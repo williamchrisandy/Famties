@@ -12,8 +12,11 @@ import CoreData
 
 extension Tips {
 
-    @nonobjc public class func fetchRequest() -> NSFetchRequest<Tips> {
-        return NSFetchRequest<Tips>(entityName: "Tips")
+    @nonobjc public class func fetchRequest(activityId: Int) -> NSFetchRequest<Tips> {
+        let fetchRequest = NSFetchRequest<Tips>(entityName: "Tips")
+        fetchRequest.predicate = NSPredicate(format: "activityId == %i", activityId)
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "index", ascending: true)]
+        return fetchRequest
     }
 
     @NSManaged public var index: Int16

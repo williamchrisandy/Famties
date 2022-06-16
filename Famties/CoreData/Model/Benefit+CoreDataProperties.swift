@@ -12,15 +12,17 @@ import CoreData
 
 extension Benefit {
 
-    @nonobjc public class func fetchRequest() -> NSFetchRequest<Benefit> {
-        return NSFetchRequest<Benefit>(entityName: "Benefit")
+    @nonobjc public class func fetchRequest(id: Int) -> NSFetchRequest<Benefit> {
+        let fetchRequest = NSFetchRequest<Benefit>(entityName: "Benefit")
+        fetchRequest.predicate = NSPredicate(format: "id == %i", id)
+        return fetchRequest
     }
 
     @NSManaged public var symbolName: String?
     @NSManaged public var id: Int16
     @NSManaged public var name: String?
     @NSManaged public var explanation: String?
-    @NSManaged public var for: NSSet?
+    @NSManaged public var of: NSSet?
 
 }
 

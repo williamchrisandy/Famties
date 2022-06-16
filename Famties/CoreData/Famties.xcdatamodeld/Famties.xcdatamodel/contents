@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="20086" systemVersion="21F79" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Activity" representedClassName="Activity" syncable="YES">
+        <attribute name="categoryId" attributeType="Integer 16" derived="YES" derivationExpression="partOf.id" usesScalarValueType="YES"/>
         <attribute name="estimatedTime" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="explanation" attributeType="String" defaultValueString=""/>
         <attribute name="id" attributeType="Integer 16" defaultValueString="-1" usesScalarValueType="YES"/>
         <attribute name="isFavorited" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
         <attribute name="name" attributeType="String" defaultValueString=""/>
         <attribute name="point" attributeType="Double" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="totalPoint" attributeType="Double" derived="YES" derivationExpression="point + partOf.point" usesScalarValueType="YES"/>
         <relationship name="has" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ActivityBenefit" inverseName="ofActivity" inverseEntity="ActivityBenefit"/>
         <relationship name="hasTips" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Tips" inverseName="of" inverseEntity="Tips"/>
         <relationship name="partOf" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Category" inverseName="has" inverseEntity="Category"/>
@@ -15,14 +17,14 @@
         <attribute name="activityId" attributeType="Integer 16" derived="YES" derivationExpression="ofActivity.id" usesScalarValueType="YES"/>
         <attribute name="benefitId" attributeType="Integer 16" derived="YES" derivationExpression="ofBenefit.id" usesScalarValueType="YES"/>
         <relationship name="ofActivity" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Activity" inverseName="has" inverseEntity="Activity"/>
-        <relationship name="ofBenefit" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Benefit" inverseName="for" inverseEntity="Benefit"/>
+        <relationship name="ofBenefit" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Benefit" inverseName="of" inverseEntity="Benefit"/>
     </entity>
     <entity name="Benefit" representedClassName="Benefit" syncable="YES">
         <attribute name="explanation" attributeType="String" defaultValueString=""/>
         <attribute name="id" attributeType="Integer 16" defaultValueString="-1" usesScalarValueType="YES"/>
         <attribute name="name" attributeType="String" defaultValueString=""/>
         <attribute name="symbolName" attributeType="String" defaultValueString=""/>
-        <relationship name="for" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ActivityBenefit" inverseName="ofBenefit" inverseEntity="ActivityBenefit"/>
+        <relationship name="of" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ActivityBenefit" inverseName="ofBenefit" inverseEntity="ActivityBenefit"/>
     </entity>
     <entity name="Category" representedClassName="Category" syncable="YES">
         <attribute name="id" attributeType="Integer 16" defaultValueString="-1" usesScalarValueType="YES"/>
@@ -38,7 +40,7 @@
         <relationship name="of" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Activity" inverseName="hasTips" inverseEntity="Activity"/>
     </entity>
     <elements>
-        <element name="Activity" positionX="-54" positionY="-9" width="128" height="164"/>
+        <element name="Activity" positionX="-54" positionY="-9" width="128" height="194"/>
         <element name="Benefit" positionX="-36" positionY="9" width="128" height="104"/>
         <element name="Category" positionX="-18" positionY="27" width="128" height="89"/>
         <element name="ActivityBenefit" positionX="0" positionY="45" width="128" height="89"/>

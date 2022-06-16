@@ -12,8 +12,10 @@ import CoreData
 
 extension ActivityBenefit {
 
-    @nonobjc public class func fetchRequest() -> NSFetchRequest<ActivityBenefit> {
-        return NSFetchRequest<ActivityBenefit>(entityName: "ActivityBenefit")
+    @nonobjc public class func fetchRequest(activityId: Int) -> NSFetchRequest<ActivityBenefit> {
+        let fetchRequest = NSFetchRequest<ActivityBenefit>(entityName: "ActivityBenefit")
+        fetchRequest.predicate = NSPredicate(format: "activityId == %i", activityId)
+        return fetchRequest
     }
 
     @NSManaged public var benefitId: Int16

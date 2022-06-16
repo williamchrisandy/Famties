@@ -13,9 +13,17 @@ import CoreData
 extension Category {
 
     @nonobjc public class func fetchRequest() -> NSFetchRequest<Category> {
-        return NSFetchRequest<Category>(entityName: "Category")
+        let fetchRequest = NSFetchRequest<Category>(entityName: "Category")
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "id", ascending: true)]
+        return fetchRequest
     }
-
+    
+    @nonobjc public class func fetchRequest(id: Int) -> NSFetchRequest<Category> {
+        let fetchRequest = NSFetchRequest<Category>(entityName: "Category")
+        fetchRequest.predicate = NSPredicate(format: "id == %i", id)
+        return fetchRequest
+    }
+    
     @NSManaged public var id: Int16
     @NSManaged public var name: String?
     @NSManaged public var point: Double
