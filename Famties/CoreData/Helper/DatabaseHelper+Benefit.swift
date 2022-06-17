@@ -5,7 +5,8 @@
 //  Created by William Chrisandy on 17/06/22.
 //
 
-import Foundation
+import CoreData
 
 extension DatabaseHelper {
+    
 }

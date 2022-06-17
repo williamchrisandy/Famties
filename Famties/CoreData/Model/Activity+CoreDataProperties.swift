@@ -12,9 +12,10 @@ import CoreData
 
 extension Activity {
 
-    @nonobjc public class func fetchRequest() -> NSFetchRequest<Activity> {
+    @nonobjc public class func fetchRequest(showAll: Bool) -> NSFetchRequest<Activity> {
         let fetchRequest = NSFetchRequest<Activity>(entityName: "Activity")
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "totalPoint", ascending: false)]
+        if showAll == false { fetchRequest.fetchLimit = DatabaseHelper.limitedDataMaxCount }
         return fetchRequest
     }
     
