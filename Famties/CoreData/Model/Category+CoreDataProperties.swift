@@ -24,7 +24,7 @@ extension Category {
         return fetchRequest
     }
     
-    @NSManaged public var id: Int16
+    @NSManaged public var id: Int64
     @NSManaged public var name: String?
     @NSManaged public var point: Double
     @NSManaged public var has: NSSet?
@@ -48,6 +48,14 @@ extension Category {
 
 }
 
-extension Category : Identifiable {
+extension Category: Identifiable {
 
+}
+
+extension Category: HasKeyLastId {
+    static var keyLastId: String = "categoryLastId"
+}
+
+extension Category: HasId {
+    
 }

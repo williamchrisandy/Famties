@@ -18,8 +18,8 @@ extension ActivityBenefit {
         return fetchRequest
     }
 
-    @NSManaged public var benefitId: Int16
-    @NSManaged public var activityId: Int16
+    @NSManaged public var benefitId: Int64
+    @NSManaged public var activityId: Int64
     @NSManaged public var ofActivity: Activity?
     @NSManaged public var ofBenefit: Benefit?
 

@@ -18,8 +18,7 @@ extension Benefit {
         return fetchRequest
     }
 
-    @NSManaged public var symbolName: String?
-    @NSManaged public var id: Int16
+    @NSManaged public var id: Int64
     @NSManaged public var name: String?
     @NSManaged public var explanation: String?
     @NSManaged public var of: NSSet?
@@ -43,6 +42,14 @@ extension Benefit {
 
 }
 
-extension Benefit : Identifiable {
+extension Benefit: Identifiable {
 
+}
+
+extension Benefit: HasKeyLastId {
+    static var keyLastId: String = "benefitLastId"
+}
+
+extension Benefit: HasId {
+    
 }

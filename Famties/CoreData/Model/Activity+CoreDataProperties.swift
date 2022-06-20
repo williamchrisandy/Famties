@@ -57,17 +57,18 @@ extension Activity {
         return fetchRequest
     }
 
-    @NSManaged public var id: Int16
-    @NSManaged public var categoryId: Int16
+    @NSManaged public var id: Int64
+    @NSManaged public var categoryId: Int64
     @NSManaged public var name: String?
     @NSManaged public var estimatedTime: Int16
     @NSManaged public var explanation: String?
     @NSManaged public var point: Double
-    @NSManaged public var totalPoint: Double
     @NSManaged public var isFavorited: Bool
     @NSManaged public var partOf: Category?
     @NSManaged public var has: NSSet?
     @NSManaged public var hasTips: NSSet?
+    
+    public var totalPoint: Double { get { point + (partOf?.point ?? 0) } }
 
 }
 
@@ -105,6 +106,14 @@ extension Activity {
 
 }
 
-extension Activity : Identifiable {
+extension Activity: Identifiable {
 
+}
+
+extension Activity: HasKeyLastId {
+    static var keyLastId: String = "activityLastId"
+}
+
+extension Activity: HasId {
+    
 }
