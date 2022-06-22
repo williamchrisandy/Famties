@@ -1,19 +1,17 @@
 //
-//  ViewController.swift
+//  HomeDetailViewController.swift
 //  Famties
 //
-//  Created by William Chrisandy on 10/06/22.
+//  Created by Hilmy Veradin on 12/06/22.
 //
 
 import UIKit
 
-class ViewController: UIViewController {
+class JournalRecapViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-
-
+    
 }
-
