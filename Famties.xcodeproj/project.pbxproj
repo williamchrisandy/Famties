@@ -14,9 +14,9 @@
 		013AB0012862C3DE00A8B7A9 /* WorksheetDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013AAFF72862C3DE00A8B7A9 /* WorksheetDetailViewController.swift */; };
 		013AB0022862C3DE00A8B7A9 /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013AAFF82862C3DE00A8B7A9 /* ActivityViewController.swift */; };
 		013AB0032862C3DE00A8B7A9 /* ActivityViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 013AAFF92862C3DE00A8B7A9 /* ActivityViewController.storyboard */; };
-		013AB0042862C3DE00A8B7A9 /* WorksheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013AAFFA2862C3DE00A8B7A9 /* WorksheetViewController.swift */; };
+		013AB0042862C3DE00A8B7A9 /* JournalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013AAFFA2862C3DE00A8B7A9 /* JournalViewController.swift */; };
 		013AB0052862C3DE00A8B7A9 /* JournalDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013AAFFB2862C3DE00A8B7A9 /* JournalDetailViewController.swift */; };
-		013AB0062862C3DE00A8B7A9 /* WorksheetViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 013AAFFC2862C3DE00A8B7A9 /* WorksheetViewController.storyboard */; };
+		013AB0062862C3DE00A8B7A9 /* JournalViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 013AAFFC2862C3DE00A8B7A9 /* JournalViewController.storyboard */; };
 		013AB0072862C3DE00A8B7A9 /* ActivityDetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 013AAFFD2862C3DE00A8B7A9 /* ActivityDetailViewController.storyboard */; };
 		013AB00D2862C3EA00A8B7A9 /* DetailCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 013AB0092862C3EA00A8B7A9 /* DetailCollectionViewCell.xib */; };
 		013AB00E2862C3EA00A8B7A9 /* ActivityCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 013AB00A2862C3EA00A8B7A9 /* ActivityCollectionViewCell.xib */; };
@@ -72,9 +72,9 @@
 		013AAFF72862C3DE00A8B7A9 /* WorksheetDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorksheetDetailViewController.swift; sourceTree = "<group>"; };
 		013AAFF82862C3DE00A8B7A9 /* ActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
 		013AAFF92862C3DE00A8B7A9 /* ActivityViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ActivityViewController.storyboard; sourceTree = "<group>"; };
-		013AAFFA2862C3DE00A8B7A9 /* WorksheetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorksheetViewController.swift; sourceTree = "<group>"; };
+		013AAFFA2862C3DE00A8B7A9 /* JournalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JournalViewController.swift; sourceTree = "<group>"; };
 		013AAFFB2862C3DE00A8B7A9 /* JournalDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JournalDetailViewController.swift; sourceTree = "<group>"; };
-		013AAFFC2862C3DE00A8B7A9 /* WorksheetViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = WorksheetViewController.storyboard; sourceTree = "<group>"; };
+		013AAFFC2862C3DE00A8B7A9 /* JournalViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = JournalViewController.storyboard; sourceTree = "<group>"; };
 		013AAFFD2862C3DE00A8B7A9 /* ActivityDetailViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ActivityDetailViewController.storyboard; sourceTree = "<group>"; };
 		013AB0092862C3EA00A8B7A9 /* DetailCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailCollectionViewCell.xib; sourceTree = "<group>"; };
 		013AB00A2862C3EA00A8B7A9 /* ActivityCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ActivityCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -143,30 +143,26 @@
 			path = JournalRecap;
 			sourceTree = "<group>";
 		};
-		013AAFF52862C3DE00A8B7A9 /* Activity+Workshop */ = {
+		013AAFF52862C3DE00A8B7A9 /* Activity */ = {
 			isa = PBXGroup;
 			children = (
-				013AAFF62862C3DE00A8B7A9 /* ActivityDetailViewController.swift */,
-				013AAFF72862C3DE00A8B7A9 /* WorksheetDetailViewController.swift */,
 				013AAFF82862C3DE00A8B7A9 /* ActivityViewController.swift */,
 				013AAFF92862C3DE00A8B7A9 /* ActivityViewController.storyboard */,
-				013AAFFA2862C3DE00A8B7A9 /* WorksheetViewController.swift */,
-				013AAFFB2862C3DE00A8B7A9 /* JournalDetailViewController.swift */,
-				013AAFFC2862C3DE00A8B7A9 /* WorksheetViewController.storyboard */,
+				013AAFF62862C3DE00A8B7A9 /* ActivityDetailViewController.swift */,
 				013AAFFD2862C3DE00A8B7A9 /* ActivityDetailViewController.storyboard */,
 			);
-			path = "Activity+Workshop";
+			path = Activity;
 			sourceTree = "<group>";
 		};
-		013AB0082862C3EA00A8B7A9 /* View */ = {
+		013AB0082862C3EA00A8B7A9 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
 				013AB0092862C3EA00A8B7A9 /* DetailCollectionViewCell.xib */,
-				013AB00A2862C3EA00A8B7A9 /* ActivityCollectionViewCell.xib */,
 				013AB00B2862C3EA00A8B7A9 /* DetailCollectionViewCell.swift */,
+				013AB00A2862C3EA00A8B7A9 /* ActivityCollectionViewCell.xib */,
 				013AB00C2862C3EA00A8B7A9 /* ActivityCollectionViewCell.swift */,
 			);
-			path = View;
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		013AB0152862C45100A8B7A9 /* Base */ = {
@@ -178,6 +174,17 @@
 				3BD1171128531FFB0036F6DE /* SceneDelegate.swift */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		3B15DF042862F05300F4E803 /* Journal */ = {
+			isa = PBXGroup;
+			children = (
+				013AAFFA2862C3DE00A8B7A9 /* JournalViewController.swift */,
+				013AAFFC2862C3DE00A8B7A9 /* JournalViewController.storyboard */,
+				013AAFF72862C3DE00A8B7A9 /* WorksheetDetailViewController.swift */,
+				013AAFFB2862C3DE00A8B7A9 /* JournalDetailViewController.swift */,
+			);
+			path = Journal;
 			sourceTree = "<group>";
 		};
 		3B4D771E285A9FA200402B03 /* CoreData */ = {
@@ -280,7 +287,7 @@
 		3BD11743285320760036F6DE /* Helper */ = {
 			isa = PBXGroup;
 			children = (
-				013AB0082862C3EA00A8B7A9 /* View */,
+				013AB0082862C3EA00A8B7A9 /* Cell */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -288,7 +295,8 @@
 		3BD117442853207F0036F6DE /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				013AAFF52862C3DE00A8B7A9 /* Activity+Workshop */,
+				3B15DF042862F05300F4E803 /* Journal */,
+				013AAFF52862C3DE00A8B7A9 /* Activity */,
 				013AAFF22862C3DE00A8B7A9 /* JournalRecap */,
 			);
 			path = Controller;
@@ -398,7 +406,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				013AB0062862C3DE00A8B7A9 /* WorksheetViewController.storyboard in Resources */,
+				013AB0062862C3DE00A8B7A9 /* JournalViewController.storyboard in Resources */,
 				013AB0072862C3DE00A8B7A9 /* ActivityDetailViewController.storyboard in Resources */,
 				013AAFF12862C3D500A8B7A9 /* Main.storyboard in Resources */,
 				013AAFFE2862C3DE00A8B7A9 /* JournalRecapViewController.storyboard in Resources */,
@@ -445,7 +453,7 @@
 				3B4D7741285BF6AD00402B03 /* DatabaseHelper+Activity.swift in Sources */,
 				013AB0142862C44500A8B7A9 /* Extension+UIView.swift in Sources */,
 				013AB00F2862C3EA00A8B7A9 /* DetailCollectionViewCell.swift in Sources */,
-				013AB0042862C3DE00A8B7A9 /* WorksheetViewController.swift in Sources */,
+				013AB0042862C3DE00A8B7A9 /* JournalViewController.swift in Sources */,
 				3B4D7734285A9FA200402B03 /* Category+CoreDataClass.swift in Sources */,
 				013AB0102862C3EA00A8B7A9 /* ActivityCollectionViewCell.swift in Sources */,
 				3B4D772D285A9FA200402B03 /* Activity+CoreDataClass.swift in Sources */,

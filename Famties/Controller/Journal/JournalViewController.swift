@@ -7,7 +7,7 @@
 
 import UIKit
 
-class WorksheetViewController: UIViewController {
+class JournalViewController: UIViewController {
     
     //MARK: - Properties
     @IBOutlet weak var WorksheetUISwitcher: UISegmentedControl!
