@@ -35,8 +35,8 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QP1-Os-ORI">
                                         <rect key="frame" x="9" y="30.5" width="200" height="19.5"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="muc-Ms-LLv">
-                                                <rect key="frame" x="0.0" y="0.0" width="20" height="19.5"/>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clock.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="muc-Ms-LLv">
+                                                <rect key="frame" x="0.0" y="0.5" width="20" height="18.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="20" id="N96-yh-XYu"/>
                                                     <constraint firstAttribute="height" constant="19.5" id="ULT-rU-6a9"/>
@@ -146,6 +146,7 @@
         </collectionViewCell>
     </objects>
     <resources>
+        <image name="clock.circle" catalog="system" width="128" height="121"/>
         <image name="heart" catalog="system" width="128" height="109"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

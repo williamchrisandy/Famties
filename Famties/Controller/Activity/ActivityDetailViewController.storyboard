@@ -5,7 +5,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
-        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -231,16 +230,7 @@
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="" id="xzG-fY-2Hc">
-                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="wCM-xf-xyb">
-                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </collectionViewCellContentView>
-                                    </collectionViewCell>
-                                </cells>
+                                <cells/>
                             </collectionView>
                             <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Ty0-qz-1aC">
                                 <rect key="frame" x="533" y="672" width="116" height="26"/>
@@ -276,15 +266,15 @@
             </objects>
             <point key="canvasLocation" x="864.2578125" y="97.950219619326489"/>
         </scene>
-        <!--WorksheetViewController-->
+        <!--JournalViewController-->
         <scene sceneID="dlO-Ks-9sL">
             <objects>
-                <viewControllerPlaceholder storyboardName="WorksheetViewController" id="n0A-sR-xpN" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="JournalViewController" id="n0A-sR-xpN" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="fLb-sV-ySt"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9kF-PD-yAj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1509" y="83"/>
+            <point key="canvasLocation" x="1537" y="98"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="wD4-Pt-L9X">

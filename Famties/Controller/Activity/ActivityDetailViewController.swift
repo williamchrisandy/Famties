@@ -32,6 +32,8 @@ class ActivityDetailViewController: UIViewController {
     @IBOutlet weak var lineView: UIView!
     @IBOutlet weak var startJournalingButton: UIButton!
     
+    weak var delegate: ActivityCollectionViewCellDelegate?
+    
     var string: String?
     var imgArray: [String]?
     

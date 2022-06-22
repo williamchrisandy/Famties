@@ -8,7 +8,7 @@
 import UIKit
 
 protocol ActivityCollectionViewCellDelegate: AnyObject {
-    func favoriteClicked()
+    func favoriteClicked(activity: Activity)
 }
 
 class ActivityCollectionViewCell: UICollectionViewCell {
@@ -36,16 +36,20 @@ class ActivityCollectionViewCell: UICollectionViewCell {
     @IBAction func favoriteClicked(_ sender: UIButton) {
         let databaseHelper = DatabaseHelper()
         databaseHelper.toogleFavoritesActivity(activity!)
-        isFavorite.imageView?.image = UIImage(systemName: (activity?.isFavorited == false ? "heart" : "heart.fill"))
-        delegate?.favoriteClicked()
+        setFavoriteButtonImage()
+        delegate?.favoriteClicked(activity: activity!)
+    }
+    
+    func setFavoriteButtonImage() {
+        isFavorite.setImage(UIImage(systemName: (activity?.isFavorited == false ? "heart" : "heart.fill")), for: .normal)
     }
     
     func setUpData() {
         categoryName.text = activity?.partOf?.name
         titleLabel.text = activity?.name
-        isFavorite.imageView?.image = UIImage(systemName: (activity?.isFavorited == false ? "heart" : "heart.fill"))
         estimatedTimeLabel.text = "\(activity?.estimatedTime ?? 0) minutes"
         activityPreview.image = activity?.coverImage
+        setFavoriteButtonImage()
     }
     
 }

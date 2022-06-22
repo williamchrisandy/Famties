@@ -81,6 +81,13 @@ class ActivityViewController: UIViewController {
         data.append(databaseHelper.getActivities(categoryId: 4, showAll: false))
         data.append(databaseHelper.getActivities(categoryId: 5, showAll: false))
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "activityToDetail" {
+            let destination = segue.destination as! ActivityDetailViewController
+            destination.delegate = self
+        }
+    }
 }
 
 extension ActivityViewController: UICollectionViewDataSource {
@@ -103,7 +110,6 @@ extension ActivityViewController: UICollectionViewDataSource {
         cell.delegate = self
         cell.setUpData()
         
-        changeCellImage(cell: cell)
         cell.layer.cornerRadius = 15
         return cell
         
@@ -141,25 +147,31 @@ extension ActivityViewController: UICollectionViewDelegateFlowLayout {
 }
 
 extension ActivityViewController: ActivityCollectionViewCellDelegate {
-    func favoriteClicked() {
+    func favoriteClicked(activity: Activity) {
         let databaseHelper = DatabaseHelper()
         data[0] = databaseHelper.getFavoriteActivities(showAll: false)
         favoriteCollectionView.reloadData()
-    }
-}
 
-extension ActivityViewController {
-    
-    private func changeCellImage(cell: ActivityCollectionViewCell) {
+        let categoryId = Int((activity.partOf?.id)!)
         
+        var targetCollectionView = [recommendedCollectionView]
+        
+        var targetData = [data[1]]
+        targetData.append(data[categoryId+1])
+        
+        if categoryId == 1 { targetCollectionView.append(awarenessCollectionView) }
+        else if categoryId == 2 { targetCollectionView.append(managementCollectionView) }
+        else if categoryId == 3 { targetCollectionView.append(socialCollectionView) }
+        else if categoryId == 4 { targetCollectionView.append(relationshipCollectionView) }
+        else if categoryId == 5 { targetCollectionView.append(responsibleCollectionView) }
+        
+        for i in 0..<targetData.count {
+            let data = targetData[i]
+            for j in 0..<data.count {
+                if data[j] == activity {
+                    targetCollectionView[i]?.reloadItems(at: [IndexPath(item: j, section: 0)])
+                }
+            }
+        }
     }
-    
-    //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    //        if segue.identifier == "activityToDetail" {
-    //            let nav = segue.destination as! UINavigationController
-    //            let activityDetail = nav.topViewController as! ActivityDetailViewController
-    //            activityDetail.string = "AAA"
-    //        }
-    //
-    //    }
 }
