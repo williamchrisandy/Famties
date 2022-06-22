@@ -33,7 +33,7 @@ class DatabaseHelper {
                 objectWithId.id = Int64(UserDefaults.standard.integer(forKey: keyLastId) + 1)
                 UserDefaults.standard.set(objectWithId.id, forKey: keyLastId)
             }
-            
+            context.refreshAllObjects()
             context.insert(newObject)
             try context.save()
         }
@@ -105,23 +105,10 @@ extension DatabaseHelper {
         activity1.estimatedTime = 30
         activity1.explanation = "Many children believe results are often a matter of luck. By doing this activity, we want to help parents teach their children how to create their own luck. Through this activity, parents can encourage their children to dream big and turn them a reality by setting goals and making plans."
         activity1.partOf = category2
+        activity1.addToHas(benefit1)
+        activity1.addToHas(benefit2)
+        activity1.addToHas(benefit3)
         insert(activity1)
-        
-        let activity1Benefit1 = ActivityBenefit(context: context)
-        activity1.addToHas(activity1Benefit1)
-        benefit1.addToFor(activity1Benefit1)
-        insert(activity1Benefit1)
-        
-        let activity1Benefit2 = ActivityBenefit(context: context)
-        activity1.addToHas(activity1Benefit2)
-        benefit2.addToFor(activity1Benefit2)
-        insert(activity1Benefit2)
-        
-        let activity1Benefit3 = ActivityBenefit(context: context)
-        activity1.addToHas(activity1Benefit3)
-        benefit3.addToFor(activity1Benefit3)
-        insert(activity1Benefit3)
-        
         
         UserDefaults.standard.set(true, forKey: DatabaseHelper.keyFirstTimev1)
     }

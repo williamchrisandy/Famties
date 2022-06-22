@@ -12,6 +12,11 @@ import CoreData
 
 extension Benefit {
 
+    @nonobjc public class func fetchRequest() -> NSFetchRequest<Benefit> {
+        let fetchRequest = NSFetchRequest<Benefit>(entityName: "Benefit")
+        return fetchRequest
+    }
+    
     @nonobjc public class func fetchRequest(id: Int) -> NSFetchRequest<Benefit> {
         let fetchRequest = NSFetchRequest<Benefit>(entityName: "Benefit")
         fetchRequest.predicate = NSPredicate(format: "id == %i", id)
@@ -25,20 +30,20 @@ extension Benefit {
 
 }
 
-// MARK: Generated accessors for for
+// MARK: Generated accessors for of
 extension Benefit {
 
-    @objc(addForObject:)
-    @NSManaged public func addToFor(_ value: ActivityBenefit)
+    @objc(addOfObject:)
+    @NSManaged public func addToOf(_ value: Activity)
 
-    @objc(removeForObject:)
-    @NSManaged public func removeFromFor(_ value: ActivityBenefit)
+    @objc(removeOfObject:)
+    @NSManaged public func removeFromOf(_ value: Activity)
 
-    @objc(addFor:)
-    @NSManaged public func addToFor(_ values: NSSet)
+    @objc(addOf:)
+    @NSManaged public func addToOf(_ values: NSSet)
 
-    @objc(removeFor:)
-    @NSManaged public func removeFromFor(_ values: NSSet)
+    @objc(removeOf:)
+    @NSManaged public func removeFromOf(_ values: NSSet)
 
 }
 

@@ -8,11 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		3B4D772B285A9FA200402B03 /* Category+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4D7720285A9FA200402B03 /* Category+CoreDataProperties.swift */; };
-		3B4D772C285A9FA200402B03 /* ActivityBenefit+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4D7721285A9FA200402B03 /* ActivityBenefit+CoreDataProperties.swift */; };
 		3B4D772D285A9FA200402B03 /* Activity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4D7722285A9FA200402B03 /* Activity+CoreDataClass.swift */; };
 		3B4D772F285A9FA200402B03 /* Benefit+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4D7724285A9FA200402B03 /* Benefit+CoreDataProperties.swift */; };
 		3B4D7731285A9FA200402B03 /* Activity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4D7726285A9FA200402B03 /* Activity+CoreDataProperties.swift */; };
-		3B4D7732285A9FA200402B03 /* ActivityBenefit+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4D7727285A9FA200402B03 /* ActivityBenefit+CoreDataClass.swift */; };
 		3B4D7733285A9FA200402B03 /* Benefit+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4D7728285A9FA200402B03 /* Benefit+CoreDataClass.swift */; };
 		3B4D7734285A9FA200402B03 /* Category+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4D7729285A9FA200402B03 /* Category+CoreDataClass.swift */; };
 		3B4D773B285BF5FF00402B03 /* DatabaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4D773A285BF5FF00402B03 /* DatabaseHelper.swift */; };
@@ -53,11 +51,9 @@
 
 /* Begin PBXFileReference section */
 		3B4D7720285A9FA200402B03 /* Category+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Category+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		3B4D7721285A9FA200402B03 /* ActivityBenefit+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ActivityBenefit+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		3B4D7722285A9FA200402B03 /* Activity+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Activity+CoreDataClass.swift"; sourceTree = "<group>"; };
 		3B4D7724285A9FA200402B03 /* Benefit+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Benefit+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		3B4D7726285A9FA200402B03 /* Activity+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Activity+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		3B4D7727285A9FA200402B03 /* ActivityBenefit+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ActivityBenefit+CoreDataClass.swift"; sourceTree = "<group>"; };
 		3B4D7728285A9FA200402B03 /* Benefit+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Benefit+CoreDataClass.swift"; sourceTree = "<group>"; };
 		3B4D7729285A9FA200402B03 /* Category+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Category+CoreDataClass.swift"; sourceTree = "<group>"; };
 		3B4D773A285BF5FF00402B03 /* DatabaseHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseHelper.swift; sourceTree = "<group>"; };
@@ -127,8 +123,6 @@
 				3B4D7726285A9FA200402B03 /* Activity+CoreDataProperties.swift */,
 				3B4D7728285A9FA200402B03 /* Benefit+CoreDataClass.swift */,
 				3B4D7724285A9FA200402B03 /* Benefit+CoreDataProperties.swift */,
-				3B4D7727285A9FA200402B03 /* ActivityBenefit+CoreDataClass.swift */,
-				3B4D7721285A9FA200402B03 /* ActivityBenefit+CoreDataProperties.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -358,11 +352,9 @@
 				3B4D772F285A9FA200402B03 /* Benefit+CoreDataProperties.swift in Sources */,
 				3BD1171428531FFB0036F6DE /* ViewController.swift in Sources */,
 				3BD1171A28531FFB0036F6DE /* Famties.xcdatamodeld in Sources */,
-				3B4D772C285A9FA200402B03 /* ActivityBenefit+CoreDataProperties.swift in Sources */,
 				3B4D773D285BF64800402B03 /* DatabaseHelper+Constants.swift in Sources */,
 				3B4D772B285A9FA200402B03 /* Category+CoreDataProperties.swift in Sources */,
 				3B4D7731285A9FA200402B03 /* Activity+CoreDataProperties.swift in Sources */,
-				3B4D7732285A9FA200402B03 /* ActivityBenefit+CoreDataClass.swift in Sources */,
 				3B4D773F285BF69C00402B03 /* DatabaseHelper+Category.swift in Sources */,
 				3B4D7741285BF6AD00402B03 /* DatabaseHelper+Activity.swift in Sources */,
 				3B4D7734285A9FA200402B03 /* Category+CoreDataClass.swift in Sources */,

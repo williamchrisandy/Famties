@@ -6,10 +6,10 @@
 //
 //
 
-import Foundation
+import UIKit
 import CoreData
 
 @objc(Benefit)
 public class Benefit: NSManagedObject {
-
+    lazy var image: UIImage? = UIImage(named: "Benefit\(id)")
 }
