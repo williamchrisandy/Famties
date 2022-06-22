@@ -135,7 +135,6 @@ extension ActivityViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         let cell = collectionView.cellForItem(at: indexPath) as! ActivityCollectionViewCell
-        changeCellImage(cell: cell)
         performSegue(withIdentifier: "activityToDetail", sender: self)
     }
 }
