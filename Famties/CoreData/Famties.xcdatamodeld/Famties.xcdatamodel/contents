@@ -9,6 +9,7 @@
         <attribute name="point" attributeType="Double" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="totalPoint" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <relationship name="has" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Benefit" inverseName="of" inverseEntity="Benefit"/>
+        <relationship name="journal" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Journal" inverseName="activity" inverseEntity="Journal"/>
         <relationship name="partOf" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Category" inverseName="has" inverseEntity="Category"/>
     </entity>
     <entity name="Benefit" representedClassName="Benefit" syncable="YES">
@@ -24,16 +25,27 @@
         <relationship name="has" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Activity" inverseName="partOf" inverseEntity="Activity"/>
     </entity>
     <entity name="Journal" representedClassName="Journal" syncable="YES">
-        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="-1" usesScalarValueType="YES"/>
+        <attribute name="childName" attributeType="String" defaultValueString=""/>
+        <attribute name="createdTime" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="id" attributeType="Integer 64" defaultValueString="-1" usesScalarValueType="YES"/>
+        <attribute name="lastEdited" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="lessonLearned" attributeType="String" defaultValueString=""/>
+        <attribute name="mood" attributeType="Integer 16" defaultValueString="-1" usesScalarValueType="YES"/>
+        <attribute name="name" attributeType="String" defaultValueString=""/>
+        <relationship name="activity" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Activity" inverseName="journal" inverseEntity="Activity"/>
+        <relationship name="worksheets" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Worksheet" inverseName="journal" inverseEntity="Worksheet"/>
     </entity>
     <entity name="Worksheet" representedClassName="Worksheet" syncable="YES" codeGenerationType="class">
+        <attribute name="data" attributeType="Binary"/>
         <attribute name="id" attributeType="Integer 64" defaultValueString="-1" usesScalarValueType="YES"/>
+        <attribute name="index" attributeType="Integer 16" defaultValueString="-1" usesScalarValueType="YES"/>
+        <relationship name="journal" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Journal" inverseName="worksheets" inverseEntity="Journal"/>
     </entity>
     <elements>
-        <element name="Activity" positionX="-54" positionY="-9" width="128" height="164"/>
+        <element name="Activity" positionX="-54" positionY="-9" width="128" height="179"/>
         <element name="Benefit" positionX="-36" positionY="9" width="128" height="89"/>
         <element name="Category" positionX="-18" positionY="27" width="128" height="89"/>
-        <element name="Journal" positionX="-63" positionY="-18" width="128" height="44"/>
-        <element name="Worksheet" positionX="-27" positionY="63" width="128" height="44"/>
+        <element name="Journal" positionX="-63" positionY="-18" width="128" height="164"/>
+        <element name="Worksheet" positionX="-27" positionY="63" width="128" height="89"/>
     </elements>
 </model>
