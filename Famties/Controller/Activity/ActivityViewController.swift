@@ -72,7 +72,6 @@ class ActivityViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.isNavigationBarHidden = true
         let databaseHelper = DatabaseHelper()
         data.append(databaseHelper.getFavoriteActivities(showAll: false))
         data.append(databaseHelper.getActivities(showAll: false))
@@ -84,6 +83,7 @@ class ActivityViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        navigationController?.isNavigationBarHidden = true
         tabBarController?.tabBar.isHidden = false
     }
     

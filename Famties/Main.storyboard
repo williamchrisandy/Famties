@@ -11,14 +11,15 @@
             <objects>
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="Cst-o9-yPj" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="4yb-Mo-UOc">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="Ffr-y6-XfI" kind="relationship" relationship="viewControllers" id="tad-yc-Lpg"/>
-                        <segue destination="BmJ-Js-bxN" kind="relationship" relationship="viewControllers" id="XEg-mu-fIb"/>
+                        <segue destination="Au2-jD-dOv" kind="relationship" relationship="viewControllers" id="tad-yc-Lpg"/>
+                        <segue destination="Gk9-dY-pNO" kind="relationship" relationship="viewControllers" id="XEg-mu-fIb"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j7a-Hc-tti" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -29,21 +30,61 @@
         <scene sceneID="gti-5Z-cfi">
             <objects>
                 <viewControllerPlaceholder storyboardName="ActivityViewController" id="Ffr-y6-XfI" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Activity" id="373-OK-dby"/>
+                    <navigationItem key="navigationItem" id="cDe-Ax-06w"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HLr-B6-ZS7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-236" y="511"/>
+            <point key="canvasLocation" x="-461" y="1276"/>
         </scene>
         <!--JournalRecapViewController-->
         <scene sceneID="B4o-Pw-I5o">
             <objects>
                 <viewControllerPlaceholder storyboardName="JournalRecapViewController" id="BmJ-Js-bxN" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="y4f-6a-kMM"/>
+                    <navigationItem key="navigationItem" id="5u8-ak-QfR"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8yh-hh-RDq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="284" y="492"/>
+            <point key="canvasLocation" x="543" y="1276"/>
+        </scene>
+        <!--Activity-->
+        <scene sceneID="J78-QA-TaL">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="Au2-jD-dOv" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Activity" id="373-OK-dby"/>
+                    <toolbarItems/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="UfP-3t-zR4">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Ffr-y6-XfI" kind="relationship" relationship="rootViewController" id="7I8-NS-L0P"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jkg-Ji-cUI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-461" y="786"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="Ldi-dj-o6g">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="Gk9-dY-pNO" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="y4f-6a-kMM"/>
+                    <toolbarItems/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dbV-3r-aJc">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BmJ-Js-bxN" kind="relationship" relationship="rootViewController" id="0XZ-jT-TqG"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="D0E-1p-SPA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="543" y="786"/>
         </scene>
     </scenes>
 </document>
