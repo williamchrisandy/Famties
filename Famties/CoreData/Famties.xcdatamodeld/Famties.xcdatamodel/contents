@@ -9,7 +9,7 @@
         <attribute name="point" attributeType="Double" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="totalPoint" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <relationship name="has" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Benefit" inverseName="of" inverseEntity="Benefit"/>
-        <relationship name="journal" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Journal" inverseName="activity" inverseEntity="Journal"/>
+        <relationship name="journals" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Journal" inverseName="activity" inverseEntity="Journal"/>
         <relationship name="partOf" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Category" inverseName="has" inverseEntity="Category"/>
     </entity>
     <entity name="Benefit" representedClassName="Benefit" syncable="YES">
@@ -32,10 +32,10 @@
         <attribute name="lessonLearned" attributeType="String" defaultValueString=""/>
         <attribute name="mood" attributeType="Integer 16" defaultValueString="-1" usesScalarValueType="YES"/>
         <attribute name="name" attributeType="String" defaultValueString=""/>
-        <relationship name="activity" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Activity" inverseName="journal" inverseEntity="Activity"/>
+        <relationship name="activity" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Activity" inverseName="journals" inverseEntity="Activity"/>
         <relationship name="worksheets" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Worksheet" inverseName="journal" inverseEntity="Worksheet"/>
     </entity>
-    <entity name="Worksheet" representedClassName="Worksheet" syncable="YES" codeGenerationType="class">
+    <entity name="Worksheet" representedClassName="Worksheet" syncable="YES">
         <attribute name="data" attributeType="Binary"/>
         <attribute name="id" attributeType="Integer 64" defaultValueString="-1" usesScalarValueType="YES"/>
         <attribute name="index" attributeType="Integer 16" defaultValueString="-1" usesScalarValueType="YES"/>

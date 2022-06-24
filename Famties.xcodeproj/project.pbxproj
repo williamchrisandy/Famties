@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B15DF092865360200F4E803 /* Worksheet+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B15DF052865360200F4E803 /* Worksheet+CoreDataClass.swift */; };
+		3B15DF0A2865360200F4E803 /* Worksheet+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B15DF062865360200F4E803 /* Worksheet+CoreDataProperties.swift */; };
+		3B15DF0B2865360200F4E803 /* Journal+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B15DF072865360200F4E803 /* Journal+CoreDataClass.swift */; };
+		3B15DF0C2865360200F4E803 /* Journal+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B15DF082865360200F4E803 /* Journal+CoreDataProperties.swift */; };
 		3B4D772B285A9FA200402B03 /* Category+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4D7720285A9FA200402B03 /* Category+CoreDataProperties.swift */; };
 		3B4D772D285A9FA200402B03 /* Activity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4D7722285A9FA200402B03 /* Activity+CoreDataClass.swift */; };
 		3B4D772F285A9FA200402B03 /* Benefit+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4D7724285A9FA200402B03 /* Benefit+CoreDataProperties.swift */; };
@@ -50,6 +54,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3B15DF052865360200F4E803 /* Worksheet+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Worksheet+CoreDataClass.swift"; sourceTree = "<group>"; };
+		3B15DF062865360200F4E803 /* Worksheet+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Worksheet+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		3B15DF072865360200F4E803 /* Journal+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Journal+CoreDataClass.swift"; sourceTree = "<group>"; };
+		3B15DF082865360200F4E803 /* Journal+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Journal+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		3B4D7720285A9FA200402B03 /* Category+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Category+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		3B4D7722285A9FA200402B03 /* Activity+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Activity+CoreDataClass.swift"; sourceTree = "<group>"; };
 		3B4D7724285A9FA200402B03 /* Benefit+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Benefit+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -123,6 +131,10 @@
 				3B4D7726285A9FA200402B03 /* Activity+CoreDataProperties.swift */,
 				3B4D7728285A9FA200402B03 /* Benefit+CoreDataClass.swift */,
 				3B4D7724285A9FA200402B03 /* Benefit+CoreDataProperties.swift */,
+				3B15DF052865360200F4E803 /* Worksheet+CoreDataClass.swift */,
+				3B15DF062865360200F4E803 /* Worksheet+CoreDataProperties.swift */,
+				3B15DF072865360200F4E803 /* Journal+CoreDataClass.swift */,
+				3B15DF082865360200F4E803 /* Journal+CoreDataProperties.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -356,8 +368,12 @@
 				3B4D772B285A9FA200402B03 /* Category+CoreDataProperties.swift in Sources */,
 				3B4D7731285A9FA200402B03 /* Activity+CoreDataProperties.swift in Sources */,
 				3B4D773F285BF69C00402B03 /* DatabaseHelper+Category.swift in Sources */,
+				3B15DF092865360200F4E803 /* Worksheet+CoreDataClass.swift in Sources */,
+				3B15DF0B2865360200F4E803 /* Journal+CoreDataClass.swift in Sources */,
+				3B15DF0A2865360200F4E803 /* Worksheet+CoreDataProperties.swift in Sources */,
 				3B4D7741285BF6AD00402B03 /* DatabaseHelper+Activity.swift in Sources */,
 				3B4D7734285A9FA200402B03 /* Category+CoreDataClass.swift in Sources */,
+				3B15DF0C2865360200F4E803 /* Journal+CoreDataProperties.swift in Sources */,
 				3B4D772D285A9FA200402B03 /* Activity+CoreDataClass.swift in Sources */,
 				3BD1171028531FFB0036F6DE /* AppDelegate.swift in Sources */,
 				3BD1171228531FFB0036F6DE /* SceneDelegate.swift in Sources */,

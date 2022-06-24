@@ -86,6 +86,23 @@ extension Activity {
 
 }
 
+// MARK: Generated accessors for journals
+extension Activity {
+
+    @objc(addJournalsObject:)
+    @NSManaged public func addToJournals(_ value: Journal)
+
+    @objc(removeJournalsObject:)
+    @NSManaged public func removeFromJournals(_ value: Journal)
+
+    @objc(addJournals:)
+    @NSManaged public func addToJournals(_ values: NSSet)
+
+    @objc(removeJournals:)
+    @NSManaged public func removeFromJournals(_ values: NSSet)
+
+}
+
 extension Activity: Identifiable {
 
 }
