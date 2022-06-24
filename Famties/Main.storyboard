@@ -29,7 +29,7 @@
         <scene sceneID="gti-5Z-cfi">
             <objects>
                 <viewControllerPlaceholder storyboardName="ActivityViewController" id="Ffr-y6-XfI" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="373-OK-dby"/>
+                    <tabBarItem key="tabBarItem" title="Activity" id="373-OK-dby"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HLr-B6-ZS7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

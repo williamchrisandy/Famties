@@ -13,8 +13,10 @@ class ActivityViewController: UIViewController {
     
     let collectionViewCell = "ActivityCollectionViewCell"
     let collectionViewCellIdentifier = "activityCollectionViewCell"
-    
     var data: [[Activity]] = []
+    var selectedActivity: Activity?
+    var categoryColor: UIColor!
+    var categoryBorderColor: UIColor!
     
     @IBOutlet weak var favoriteCollectionView: UICollectionView! {
         didSet {
@@ -70,8 +72,7 @@ class ActivityViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        self.navigationController?.isNavigationBarHidden = true
-        
+        self.navigationController?.isNavigationBarHidden = true
         let databaseHelper = DatabaseHelper()
         data.append(databaseHelper.getFavoriteActivities(showAll: false))
         data.append(databaseHelper.getActivities(showAll: false))
@@ -81,6 +82,41 @@ class ActivityViewController: UIViewController {
         data.append(databaseHelper.getActivities(categoryId: 4, showAll: false))
         data.append(databaseHelper.getActivities(categoryId: 5, showAll: false))
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        tabBarController?.tabBar.isHidden = false
+    }
+    
+    private func prepareCardsColor(activity: Activity) {
+        let activityCategoryName = activity.partOf?.name
+        if activityCategoryName == "Self Awareness" {
+            categoryColor = UIColor(named: "AwarenessColor")
+            categoryBorderColor = UIColor(named: "AwarenessBorderColor")
+        } else if activityCategoryName == "Self Management" {
+            categoryColor = UIColor(named: "ManagementColor")
+            categoryBorderColor = UIColor(named: "ManagementBorderColor")
+        } else if activityCategoryName == "Social Awareness" {
+            categoryColor = UIColor(named: "SocialColor")
+            categoryBorderColor = UIColor(named: "SocialBorderColor")
+        } else if activityCategoryName == "Relationship Skills" {
+            categoryColor = UIColor(named: "RelationshipColor")
+            categoryBorderColor = UIColor(named: "RelationshipBorderColor")
+        } else {
+            categoryColor = UIColor(named: "DecisionColor")
+            categoryBorderColor = UIColor(named: "DecisionBorderColor")
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "activityToDetailSegue" {
+            let destination = segue.destination as! ActivityDetailViewController
+            destination.delegate = self
+            destination.detailActivity = selectedActivity
+        }
+    }
+    
+    
+    
 }
 
 extension ActivityViewController: UICollectionViewDataSource {
@@ -98,13 +134,15 @@ extension ActivityViewController: UICollectionViewDataSource {
         else if collectionView == socialCollectionView { activities = data[4] }
         else if collectionView == relationshipCollectionView { activities = data[5] }
         else if collectionView == responsibleCollectionView { activities = data[6] }
-        
+
         cell.activity = activities[indexPath.item]
         cell.delegate = self
-        cell.setUpData()
+        prepareCardsColor(activity: activities[indexPath.item])
+        cell.setUpData(categoryColor: categoryColor, categoryBorderColor: categoryBorderColor)
         
-        changeCellImage(cell: cell)
         cell.layer.cornerRadius = 15
+        cell.layer.borderWidth = 1.5
+        cell.layer.borderColor = UIColor(named: "CardsDarkBlueColor")?.cgColor
         return cell
         
     }
@@ -129,8 +167,8 @@ extension ActivityViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         let cell = collectionView.cellForItem(at: indexPath) as! ActivityCollectionViewCell
-        changeCellImage(cell: cell)
-        performSegue(withIdentifier: "activityToDetail", sender: self)
+        selectedActivity = cell.activity
+        performSegue(withIdentifier: "activityToDetailSegue", sender: self)
     }
 }
 
@@ -141,25 +179,31 @@ extension ActivityViewController: UICollectionViewDelegateFlowLayout {
 }
 
 extension ActivityViewController: ActivityCollectionViewCellDelegate {
-    func favoriteClicked() {
+    func favoriteClicked(activity: Activity) {
         let databaseHelper = DatabaseHelper()
         data[0] = databaseHelper.getFavoriteActivities(showAll: false)
         favoriteCollectionView.reloadData()
-    }
-}
 
-extension ActivityViewController {
-    
-    private func changeCellImage(cell: ActivityCollectionViewCell) {
+        let categoryId = Int((activity.partOf?.id)!)
         
+        var targetCollectionView = [recommendedCollectionView]
+        
+        var targetData = [data[1]]
+        targetData.append(data[categoryId+1])
+        
+        if categoryId == 1 { targetCollectionView.append(awarenessCollectionView) }
+        else if categoryId == 2 { targetCollectionView.append(managementCollectionView) }
+        else if categoryId == 3 { targetCollectionView.append(socialCollectionView) }
+        else if categoryId == 4 { targetCollectionView.append(relationshipCollectionView) }
+        else if categoryId == 5 { targetCollectionView.append(responsibleCollectionView) }
+        
+        for i in 0..<targetData.count {
+            let data = targetData[i]
+            for j in 0..<data.count {
+                if data[j] == activity {
+                    targetCollectionView[i]?.reloadItems(at: [IndexPath(item: j, section: 0)])
+                }
+            }
+        }
     }
-    
-    //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    //        if segue.identifier == "activityToDetail" {
-    //            let nav = segue.destination as! UINavigationController
-    //            let activityDetail = nav.topViewController as! ActivityDetailViewController
-    //            activityDetail.string = "AAA"
-    //        }
-    //
-    //    }
 }

@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -21,7 +22,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="219" height="290"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="00i-x0-nUq">
-                                <rect key="frame" x="0.0" y="0.0" width="219" height="230"/>
+                                <rect key="frame" x="0.0" y="0.0" width="219" height="290"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cv1-eL-W98" userLabel="BotView">
                                 <rect key="frame" x="0.0" y="230" width="219" height="60"/>
@@ -29,14 +30,15 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7BU-AZ-wRS">
                                         <rect key="frame" x="9" y="9" width="201" height="19.5"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="textColor" name="CardsTitleColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QP1-Os-ORI">
                                         <rect key="frame" x="9" y="30.5" width="200" height="19.5"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="muc-Ms-LLv">
-                                                <rect key="frame" x="0.0" y="0.0" width="20" height="19.5"/>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clock.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="muc-Ms-LLv">
+                                                <rect key="frame" x="0.0" y="0.5" width="20" height="18.5"/>
+                                                <color key="tintColor" name="CardsTimeColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="20" id="N96-yh-XYu"/>
                                                     <constraint firstAttribute="height" constant="19.5" id="ULT-rU-6a9"/>
@@ -45,11 +47,10 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ke3-MR-tcV">
                                                 <rect key="frame" x="28" y="0.0" width="42" height="19.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
+                                                <color key="textColor" name="CardsDescriptionColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstItem="ke3-MR-tcV" firstAttribute="leading" secondItem="muc-Ms-LLv" secondAttribute="trailing" constant="8" symbolic="YES" id="1tk-wT-SgB"/>
                                             <constraint firstItem="muc-Ms-LLv" firstAttribute="top" secondItem="QP1-Os-ORI" secondAttribute="top" id="6ZO-MC-cuS"/>
@@ -60,7 +61,7 @@
                                         </constraints>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                <color key="backgroundColor" name="CardsDarkColor"/>
                                 <constraints>
                                     <constraint firstItem="7BU-AZ-wRS" firstAttribute="top" secondItem="cv1-eL-W98" secondAttribute="top" constant="9" id="I3h-nB-Zqw"/>
                                     <constraint firstItem="QP1-Os-ORI" firstAttribute="top" secondItem="7BU-AZ-wRS" secondAttribute="bottom" constant="2" id="QSt-4j-MNb"/>
@@ -76,7 +77,7 @@
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A0k-YJ-dsT">
                                         <rect key="frame" x="15" y="0.0" width="114" height="20"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -91,6 +92,7 @@
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XAa-5U-7RL">
                                 <rect key="frame" x="178" y="11" width="31" height="31"/>
+                                <color key="tintColor" name="CardsFavoriteColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="heart" catalog="system"/>
                                 <connections>
@@ -110,7 +112,7 @@
                             <constraint firstItem="cv1-eL-W98" firstAttribute="top" secondItem="LB2-2I-OKC" secondAttribute="top" constant="230" id="Uem-GS-jNK"/>
                             <constraint firstItem="cv1-eL-W98" firstAttribute="top" secondItem="sPu-fe-Sar" secondAttribute="bottom" constant="195" id="ZiG-Xc-g0d"/>
                             <constraint firstItem="cv1-eL-W98" firstAttribute="leading" secondItem="LB2-2I-OKC" secondAttribute="leading" id="b8r-tx-P9C"/>
-                            <constraint firstAttribute="bottom" secondItem="00i-x0-nUq" secondAttribute="bottom" constant="60" id="eIb-eX-s9g"/>
+                            <constraint firstAttribute="bottom" secondItem="00i-x0-nUq" secondAttribute="bottom" id="eIb-eX-s9g"/>
                             <constraint firstAttribute="trailing" secondItem="sPu-fe-Sar" secondAttribute="trailing" constant="60" id="gKZ-km-YKc"/>
                             <constraint firstItem="XAa-5U-7RL" firstAttribute="top" secondItem="LB2-2I-OKC" secondAttribute="top" constant="11" id="lGy-kC-AiG"/>
                             <constraint firstAttribute="trailing" secondItem="XAa-5U-7RL" secondAttribute="trailing" constant="10" id="uMJ-Ac-meF"/>
@@ -146,12 +148,25 @@
         </collectionViewCell>
     </objects>
     <resources>
+        <image name="clock.circle" catalog="system" width="128" height="121"/>
         <image name="heart" catalog="system" width="128" height="109"/>
+        <namedColor name="CardsDarkColor">
+            <color red="0.0" green="0.19215686274509805" blue="0.29411764705882354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="CardsDescriptionColor">
+            <color red="0.81176470588235294" green="0.81176470588235294" blue="0.81176470588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="CardsFavoriteColor">
+            <color red="0.9882352941176471" green="0.59607843137254901" blue="0.19607843137254902" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="CardsTimeColor">
+            <color red="0.83529411764705885" green="0.7803921568627451" blue="0.60392156862745094" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="CardsTitleColor">
+            <color red="1" green="0.99215686274509807" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemBlueColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
