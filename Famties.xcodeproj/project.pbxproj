@@ -11,11 +11,9 @@
 		013AAFFE2862C3DE00A8B7A9 /* JournalRecapViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 013AAFF32862C3DE00A8B7A9 /* JournalRecapViewController.storyboard */; };
 		013AAFFF2862C3DE00A8B7A9 /* JournalRecapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013AAFF42862C3DE00A8B7A9 /* JournalRecapViewController.swift */; };
 		013AB0002862C3DE00A8B7A9 /* ActivityDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013AAFF62862C3DE00A8B7A9 /* ActivityDetailViewController.swift */; };
-		013AB0012862C3DE00A8B7A9 /* WorksheetDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013AAFF72862C3DE00A8B7A9 /* WorksheetDetailViewController.swift */; };
 		013AB0022862C3DE00A8B7A9 /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013AAFF82862C3DE00A8B7A9 /* ActivityViewController.swift */; };
 		013AB0032862C3DE00A8B7A9 /* ActivityViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 013AAFF92862C3DE00A8B7A9 /* ActivityViewController.storyboard */; };
 		013AB0042862C3DE00A8B7A9 /* JournalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013AAFFA2862C3DE00A8B7A9 /* JournalViewController.swift */; };
-		013AB0052862C3DE00A8B7A9 /* JournalDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013AAFFB2862C3DE00A8B7A9 /* JournalDetailViewController.swift */; };
 		013AB0062862C3DE00A8B7A9 /* JournalViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 013AAFFC2862C3DE00A8B7A9 /* JournalViewController.storyboard */; };
 		013AB0072862C3DE00A8B7A9 /* ActivityDetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 013AAFFD2862C3DE00A8B7A9 /* ActivityDetailViewController.storyboard */; };
 		013AB00D2862C3EA00A8B7A9 /* DetailCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 013AB0092862C3EA00A8B7A9 /* DetailCollectionViewCell.xib */; };
@@ -24,14 +22,14 @@
 		013AB0102862C3EA00A8B7A9 /* ActivityCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013AB00C2862C3EA00A8B7A9 /* ActivityCollectionViewCell.swift */; };
 		013AB0132862C44500A8B7A9 /* Extension+UICollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013AB0112862C44500A8B7A9 /* Extension+UICollectionViewCell.swift */; };
 		013AB0142862C44500A8B7A9 /* Extension+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013AB0122862C44500A8B7A9 /* Extension+UIView.swift */; };
+		01F9BA7828641DA000292CFB /* JournalRecapCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F9BA7628641DA000292CFB /* JournalRecapCollectionViewCell.swift */; };
+		01F9BA7928641DA000292CFB /* JournalRecapCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01F9BA7728641DA000292CFB /* JournalRecapCollectionViewCell.xib */; };
 		3B15DF092865360200F4E803 /* Worksheet+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B15DF052865360200F4E803 /* Worksheet+CoreDataClass.swift */; };
 		3B15DF0A2865360200F4E803 /* Worksheet+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B15DF062865360200F4E803 /* Worksheet+CoreDataProperties.swift */; };
 		3B15DF0B2865360200F4E803 /* Journal+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B15DF072865360200F4E803 /* Journal+CoreDataClass.swift */; };
 		3B15DF0C2865360200F4E803 /* Journal+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B15DF082865360200F4E803 /* Journal+CoreDataProperties.swift */; };
 		3B15DF0E28653A6800F4E803 /* DatabaseHelper+Worksheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B15DF0D28653A6800F4E803 /* DatabaseHelper+Worksheet.swift */; };
 		3B15DF1028653A8700F4E803 /* DatabaseHelper+Journal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B15DF0F28653A8700F4E803 /* DatabaseHelper+Journal.swift */; };
-		01F9BA7828641DA000292CFB /* JournalRecapCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F9BA7628641DA000292CFB /* JournalRecapCollectionViewCell.swift */; };
-		01F9BA7928641DA000292CFB /* JournalRecapCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01F9BA7728641DA000292CFB /* JournalRecapCollectionViewCell.xib */; };
 		3B4D772B285A9FA200402B03 /* Category+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4D7720285A9FA200402B03 /* Category+CoreDataProperties.swift */; };
 		3B4D772D285A9FA200402B03 /* Activity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4D7722285A9FA200402B03 /* Activity+CoreDataClass.swift */; };
 		3B4D772F285A9FA200402B03 /* Benefit+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4D7724285A9FA200402B03 /* Benefit+CoreDataProperties.swift */; };
@@ -45,6 +43,9 @@
 		3B4D7743285BF6BA00402B03 /* DatabaseHelper+Tips.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4D7742285BF6BA00402B03 /* DatabaseHelper+Tips.swift */; };
 		3B4D7745285BF71300402B03 /* DatabaseHelper+Benefit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4D7744285BF71300402B03 /* DatabaseHelper+Benefit.swift */; };
 		3B4D7747285BF72B00402B03 /* DatabaseHelper+ActivityBenefit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4D7746285BF72B00402B03 /* DatabaseHelper+ActivityBenefit.swift */; };
+		3B6677DE28655E39004C96BB /* ActivityWorksheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6677DD28655E39004C96BB /* ActivityWorksheetViewController.swift */; };
+		3B6677E028655E42004C96BB /* JournalWorksheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6677DF28655E42004C96BB /* JournalWorksheetViewController.swift */; };
+		3B6677E228655EE9004C96BB /* MoodCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6677E128655EE9004C96BB /* MoodCollectionViewCell.swift */; };
 		3BD1171028531FFB0036F6DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD1170F28531FFB0036F6DE /* AppDelegate.swift */; };
 		3BD1171228531FFB0036F6DE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD1171128531FFB0036F6DE /* SceneDelegate.swift */; };
 		3BD1171A28531FFB0036F6DE /* Famties.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3BD1171828531FFB0036F6DE /* Famties.xcdatamodeld */; };
@@ -77,11 +78,9 @@
 		013AAFF32862C3DE00A8B7A9 /* JournalRecapViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = JournalRecapViewController.storyboard; sourceTree = "<group>"; };
 		013AAFF42862C3DE00A8B7A9 /* JournalRecapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JournalRecapViewController.swift; sourceTree = "<group>"; };
 		013AAFF62862C3DE00A8B7A9 /* ActivityDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityDetailViewController.swift; sourceTree = "<group>"; };
-		013AAFF72862C3DE00A8B7A9 /* WorksheetDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorksheetDetailViewController.swift; sourceTree = "<group>"; };
 		013AAFF82862C3DE00A8B7A9 /* ActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
 		013AAFF92862C3DE00A8B7A9 /* ActivityViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ActivityViewController.storyboard; sourceTree = "<group>"; };
 		013AAFFA2862C3DE00A8B7A9 /* JournalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JournalViewController.swift; sourceTree = "<group>"; };
-		013AAFFB2862C3DE00A8B7A9 /* JournalDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JournalDetailViewController.swift; sourceTree = "<group>"; };
 		013AAFFC2862C3DE00A8B7A9 /* JournalViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = JournalViewController.storyboard; sourceTree = "<group>"; };
 		013AAFFD2862C3DE00A8B7A9 /* ActivityDetailViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ActivityDetailViewController.storyboard; sourceTree = "<group>"; };
 		013AB0092862C3EA00A8B7A9 /* DetailCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -90,14 +89,14 @@
 		013AB00C2862C3EA00A8B7A9 /* ActivityCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityCollectionViewCell.swift; sourceTree = "<group>"; };
 		013AB0112862C44500A8B7A9 /* Extension+UICollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extension+UICollectionViewCell.swift"; sourceTree = "<group>"; };
 		013AB0122862C44500A8B7A9 /* Extension+UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extension+UIView.swift"; sourceTree = "<group>"; };
+		01F9BA7628641DA000292CFB /* JournalRecapCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalRecapCollectionViewCell.swift; sourceTree = "<group>"; };
+		01F9BA7728641DA000292CFB /* JournalRecapCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JournalRecapCollectionViewCell.xib; sourceTree = "<group>"; };
 		3B15DF052865360200F4E803 /* Worksheet+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Worksheet+CoreDataClass.swift"; sourceTree = "<group>"; };
 		3B15DF062865360200F4E803 /* Worksheet+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Worksheet+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		3B15DF072865360200F4E803 /* Journal+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Journal+CoreDataClass.swift"; sourceTree = "<group>"; };
 		3B15DF082865360200F4E803 /* Journal+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Journal+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		3B15DF0D28653A6800F4E803 /* DatabaseHelper+Worksheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DatabaseHelper+Worksheet.swift"; sourceTree = "<group>"; };
 		3B15DF0F28653A8700F4E803 /* DatabaseHelper+Journal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DatabaseHelper+Journal.swift"; sourceTree = "<group>"; };
-		01F9BA7628641DA000292CFB /* JournalRecapCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalRecapCollectionViewCell.swift; sourceTree = "<group>"; };
-		01F9BA7728641DA000292CFB /* JournalRecapCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JournalRecapCollectionViewCell.xib; sourceTree = "<group>"; };
 		3B4D7720285A9FA200402B03 /* Category+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Category+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		3B4D7722285A9FA200402B03 /* Activity+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Activity+CoreDataClass.swift"; sourceTree = "<group>"; };
 		3B4D7724285A9FA200402B03 /* Benefit+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Benefit+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -111,6 +110,9 @@
 		3B4D7742285BF6BA00402B03 /* DatabaseHelper+Tips.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DatabaseHelper+Tips.swift"; sourceTree = "<group>"; };
 		3B4D7744285BF71300402B03 /* DatabaseHelper+Benefit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DatabaseHelper+Benefit.swift"; sourceTree = "<group>"; };
 		3B4D7746285BF72B00402B03 /* DatabaseHelper+ActivityBenefit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DatabaseHelper+ActivityBenefit.swift"; sourceTree = "<group>"; };
+		3B6677DD28655E39004C96BB /* ActivityWorksheetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityWorksheetViewController.swift; sourceTree = "<group>"; };
+		3B6677DF28655E42004C96BB /* JournalWorksheetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JournalWorksheetViewController.swift; sourceTree = "<group>"; };
+		3B6677E128655EE9004C96BB /* MoodCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoodCollectionViewCell.swift; sourceTree = "<group>"; };
 		3BD1170C28531FFB0036F6DE /* Famties.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Famties.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BD1170F28531FFB0036F6DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3BD1171128531FFB0036F6DE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -173,6 +175,7 @@
 		013AB0082862C3EA00A8B7A9 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				3B6677E128655EE9004C96BB /* MoodCollectionViewCell.swift */,
 				013AB0092862C3EA00A8B7A9 /* DetailCollectionViewCell.xib */,
 				013AB00B2862C3EA00A8B7A9 /* DetailCollectionViewCell.swift */,
 				013AB00A2862C3EA00A8B7A9 /* ActivityCollectionViewCell.xib */,
@@ -197,10 +200,10 @@
 		3B15DF042862F05300F4E803 /* Journal */ = {
 			isa = PBXGroup;
 			children = (
+				3B6677DF28655E42004C96BB /* JournalWorksheetViewController.swift */,
+				3B6677DD28655E39004C96BB /* ActivityWorksheetViewController.swift */,
 				013AAFFA2862C3DE00A8B7A9 /* JournalViewController.swift */,
 				013AAFFC2862C3DE00A8B7A9 /* JournalViewController.storyboard */,
-				013AAFF72862C3DE00A8B7A9 /* WorksheetDetailViewController.swift */,
-				013AAFFB2862C3DE00A8B7A9 /* JournalDetailViewController.swift */,
 			);
 			path = Journal;
 			sourceTree = "<group>";
@@ -472,16 +475,17 @@
 				3BD1171A28531FFB0036F6DE /* Famties.xcdatamodeld in Sources */,
 				3B4D773D285BF64800402B03 /* DatabaseHelper+Constants.swift in Sources */,
 				3B4D772B285A9FA200402B03 /* Category+CoreDataProperties.swift in Sources */,
-				013AB0052862C3DE00A8B7A9 /* JournalDetailViewController.swift in Sources */,
 				3B15DF0E28653A6800F4E803 /* DatabaseHelper+Worksheet.swift in Sources */,
 				3B4D7731285A9FA200402B03 /* Activity+CoreDataProperties.swift in Sources */,
 				3B4D773F285BF69C00402B03 /* DatabaseHelper+Category.swift in Sources */,
 				3B15DF092865360200F4E803 /* Worksheet+CoreDataClass.swift in Sources */,
 				3B15DF0B2865360200F4E803 /* Journal+CoreDataClass.swift in Sources */,
 				3B15DF0A2865360200F4E803 /* Worksheet+CoreDataProperties.swift in Sources */,
+				3B6677E028655E42004C96BB /* JournalWorksheetViewController.swift in Sources */,
 				3B4D7741285BF6AD00402B03 /* DatabaseHelper+Activity.swift in Sources */,
 				013AB0142862C44500A8B7A9 /* Extension+UIView.swift in Sources */,
 				013AB00F2862C3EA00A8B7A9 /* DetailCollectionViewCell.swift in Sources */,
+				3B6677DE28655E39004C96BB /* ActivityWorksheetViewController.swift in Sources */,
 				3B15DF1028653A8700F4E803 /* DatabaseHelper+Journal.swift in Sources */,
 				013AB0042862C3DE00A8B7A9 /* JournalViewController.swift in Sources */,
 				3B4D7734285A9FA200402B03 /* Category+CoreDataClass.swift in Sources */,
@@ -490,10 +494,10 @@
 				3B4D772D285A9FA200402B03 /* Activity+CoreDataClass.swift in Sources */,
 				3BD1171028531FFB0036F6DE /* AppDelegate.swift in Sources */,
 				01F9BA7828641DA000292CFB /* JournalRecapCollectionViewCell.swift in Sources */,
+				3B6677E228655EE9004C96BB /* MoodCollectionViewCell.swift in Sources */,
 				3BD1171228531FFB0036F6DE /* SceneDelegate.swift in Sources */,
 				3B4D7743285BF6BA00402B03 /* DatabaseHelper+Tips.swift in Sources */,
 				3B4D7747285BF72B00402B03 /* DatabaseHelper+ActivityBenefit.swift in Sources */,
-				013AB0012862C3DE00A8B7A9 /* WorksheetDetailViewController.swift in Sources */,
 				3B4D7733285A9FA200402B03 /* Benefit+CoreDataClass.swift in Sources */,
 				013AB0002862C3DE00A8B7A9 /* ActivityDetailViewController.swift in Sources */,
 				3B4D773B285BF5FF00402B03 /* DatabaseHelper.swift in Sources */,
