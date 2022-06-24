@@ -102,6 +102,10 @@ class ActivityDetailViewController: UIViewController {
         self.hidesBottomBarWhenPushed = false
     }
     
+    @IBAction func createNewJournal(_ sender: UIButton) {
+        performSegue(withIdentifier: "goToJournalSegue", sender: self)
+    }
+    
     @objc private func addActivityToFavorite() {
         let databaseHelper = DatabaseHelper()
         databaseHelper.toogleFavoritesActivity(detailActivity!)
@@ -207,6 +211,17 @@ class ActivityDetailViewController: UIViewController {
                         bottom: bottomAnchor, paddingBottom: frameHeight * 0.1117,
                         left: leftAnchor, paddingLeft: frameWidth * 0.3687 ,
                         width: 1)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToJournalSegue" {
+            let databaseHelper = DatabaseHelper()
+            let journal = databaseHelper.createBlankJournal(from: detailActivity!)
+            
+            let destination = segue.destination as! JournalViewController
+            destination.journal = journal
+            
+        }
     }
 }
 

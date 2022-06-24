@@ -216,6 +216,9 @@
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="LET'S START"/>
+                                <connections>
+                                    <action selector="createNewJournal:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="eY4-MG-1kn"/>
+                                </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" directionalLockEnabled="YES" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="yuR-4H-L0v">
                                 <rect key="frame" x="481" y="536" width="240" height="128"/>
@@ -265,7 +268,7 @@
                         <outlet property="timeDurationLabel" destination="Ue0-Gb-5l0" id="p21-ET-I1S"/>
                         <outlet property="timeDurationView" destination="0xj-Go-4Fx" id="jpz-PT-cAl"/>
                         <outlet property="titleLabel" destination="Abs-rB-7C4" id="ukC-wd-iBT"/>
-                        <segue destination="n0A-sR-xpN" kind="show" id="ayT-t3-lrw"/>
+                        <segue destination="n0A-sR-xpN" kind="show" identifier="goToJournalSegue" id="ayT-t3-lrw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
