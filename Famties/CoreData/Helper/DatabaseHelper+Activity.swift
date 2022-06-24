@@ -75,4 +75,14 @@ extension DatabaseHelper {
             return []
         }
     }
+    
+    func toogleFavoritesActivity(_ activity: Activity) {
+        activity.isFavorited = !activity.isFavorited
+        do {
+            try context.save()
+        }
+        catch let error {
+            print(error.localizedDescription)
+        }
+    }
 }
