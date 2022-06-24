@@ -276,10 +276,10 @@
             </objects>
             <point key="canvasLocation" x="864.2578125" y="97.950219619326489"/>
         </scene>
-        <!--WorksheetViewController-->
+        <!--JournalViewController-->
         <scene sceneID="dlO-Ks-9sL">
             <objects>
-                <viewControllerPlaceholder storyboardName="WorksheetViewController" id="n0A-sR-xpN" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="JournalViewController" id="n0A-sR-xpN" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="fLb-sV-ySt"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9kF-PD-yAj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

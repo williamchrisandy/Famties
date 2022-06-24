@@ -16,6 +16,20 @@ extension Journal {
         return NSFetchRequest<Journal>(entityName: "Journal")
     }
 
+    @nonobjc public class func fetchRequest(id: Int) -> NSFetchRequest<Journal> {
+        let fetchRequest = NSFetchRequest<Journal>(entityName: "Journal")
+        fetchRequest.predicate = NSPredicate(format: "id == %i", id)
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "createdTime", ascending: false)]
+        return fetchRequest
+    }
+    
+    @nonobjc public class func fetchRequest(activityId: Int) -> NSFetchRequest<Journal> {
+        let fetchRequest = NSFetchRequest<Journal>(entityName: "Journal")
+        fetchRequest.predicate = NSPredicate(format: "activity.id == %i", activityId)
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "createdTime", ascending: false)]
+        return fetchRequest
+    }
+    
     @NSManaged public var childName: String?
     @NSManaged public var createdTime: Date?
     @NSManaged public var id: Int64
