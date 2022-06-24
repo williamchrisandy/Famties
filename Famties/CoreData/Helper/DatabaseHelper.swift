@@ -55,6 +55,15 @@ class DatabaseHelper {
             print(error.localizedDescription)
         }
     }
+    
+    func saveContext() {
+        do {
+            try context.save()
+        }
+        catch let error {
+            print(error.localizedDescription)
+        }
+    }
 }
 
 //INITIALIZER

@@ -30,4 +30,18 @@ extension DatabaseHelper {
             return nil
         }
     }
+    
+    func createBlankJournal(from activity: Activity) -> Journal {
+        let journal = Journal(context: context)
+        journal.createdTime = Date()
+        journal.lastEdited = Date()
+        journal.activity = activity
+        insert(journal)
+        
+        journal.name = "Journal \(journal.id)"
+        journal.childName = "Unnamed"
+        saveContext()
+        
+        return journal
+    }
 }
