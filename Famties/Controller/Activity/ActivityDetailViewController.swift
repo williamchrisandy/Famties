@@ -12,13 +12,22 @@ class ActivityDetailViewController: UIViewController {
     
     //MARK: Properties
     var detailCollectionViewCell = "detailCollectionCell"
+    
     @IBOutlet weak var previewImage: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var categoryView: UIView!
+    @IBOutlet weak var categoryTextLabel: UILabel!
     @IBOutlet weak var timeDurationView: UIView!
+    @IBOutlet weak var timeDurationLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var benefitView1: UIView!
+    @IBOutlet weak var benefitTitleLabel1: UILabel!
+    @IBOutlet weak var benefitDescriptionLabel1: UILabel!
     @IBOutlet weak var benefitView2: UIView!
+    @IBOutlet weak var benefitTitleLabel2: UILabel!
+    @IBOutlet weak var benefitDescriptionLabel2: UILabel!
+    @IBOutlet weak var benefitTitleLabel3: UILabel!
+    @IBOutlet weak var benefitDescriptionLabel3: UILabel!
     @IBOutlet weak var benefitView3: UIView!
     @IBOutlet weak var howToDoActivitiesLabel: UILabel!
     @IBOutlet weak var stepsCollectionView: UICollectionView! {
@@ -33,22 +42,95 @@ class ActivityDetailViewController: UIViewController {
     @IBOutlet weak var startJournalingButton: UIButton!
     
     weak var delegate: ActivityCollectionViewCellDelegate?
+    var detailActivity: Activity?
+    var detailBenefits: [Benefit]?
+    var categoryColor: UIColor!
+    var categoryBorderColor: UIColor!
     
     var string: String?
-    var imgArray: [String]?
+    var imgArray: [UIImage] = []
     
     override func viewDidLoad() {
+        tabBarController?.tabBar.isHidden = true
         super.viewDidLoad()
         setupConstraint()
-//        let button = UIBarButtonItem(title: "< Activity", style: .done, target: self, action: #selector(goBack))
-//        self.navigationItem.leftBarButtonItem = button
-        imgArray = ["heart", "heart.fill", "heart", "heart.fill", "heart", "heart.fill", "heart.fill"]
+        self.navigationController?.isNavigationBarHidden = false
+        self.navigationController?.navigationBar.backItem?.title = "Activity"
+        
+        let rightButton = UIBarButtonItem(image: UIImage(systemName: (detailActivity?.isFavorited == false ? "heart" : "heart.fill")), style: .done, target: self, action: #selector(addActivityToFavorite))
+        rightButton.tintColor = UIColor(named: "CardsFavoriteColor")
+        self.navigationItem.rightBarButtonItem = rightButton
+        
+        imgArray = detailActivity!.howToImage
         stepsPageController.currentPage = 0
-        stepsPageController.numberOfPages = imgArray!.count
+        stepsPageController.numberOfPages = imgArray.count
+        
+        setupDetailData()
     }
     
-    @objc private func goBack() {
-        dismiss(animated: true)
+    private func setupDetailData() {
+        prepareCardsColor(activity: detailActivity!)
+        detailBenefits = detailActivity?.has?.allObjects as! [Benefit]
+        
+        titleLabel.text = detailActivity?.name
+        descriptionLabel.text = detailActivity?.explanation
+        previewImage.image = detailActivity?.coverImage
+        timeDurationLabel.text = "\(detailActivity?.estimatedTime ?? 0) minutes"
+        categoryTextLabel.text = detailActivity?.partOf?.name
+        
+        benefitTitleLabel1.text = detailBenefits?[0].name
+        benefitDescriptionLabel1.text = detailBenefits?[0].explanation
+        benefitTitleLabel2.text = detailBenefits?[1].name
+        benefitDescriptionLabel2.text = detailBenefits?[1].explanation
+        benefitTitleLabel3.text = detailBenefits?[2].name
+        benefitDescriptionLabel3.text = detailBenefits?[2].explanation
+        
+        categoryView.backgroundColor = categoryColor
+        categoryView.layer.borderColor = categoryBorderColor.cgColor
+        categoryView.layer.borderWidth = 1
+        categoryView.layer.cornerRadius = 15
+        
+        stepsCollectionView.layer.cornerRadius = 10
+        
+        startJournalingButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
+        startJournalingButton.layer.cornerRadius = 10
+        
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(false)
+        self.hidesBottomBarWhenPushed = false
+    }
+    
+    @objc private func addActivityToFavorite() {
+        let databaseHelper = DatabaseHelper()
+        databaseHelper.toogleFavoritesActivity(detailActivity!)
+        if navigationItem.rightBarButtonItem?.image == UIImage(systemName: "heart") {
+            navigationItem.rightBarButtonItem?.image = UIImage(systemName: "heart.fill")
+        } else {
+            navigationItem.rightBarButtonItem?.image = UIImage(systemName: "heart")
+        }
+        delegate?.favoriteClicked(activity: detailActivity!)
+    }
+    
+    private func prepareCardsColor(activity: Activity) {
+        let activityCategoryName = activity.partOf?.name
+        if activityCategoryName == "Self Awareness" {
+            categoryColor = UIColor(named: "AwarenessColor")
+            categoryBorderColor = UIColor(named: "AwarenessBorderColor")
+        } else if activityCategoryName == "Self Management" {
+            categoryColor = UIColor(named: "ManagementColor")
+            categoryBorderColor = UIColor(named: "ManagementBorderColor")
+        } else if activityCategoryName == "Social Awareness" {
+            categoryColor = UIColor(named: "SocialColor")
+            categoryBorderColor = UIColor(named: "SocialBorderColor")
+        } else if activityCategoryName == "Relationship Skills" {
+            categoryColor = UIColor(named: "RelationshipColor")
+            categoryBorderColor = UIColor(named: "RelationshipBorderColor")
+        } else {
+            categoryColor = UIColor(named: "DecisionColor")
+            categoryBorderColor = UIColor(named: "DecisionBorderColor")
+        }
     }
     
     //MARK: Helpers
@@ -64,6 +146,7 @@ class ActivityDetailViewController: UIViewController {
                             bottom: bottomAnchor, paddingBottom: frameHeight * 0.6311,
                             left: leftAnchor, paddingLeft: frameWidth * 0.0313 ,
                             right: rightAnchor, paddingRight: frameWidth * 0.67)
+        previewImage.layer.cornerRadius = 20
         
         howToDoActivitiesLabel.anchor(top: topAnchor, paddingTop: frameHeight * 0.0981,
                                       bottom: bottomAnchor, paddingBottom: frameHeight * 0.8844,
@@ -88,12 +171,12 @@ class ActivityDetailViewController: UIViewController {
         categoryView.anchor(top: topAnchor, paddingTop: frameHeight * 0.492,
                             bottom: bottomAnchor, paddingBottom: frameHeight * 0.492,
                             left: leftAnchor, paddingLeft: frameWidth * 0.0401 ,
-                            right: rightAnchor, paddingRight: frameWidth * 0.8184)
+                            right: rightAnchor, paddingRight: frameWidth * 0.8)
         
         timeDurationView.anchor(top: topAnchor, paddingTop: frameHeight * 0.5198,
                                 bottom: bottomAnchor, paddingBottom: frameHeight * 0.4671,
                                 left: leftAnchor, paddingLeft: frameWidth * 0.0391 ,
-                                right: rightAnchor, paddingRight: frameWidth * 0.8653)
+                                right: rightAnchor, paddingRight: frameWidth * 0.85)
         
         descriptionLabel.anchor(top: topAnchor, paddingTop: frameHeight * 0.555,
                                 bottom: bottomAnchor, paddingBottom: frameHeight * 0.3485,
@@ -127,9 +210,9 @@ class ActivityDetailViewController: UIViewController {
     }
 }
 
-extension ActivityDetailViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
+extension ActivityDetailViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return imgArray!.count
+        return imgArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -138,17 +221,21 @@ extension ActivityDetailViewController: UICollectionViewDelegateFlowLayout, UICo
         return CGSize(width: width, height: height)
     }
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: detailCollectionViewCell, for: indexPath) as! DetailCollectionViewCell
-        cell.detailImageView.image = UIImage(systemName: imgArray![indexPath.row])
-//        cell.detailImageView.contentMode = .scaleToFill
-//        cell.translatesAutoresizingMaskIntoConstraints = false
-        cell.backgroundColor = .purple
+        cell.detailImageView.image = imgArray[indexPath.item]
         return cell
     }
     
-    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        stepsPageController.currentPage = indexPath.row
+    func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        let visibleRectangleDaily = CGRect(origin: stepsCollectionView.contentOffset, size: stepsCollectionView.bounds.size)
+        if let visibleIndexPath = self.stepsCollectionView.indexPathForItem(at: CGPoint(x: visibleRectangleDaily.midX, y: visibleRectangleDaily.midY)) {
+            stepsPageController.currentPage = visibleIndexPath.item
+        }
     }
+    
 }
-

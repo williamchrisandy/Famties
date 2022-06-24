@@ -24,6 +24,8 @@
 		013AB0102862C3EA00A8B7A9 /* ActivityCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013AB00C2862C3EA00A8B7A9 /* ActivityCollectionViewCell.swift */; };
 		013AB0132862C44500A8B7A9 /* Extension+UICollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013AB0112862C44500A8B7A9 /* Extension+UICollectionViewCell.swift */; };
 		013AB0142862C44500A8B7A9 /* Extension+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013AB0122862C44500A8B7A9 /* Extension+UIView.swift */; };
+		01F9BA7828641DA000292CFB /* JournalRecapCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F9BA7628641DA000292CFB /* JournalRecapCollectionViewCell.swift */; };
+		01F9BA7928641DA000292CFB /* JournalRecapCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01F9BA7728641DA000292CFB /* JournalRecapCollectionViewCell.xib */; };
 		3B4D772B285A9FA200402B03 /* Category+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4D7720285A9FA200402B03 /* Category+CoreDataProperties.swift */; };
 		3B4D772D285A9FA200402B03 /* Activity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4D7722285A9FA200402B03 /* Activity+CoreDataClass.swift */; };
 		3B4D772F285A9FA200402B03 /* Benefit+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4D7724285A9FA200402B03 /* Benefit+CoreDataProperties.swift */; };
@@ -82,6 +84,8 @@
 		013AB00C2862C3EA00A8B7A9 /* ActivityCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityCollectionViewCell.swift; sourceTree = "<group>"; };
 		013AB0112862C44500A8B7A9 /* Extension+UICollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extension+UICollectionViewCell.swift"; sourceTree = "<group>"; };
 		013AB0122862C44500A8B7A9 /* Extension+UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extension+UIView.swift"; sourceTree = "<group>"; };
+		01F9BA7628641DA000292CFB /* JournalRecapCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalRecapCollectionViewCell.swift; sourceTree = "<group>"; };
+		01F9BA7728641DA000292CFB /* JournalRecapCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JournalRecapCollectionViewCell.xib; sourceTree = "<group>"; };
 		3B4D7720285A9FA200402B03 /* Category+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Category+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		3B4D7722285A9FA200402B03 /* Activity+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Activity+CoreDataClass.swift"; sourceTree = "<group>"; };
 		3B4D7724285A9FA200402B03 /* Benefit+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Benefit+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -161,6 +165,8 @@
 				013AB00B2862C3EA00A8B7A9 /* DetailCollectionViewCell.swift */,
 				013AB00A2862C3EA00A8B7A9 /* ActivityCollectionViewCell.xib */,
 				013AB00C2862C3EA00A8B7A9 /* ActivityCollectionViewCell.swift */,
+				01F9BA7628641DA000292CFB /* JournalRecapCollectionViewCell.swift */,
+				01F9BA7728641DA000292CFB /* JournalRecapCollectionViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -414,6 +420,7 @@
 				3BD1171F28531FFC0036F6DE /* LaunchScreen.storyboard in Resources */,
 				3BD1171C28531FFC0036F6DE /* Assets.xcassets in Resources */,
 				013AB00D2862C3EA00A8B7A9 /* DetailCollectionViewCell.xib in Resources */,
+				01F9BA7928641DA000292CFB /* JournalRecapCollectionViewCell.xib in Resources */,
 				013AB00E2862C3EA00A8B7A9 /* ActivityCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -458,6 +465,7 @@
 				013AB0102862C3EA00A8B7A9 /* ActivityCollectionViewCell.swift in Sources */,
 				3B4D772D285A9FA200402B03 /* Activity+CoreDataClass.swift in Sources */,
 				3BD1171028531FFB0036F6DE /* AppDelegate.swift in Sources */,
+				01F9BA7828641DA000292CFB /* JournalRecapCollectionViewCell.swift in Sources */,
 				3BD1171228531FFB0036F6DE /* SceneDelegate.swift in Sources */,
 				3B4D7743285BF6BA00402B03 /* DatabaseHelper+Tips.swift in Sources */,
 				3B4D7747285BF72B00402B03 /* DatabaseHelper+ActivityBenefit.swift in Sources */,

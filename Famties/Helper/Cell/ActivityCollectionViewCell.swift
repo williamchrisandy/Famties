@@ -31,6 +31,11 @@ class ActivityCollectionViewCell: UICollectionViewCell {
     private func setupViews() {
         categoryView.layer.masksToBounds = true
         categoryView.layer.cornerRadius = 10
+        
+        titleLabel.minimumScaleFactor = 0.1    //or whatever suits your need
+        titleLabel.adjustsFontSizeToFitWidth = true
+        titleLabel.lineBreakMode = .byClipping
+        titleLabel.numberOfLines = 0
     }
     
     @IBAction func favoriteClicked(_ sender: UIButton) {
@@ -44,11 +49,15 @@ class ActivityCollectionViewCell: UICollectionViewCell {
         isFavorite.setImage(UIImage(systemName: (activity?.isFavorited == false ? "heart" : "heart.fill")), for: .normal)
     }
     
-    func setUpData() {
+    func setUpData(categoryColor: UIColor, categoryBorderColor: UIColor) {
         categoryName.text = activity?.partOf?.name
         titleLabel.text = activity?.name
         estimatedTimeLabel.text = "\(activity?.estimatedTime ?? 0) minutes"
         activityPreview.image = activity?.coverImage
+        
+        categoryView.backgroundColor = categoryColor
+        categoryView.layer.borderColor = categoryBorderColor.cgColor
+        categoryView.layer.borderWidth = 1
         setFavoriteButtonImage()
     }
     
