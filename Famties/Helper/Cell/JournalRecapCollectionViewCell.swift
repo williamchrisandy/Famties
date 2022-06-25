@@ -9,6 +9,7 @@ import UIKit
 
 class JournalRecapCollectionViewCell: UICollectionViewCell {
 
+    @IBOutlet weak var JournalCollectionImage: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

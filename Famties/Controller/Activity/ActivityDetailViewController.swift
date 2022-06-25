@@ -14,20 +14,60 @@ class ActivityDetailViewController: UIViewController {
     var detailCollectionViewCell = "detailCollectionCell"
     
     @IBOutlet weak var previewImage: UIImageView!
-    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel! {
+        didSet {
+            adjustTextSize(label: titleLabel)
+        }
+    }
     @IBOutlet weak var categoryView: UIView!
-    @IBOutlet weak var categoryTextLabel: UILabel!
+    @IBOutlet weak var categoryTextLabel: UILabel! {
+        didSet {
+            adjustTextSize(label: categoryTextLabel)
+        }
+    }
     @IBOutlet weak var timeDurationView: UIView!
-    @IBOutlet weak var timeDurationLabel: UILabel!
-    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var timeDurationLabel: UILabel! {
+        didSet {
+            adjustTextSize(label: timeDurationLabel)
+        }
+    }
+    @IBOutlet weak var descriptionLabel: UILabel! {
+        didSet {
+            adjustTextSize(label: descriptionLabel)
+        }
+    }
     @IBOutlet weak var benefitView1: UIView!
-    @IBOutlet weak var benefitTitleLabel1: UILabel!
-    @IBOutlet weak var benefitDescriptionLabel1: UILabel!
+    @IBOutlet weak var benefitTitleLabel1: UILabel! {
+        didSet {
+            adjustTextSize(label: benefitTitleLabel1)
+        }
+    }
+    @IBOutlet weak var benefitDescriptionLabel1: UILabel! {
+        didSet {
+            adjustTextSize(label: benefitDescriptionLabel1)
+        }
+    }
     @IBOutlet weak var benefitView2: UIView!
-    @IBOutlet weak var benefitTitleLabel2: UILabel!
-    @IBOutlet weak var benefitDescriptionLabel2: UILabel!
-    @IBOutlet weak var benefitTitleLabel3: UILabel!
-    @IBOutlet weak var benefitDescriptionLabel3: UILabel!
+    @IBOutlet weak var benefitTitleLabel2: UILabel! {
+        didSet {
+            adjustTextSize(label: benefitTitleLabel2)
+        }
+    }
+    @IBOutlet weak var benefitDescriptionLabel2: UILabel!{
+        didSet {
+            adjustTextSize(label: benefitDescriptionLabel2)
+        }
+    }
+    @IBOutlet weak var benefitTitleLabel3: UILabel!{
+        didSet {
+            adjustTextSize(label: benefitTitleLabel3)
+        }
+    }
+    @IBOutlet weak var benefitDescriptionLabel3: UILabel!{
+        didSet {
+            adjustTextSize(label: benefitDescriptionLabel3)
+        }
+    }
     @IBOutlet weak var benefitView3: UIView!
     @IBOutlet weak var howToDoActivitiesLabel: UILabel!
     @IBOutlet weak var stepsCollectionView: UICollectionView! {
@@ -53,7 +93,7 @@ class ActivityDetailViewController: UIViewController {
     override func viewDidLoad() {
         tabBarController?.tabBar.isHidden = true
         super.viewDidLoad()
-        setupConstraint()
+//        setupConstraint()
         self.navigationController?.isNavigationBarHidden = false
         self.navigationController?.navigationBar.backItem?.title = "Activity"
         
@@ -67,6 +107,7 @@ class ActivityDetailViewController: UIViewController {
         
         setupDetailData()
     }
+
     
     private func setupDetailData() {
         prepareCardsColor(activity: detailActivity!)
@@ -76,7 +117,7 @@ class ActivityDetailViewController: UIViewController {
         descriptionLabel.text = detailActivity?.explanation
         previewImage.image = detailActivity?.coverImage
         timeDurationLabel.text = "\(detailActivity?.estimatedTime ?? 0) minutes"
-        categoryTextLabel.text = detailActivity?.partOf?.name
+        categoryTextLabel.text = "Relationship Skills"
         
         benefitTitleLabel1.text = detailBenefits?[0].name
         benefitDescriptionLabel1.text = detailBenefits?[0].explanation
@@ -84,17 +125,25 @@ class ActivityDetailViewController: UIViewController {
         benefitDescriptionLabel2.text = detailBenefits?[1].explanation
         benefitTitleLabel3.text = detailBenefits?[2].name
         benefitDescriptionLabel3.text = detailBenefits?[2].explanation
-        
+//
         categoryView.backgroundColor = categoryColor
         categoryView.layer.borderColor = categoryBorderColor.cgColor
         categoryView.layer.borderWidth = 1
-        categoryView.layer.cornerRadius = 15
+        categoryView.layer.cornerRadius = categoryView.frame.height * 1/2
         
         stepsCollectionView.layer.cornerRadius = 10
+        previewImage.layer.cornerRadius = 10
+//
+//        startJournalingButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
+//        startJournalingButton.layer.cornerRadius = 10
         
-        startJournalingButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
-        startJournalingButton.layer.cornerRadius = 10
-        
+    }
+    
+    private func adjustTextSize(label: UILabel) {
+        label.minimumScaleFactor = 0.5   //or whatever suits your need
+        label.adjustsFontSizeToFitWidth = true
+//        label.lineBreakMode = .byClipping
+//        label.numberOfLines = 0
     }
     
     override func viewWillDisappear(_ animated: Bool) {

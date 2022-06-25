@@ -18,6 +18,7 @@ class ActivityViewController: UIViewController {
     var categoryColor: UIColor!
     var categoryBorderColor: UIColor!
     
+    @IBOutlet weak var activityButton: UIButton!
     @IBOutlet weak var favoriteCollectionView: UICollectionView! {
         didSet {
             favoriteCollectionView.delegate = self
@@ -85,6 +86,7 @@ class ActivityViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         tabBarController?.tabBar.isHidden = false
+        activityButton.contentMode = .scaleAspectFit
     }
     
     private func prepareCardsColor(activity: Activity) {
