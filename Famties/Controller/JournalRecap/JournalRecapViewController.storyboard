@@ -18,9 +18,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Expressing Agreement or Disagreement Together" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F4H-m2-WPb">
-                                <rect key="frame" x="0.0" y="94" width="744" height="115"/>
+                                <rect key="frame" x="22" y="94" width="700" height="115"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="115" id="iJg-o3-S3S"/>
+                                    <constraint firstAttribute="width" constant="700" id="jX2-pJ-ygG"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="48"/>
                                 <color key="textColor" red="0.19215688110000001" green="0.43921568989999998" blue="0.57254904510000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -92,8 +93,6 @@
                             <constraint firstItem="ZXd-gF-3WF" firstAttribute="centerY" secondItem="DBN-yE-R49" secondAttribute="centerY" id="Cj6-Bw-Jgb"/>
                             <constraint firstItem="rtX-cp-oqK" firstAttribute="centerX" secondItem="p8j-Jq-flr" secondAttribute="centerX" id="DbM-WI-m19"/>
                             <constraint firstItem="Sd3-9I-w8I" firstAttribute="centerX" secondItem="p8j-Jq-flr" secondAttribute="centerX" id="EBV-yo-kwx"/>
-                            <constraint firstAttribute="trailing" secondItem="F4H-m2-WPb" secondAttribute="trailing" id="HyK-aQ-Pao"/>
-                            <constraint firstItem="F4H-m2-WPb" firstAttribute="leading" secondItem="p8j-Jq-flr" secondAttribute="leading" id="IBh-2O-UKG"/>
                             <constraint firstItem="F4H-m2-WPb" firstAttribute="centerX" secondItem="p8j-Jq-flr" secondAttribute="centerX" id="JtE-qb-ahk"/>
                             <constraint firstItem="DBN-yE-R49" firstAttribute="top" relation="greaterThanOrEqual" secondItem="rtX-cp-oqK" secondAttribute="bottom" constant="50" id="L4h-Y1-8gR"/>
                             <constraint firstItem="ZXd-gF-3WF" firstAttribute="leading" secondItem="LGp-X4-EjA" secondAttribute="leading" constant="100" id="MOc-Vg-rot"/>

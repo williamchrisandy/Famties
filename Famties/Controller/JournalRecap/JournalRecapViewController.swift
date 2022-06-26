@@ -8,10 +8,17 @@
 import UIKit
 
 class JournalRecapViewController: UIViewController {
-
+    
+    // MARK: - Properties
+    // Identifier
     var journalRecapCollectionViewCell = "JournalRecapCollectionViewCell"
     
-    @IBOutlet weak var journalTitle: UILabel!
+    // IBOutlet
+    @IBOutlet weak var journalTitle: UILabel! {
+        didSet {
+            adjustTextSize(label: journalTitle)
+        }
+    }
     @IBOutlet weak var journalKidName: UILabel!
     @IBOutlet weak var journalCollectionView: UICollectionView! {
         didSet {
@@ -25,13 +32,16 @@ class JournalRecapViewController: UIViewController {
     @IBOutlet weak var slideRightButton: UIButton!
     @IBOutlet weak var slideLeftButton: UIButton!
     
+    // Property Type
     var currentIndex = 0
     var imageArray: [UIImage] = []
     var nameArray: [String] = []
     var titleArray: [String] = []
     
+    // MARK: - Life Cycles
     override func viewDidLoad() {
         super.viewDidLoad()
+        let databaseHelper = DatabaseHelper()
         
         journalCollectionView.layer.cornerRadius = 15
         
@@ -40,10 +50,10 @@ class JournalRecapViewController: UIViewController {
         imageArray.append((UIImage(named: "Activity17_Journal")!))
         imageArray.append((UIImage(named: "Activity22_Journal")!))
         
-        titleArray.append("Making Dream Comes\n True with Nano")
-        titleArray.append("Lovely Gift Creating\n with Zoya")
-        titleArray.append("Lovely Gift Creating\n Creating Creating")
-        titleArray.append("Expressing Agreement or\n Disagreement Together")
+        titleArray.append("Making Dream Comes True with Nano")
+        titleArray.append("Lovely Gift Creating with Zoya")
+        titleArray.append("Lovely Gift Creating Creating Creating")
+        titleArray.append("Expressing Agreement or Disagreement Together")
         
         nameArray.append("Nano")
         nameArray.append("Zoya")
@@ -54,11 +64,10 @@ class JournalRecapViewController: UIViewController {
         journalKidName.text = nameArray[0]
     }
     
+    //MARK: - Helpers
     @IBAction func slideRightButtonTapped(_ sender: Any) {
         currentIndex += 1
-        if currentIndex > imageArray.count-1 {
-            currentIndex = 0
-        }
+        if currentIndex > imageArray.count - 1 { currentIndex = 0 }
         journalTitle.text = titleArray[currentIndex]
         journalKidName.text = nameArray[currentIndex]
         journalCollectionView.scrollToItem(at: IndexPath.init(item: currentIndex, section: 0), at: .centeredHorizontally, animated: true)
@@ -66,16 +75,19 @@ class JournalRecapViewController: UIViewController {
     
     @IBAction func slideLeftButtonTapped(_ sender: Any) {
         currentIndex -= 1
-        if currentIndex < 0 {
-            currentIndex = imageArray.count-1
-        }
+        if currentIndex < 0 { currentIndex = imageArray.count - 1 }
         journalTitle.text = titleArray[currentIndex]
         journalKidName.text = nameArray[currentIndex]
         journalCollectionView.scrollToItem(at: IndexPath.init(item: currentIndex, section: 0), at: .centeredHorizontally, animated: true)
     }
     
+    private func adjustTextSize(label: UILabel) {
+        label.minimumScaleFactor = 0.95
+        label.adjustsFontSizeToFitWidth = true
+    }
 }
 
+//MARK: - UICollectionView Data and Delegate
 extension JournalRecapViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return imageArray.count
@@ -94,13 +106,7 @@ extension JournalRecapViewController: UICollectionViewDataSource, UICollectionVi
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: journalRecapCollectionViewCell, for: indexPath) as! JournalRecapCollectionViewCell
         let cellImage = imageArray[indexPath.item].resized(to: cell.frame.size)
-//
         cell.JournalCollectionImage.image = cellImage
-//        cell.JournalCollectionImage.image = imageArray[indexPath.item]
-//        cell.JournalCollectionImage.contentMode = .scaleAspectFill
-        
-//        cell.JournalCollectionImage.image = imageArray[indexPath.item]
-//       cell.detailImageView.frame = CGRect(x: 0, y: 0, width: Int(collectionView.frame.width), height: Int(collectionView.frame.height))
         return cell
     }
 }
