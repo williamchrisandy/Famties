@@ -10,6 +10,17 @@ import CoreData
 import AVFoundation
 
 extension DatabaseHelper {
+    func getJournals() -> [Journal] {
+        do {
+            let fetchRequest: NSFetchRequest<Journal> = Journal.fetchRequest()
+            return try context.fetch(fetchRequest)
+        }
+        catch let error {
+            print(error.localizedDescription)
+            return []
+        }
+    }
+    
     func getJournals(activityId: Int) -> [Journal] {
         do {
             let fetchRequest: NSFetchRequest<Journal> = Journal.fetchRequest(activityId: activityId)
