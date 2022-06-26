@@ -5,7 +5,9 @@
 //  Created by William Chrisandy on 24/06/22.
 //
 
+import UIKit
 import CoreData
+import AVFoundation
 
 extension DatabaseHelper {
     func getJournals(activityId: Int) -> [Journal] {
@@ -43,5 +45,39 @@ extension DatabaseHelper {
         saveContext()
         
         return journal
+    }
+    
+    func save(image: UIImage, at index: Int, journal: Journal) {
+        do {
+            let rootURL = try FileManager.default.url(for: .picturesDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+            let subDirectoryURL = rootURL.appendingPathComponent("Journal\(journal.id)")
+            
+            try FileManager.default.createDirectory(at: subDirectoryURL, withIntermediateDirectories: true)
+            
+            let saveURL = subDirectoryURL.appendingPathComponent("Journal\(journal.id)_Photo\(index+1)")
+            
+            if let pngData = image.pngData() {
+                try pngData.write(to: saveURL)
+            }
+        }
+        catch {
+            print(error.localizedDescription)
+        }
+    }
+    
+    func deleteImage(at index: Int, journal: Journal) {
+        do {
+            let rootURL = try FileManager.default.url(for: .picturesDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+            let subDirectoryURL = rootURL.appendingPathComponent("Journal\(journal.id)")
+            
+            try FileManager.default.createDirectory(at: subDirectoryURL, withIntermediateDirectories: false)
+            
+            let saveURL = subDirectoryURL.appendingPathComponent("Journal\(journal.id)_Photo\(index+1)")
+            
+            try FileManager.default.removeItem(at: saveURL)
+        }
+        catch {
+            print(error.localizedDescription)
+        }
     }
 }

@@ -62,3 +62,11 @@ extension Journal {
 extension Journal : Identifiable {
 
 }
+
+extension Journal: HasKeyLastId {
+    static var keyLastId: String = "journalLastId"
+}
+
+extension Journal: HasId {
+    
+}
