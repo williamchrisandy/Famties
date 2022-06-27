@@ -22,6 +22,7 @@
 		013AB0102862C3EA00A8B7A9 /* ActivityCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013AB00C2862C3EA00A8B7A9 /* ActivityCollectionViewCell.swift */; };
 		013AB0132862C44500A8B7A9 /* Extension+UICollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013AB0112862C44500A8B7A9 /* Extension+UICollectionViewCell.swift */; };
 		013AB0142862C44500A8B7A9 /* Extension+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013AB0122862C44500A8B7A9 /* Extension+UIView.swift */; };
+		0196C7252866BDAD00D94D98 /* Extension+UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0196C7242866BDAD00D94D98 /* Extension+UIImage.swift */; };
 		01F9BA7828641DA000292CFB /* JournalRecapCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F9BA7628641DA000292CFB /* JournalRecapCollectionViewCell.swift */; };
 		01F9BA7928641DA000292CFB /* JournalRecapCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01F9BA7728641DA000292CFB /* JournalRecapCollectionViewCell.xib */; };
 		3B15DF092865360200F4E803 /* Worksheet+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B15DF052865360200F4E803 /* Worksheet+CoreDataClass.swift */; };
@@ -97,6 +98,7 @@
 		013AB00C2862C3EA00A8B7A9 /* ActivityCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityCollectionViewCell.swift; sourceTree = "<group>"; };
 		013AB0112862C44500A8B7A9 /* Extension+UICollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extension+UICollectionViewCell.swift"; sourceTree = "<group>"; };
 		013AB0122862C44500A8B7A9 /* Extension+UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extension+UIView.swift"; sourceTree = "<group>"; };
+		0196C7242866BDAD00D94D98 /* Extension+UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIImage.swift"; sourceTree = "<group>"; };
 		01F9BA7628641DA000292CFB /* JournalRecapCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalRecapCollectionViewCell.swift; sourceTree = "<group>"; };
 		01F9BA7728641DA000292CFB /* JournalRecapCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JournalRecapCollectionViewCell.xib; sourceTree = "<group>"; };
 		3B15DF052865360200F4E803 /* Worksheet+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Worksheet+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -217,6 +219,7 @@
 				013AB0122862C44500A8B7A9 /* Extension+UIView.swift */,
 				3BD1170F28531FFB0036F6DE /* AppDelegate.swift */,
 				3BD1171128531FFB0036F6DE /* SceneDelegate.swift */,
+				0196C7242866BDAD00D94D98 /* Extension+UIImage.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -517,6 +520,7 @@
 				3B6677DE28655E39004C96BB /* ActivityWorksheetViewController.swift in Sources */,
 				3B15DF1028653A8700F4E803 /* DatabaseHelper+Journal.swift in Sources */,
 				013AB0042862C3DE00A8B7A9 /* JournalViewController.swift in Sources */,
+				0196C7252866BDAD00D94D98 /* Extension+UIImage.swift in Sources */,
 				3B4D7734285A9FA200402B03 /* Category+CoreDataClass.swift in Sources */,
 				013AB0102862C3EA00A8B7A9 /* ActivityCollectionViewCell.swift in Sources */,
 				3B15DF0C2865360200F4E803 /* Journal+CoreDataProperties.swift in Sources */,

@@ -8,16 +8,25 @@
 import UIKit
 
 class ActivityViewController: UIViewController {
-    
-    //MARK: - Properties
-    
+
+    // MARK: - Properties
+    // Property Identifier
     let collectionViewCell = "ActivityCollectionViewCell"
     let collectionViewCellIdentifier = "activityCollectionViewCell"
+    
+    // Property type
     var data: [[Activity]] = []
     var selectedActivity: Activity?
     var categoryColor: UIColor!
     var categoryBorderColor: UIColor!
-    
+
+    // IBOutlets
+    @IBOutlet weak var activityButton: UIButton! {
+        didSet {
+            let bannerImage = UIImage(named: "Acivity1_Banner")?.resized(to: activityButton.frame.size)
+            activityButton.setImage(bannerImage, for: .normal)
+        }
+    }
     @IBOutlet weak var favoriteCollectionView: UICollectionView! {
         didSet {
             favoriteCollectionView.delegate = self
@@ -67,11 +76,25 @@ class ActivityViewController: UIViewController {
             responsibleCollectionView.register(UINib(nibName: collectionViewCell, bundle: nil), forCellWithReuseIdentifier: collectionViewCellIdentifier)
         }
     }
-    
+
     //MARK: - Life Cycles
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.isNavigationBarHidden = true
+        initializeDatabaseHelper()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        tabBarController?.tabBar.isHidden = false
+    }
+    
+    //MARK: - Helpers
+    @IBAction func bannerTapped(_ sender: Any) {
+        selectedActivity = data[1][0]
+        performSegue(withIdentifier: "activityToDetailSegue", sender: self)
+    }
+    
+    private func initializeDatabaseHelper() {
         let databaseHelper = DatabaseHelper()
         data.append(databaseHelper.getFavoriteActivities(showAll: false))
         data.append(databaseHelper.getActivities(showAll: false))
@@ -81,12 +104,7 @@ class ActivityViewController: UIViewController {
         data.append(databaseHelper.getActivities(categoryId: 4, showAll: false))
         data.append(databaseHelper.getActivities(categoryId: 5, showAll: false))
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        navigationController?.isNavigationBarHidden = true
-        tabBarController?.tabBar.isHidden = false
-    }
-    
+
     private func prepareCardsColor(activity: Activity) {
         let activityCategoryName = activity.partOf?.name
         if activityCategoryName == "Self Awareness" {
@@ -114,19 +132,16 @@ class ActivityViewController: UIViewController {
             destination.detailActivity = selectedActivity
         }
     }
-    
-    
-    
 }
 
+//MARK: - UICollectionView Data and Delegate
 extension ActivityViewController: UICollectionViewDataSource {
-    
+
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: collectionViewCellIdentifier, for: indexPath) as! ActivityCollectionViewCell
-        
+
         var activities: [Activity] = []
-        
+
         if collectionView == favoriteCollectionView { activities = data[0] }
         else if collectionView == recommendedCollectionView { activities = data[1] }
         else if collectionView == awarenessCollectionView { activities = data[2] }
@@ -139,14 +154,13 @@ extension ActivityViewController: UICollectionViewDataSource {
         cell.delegate = self
         prepareCardsColor(activity: activities[indexPath.item])
         cell.setUpData(categoryColor: categoryColor, categoryBorderColor: categoryBorderColor)
-        
+
         cell.layer.cornerRadius = 15
         cell.layer.borderWidth = 1.5
         cell.layer.borderColor = UIColor(named: "CardsDarkBlueColor")?.cgColor
         return cell
-        
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == favoriteCollectionView { return data[0].count }
         else if collectionView == recommendedCollectionView { return data[1].count }
@@ -157,7 +171,7 @@ extension ActivityViewController: UICollectionViewDataSource {
         else if collectionView == responsibleCollectionView { return data[6].count }
         return 0
     }
-    
+
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
@@ -165,7 +179,6 @@ extension ActivityViewController: UICollectionViewDataSource {
 
 extension ActivityViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
         let cell = collectionView.cellForItem(at: indexPath) as! ActivityCollectionViewCell
         selectedActivity = cell.activity
         performSegue(withIdentifier: "activityToDetailSegue", sender: self)
@@ -185,18 +198,18 @@ extension ActivityViewController: ActivityCollectionViewCellDelegate {
         favoriteCollectionView.reloadData()
 
         let categoryId = Int((activity.partOf?.id)!)
-        
+
         var targetCollectionView = [recommendedCollectionView]
-        
+
         var targetData = [data[1]]
         targetData.append(data[categoryId+1])
-        
+
         if categoryId == 1 { targetCollectionView.append(awarenessCollectionView) }
         else if categoryId == 2 { targetCollectionView.append(managementCollectionView) }
         else if categoryId == 3 { targetCollectionView.append(socialCollectionView) }
         else if categoryId == 4 { targetCollectionView.append(relationshipCollectionView) }
         else if categoryId == 5 { targetCollectionView.append(responsibleCollectionView) }
-        
+
         for i in 0..<targetData.count {
             let data = targetData[i]
             for j in 0..<data.count {
