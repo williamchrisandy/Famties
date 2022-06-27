@@ -16,7 +16,6 @@ protocol JournalMediaDeleterDelegate{
     func deleteImage(currentIndex: Int)
 }
 
-
 class JournalWorksheetViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, JournalMediaPickerDelegate, JournalMediaDeleterDelegate, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
     
     //MARK: Properties
@@ -27,7 +26,7 @@ class JournalWorksheetViewController: UIViewController, UITableViewDelegate, UIT
     let moodList = ["Emoji1", "Emoji2", "Emoji3", "Emoji4", "Emoji5", "Emoji6", "Emoji7", "Emoji8", "Emoji9"]
     var rowHeight: [CGFloat] = [182, 550, 182, 182]
     var moodCount: Int!
-    var photos: [UIImage] = []
+    var photos: [UIImage]! = []
     var video: NSURL!
     var selectCell = MoodCollectionViewCell()
     var cellIdentifier: String!
@@ -53,6 +52,10 @@ class JournalWorksheetViewController: UIViewController, UITableViewDelegate, UIT
         videoIsHidden = true
         
         moodCount = moodList.count
+        
+        photos = journal?.photo
+        updateTableCell()
+        
     }
     
     
@@ -105,7 +108,7 @@ class JournalWorksheetViewController: UIViewController, UITableViewDelegate, UIT
 
     //MARK: Overrides
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return 3
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -113,12 +116,16 @@ class JournalWorksheetViewController: UIViewController, UITableViewDelegate, UIT
             // mood
             cellIdentifier = "moodJournalCell"
             let cell = journalWorksheetTableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! MoodJournalWorksheetTableViewCell
+            cell.journal = journal
+            cell.loadData()
             return cell
             
         } else if indexPath.row == 1 {
             // learned
             cellIdentifier = "learnedJournalCell"
             let cell = journalWorksheetTableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! LearnedJournalWorksheetTableViewCell
+            cell.journal = journal
+            cell.loadData()
             return cell
             
         } else if indexPath.row == 2 {
@@ -134,6 +141,7 @@ class JournalWorksheetViewController: UIViewController, UITableViewDelegate, UIT
                 rowHeight[2] = 364
                 cellIdentifier = "photoExpandedJournalCell"
                 let cell = journalWorksheetTableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! PhotoExpandedJournalWorksheetTableViewCell
+                cell.journal = journal
                 cell.delegates = self
                 cell.photoUploadCount = photos.count
                 cell.photos = photos
@@ -154,6 +162,7 @@ class JournalWorksheetViewController: UIViewController, UITableViewDelegate, UIT
                 cellIdentifier = "videoExpandedJournalCell"
                 let cell = journalWorksheetTableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! VideoExpandedJournalWorksheetTableViewCell
                 cell.videoExpandedImageView.image = photos[0]
+                cell.journal = journal
                 return cell
             }
         } else {
