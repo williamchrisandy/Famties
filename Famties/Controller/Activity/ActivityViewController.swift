@@ -23,8 +23,8 @@ class ActivityViewController: UIViewController {
     // IBOutlets
     @IBOutlet weak var activityButton: UIButton! {
         didSet {
-            let bannerImage = UIImage(named: "Acivity1_Banner")?.resized(to: activityButton.frame.size)
-            activityButton.setImage(bannerImage, for: .normal)
+//            let bannerImage = UIImage(named: "Acivity1_Banner")?.resized(to: activityButton.frame.size)
+//            activityButton.setImage(bannerImage, for: .normal)
         }
     }
     @IBOutlet weak var favoriteCollectionView: UICollectionView! {
@@ -86,6 +86,11 @@ class ActivityViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(true, animated: false)
         self.tabBarController?.tabBar.isHidden = false
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        let bannerImage = UIImage(named: "Acivity1_Banner")?.resized(to: activityButton.frame.size)
+        activityButton.setImage(bannerImage, for: .normal)
     }
     
     //MARK: - Helpers

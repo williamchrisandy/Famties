@@ -169,8 +169,24 @@ extension JournalRecapViewController: UITextViewDelegate {
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         if (text == "\n") {
             textView.resignFirstResponder()
+            setDetailText(textView: textView, text: text)
             return false
         }
         return true
+    }
+    
+    private func setDetailText(textView: UITextView, text: String) {
+        if textView == nameTextView {
+            textView.isHidden = true
+            journalKidName.isHidden = false
+            journalKidName.text = text
+        } else {
+            textView.isHidden = true
+            journalTitle.isHidden = false
+            journalTitle.text = text
+        }
+        
+        
+        
     }
 }
