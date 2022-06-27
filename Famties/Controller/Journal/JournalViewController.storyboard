@@ -32,7 +32,7 @@
                             </containerView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Wiq-wX-m52">
                                 <rect key="frame" x="100" y="74" width="824" height="32"/>
-                                <color key="backgroundColor" name="ManagementColor"/>
+                                <color key="backgroundColor" name="PageControlBackgroundColor"/>
                                 <segments>
                                     <segment title="Activity"/>
                                     <segment title="Journaling"/>
@@ -239,7 +239,7 @@
                                                     <state key="normal" title="Button"/>
                                                     <buttonConfiguration key="configuration" style="filled" title="+ Upload photos">
                                                         <color key="baseForegroundColor" name="ActivityTitleColor"/>
-                                                        <color key="baseBackgroundColor" name="ManagementColor"/>
+                                                        <color key="baseBackgroundColor" name="PageControlBackgroundColor"/>
                                                     </buttonConfiguration>
                                                     <connections>
                                                         <action selector="uploadPhoto:" destination="K8p-Xy-6hI" eventType="touchUpInside" id="QnY-Nm-VYa"/>
@@ -295,7 +295,7 @@
                                                                         <state key="normal" title="Button"/>
                                                                         <buttonConfiguration key="configuration" style="filled" title="+ Upload photos">
                                                                             <color key="baseForegroundColor" name="ActivityTitleColor"/>
-                                                                            <color key="baseBackgroundColor" name="ManagementColor"/>
+                                                                            <color key="baseBackgroundColor" name="PageControlBackgroundColor"/>
                                                                         </buttonConfiguration>
                                                                         <connections>
                                                                             <action selector="uploadPhoto:" destination="cao-uF-8WN" eventType="touchUpInside" id="4Bg-Fr-0fp"/>
@@ -397,7 +397,7 @@
                                                     <state key="normal" title="Button"/>
                                                     <buttonConfiguration key="configuration" style="filled" title="+ Upload video">
                                                         <color key="baseForegroundColor" name="ActivityTitleColor"/>
-                                                        <color key="baseBackgroundColor" name="ManagementColor"/>
+                                                        <color key="baseBackgroundColor" name="PageControlBackgroundColor"/>
                                                     </buttonConfiguration>
                                                     <connections>
                                                         <action selector="uploadVideo:" destination="jxf-ld-3mm" eventType="touchUpInside" id="9qe-sJ-i6L"/>
@@ -596,11 +596,11 @@
         <namedColor name="ActivityTitleColor">
             <color red="0.0" green="0.2627450980392157" blue="0.31372549019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="ManagementColor">
-            <color red="0.69803921568627447" green="0.8666666666666667" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="PageControlBackgroundColor">
+            <color red="0.89800000190734863" green="0.92199999094009399" blue="0.9179999828338623" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="PageControlTintColor">
-            <color red="0.17254901960784313" green="0.42352941176470588" blue="0.56470588235294117" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.17299999296665192" green="0.42399999499320984" blue="0.56499999761581421" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

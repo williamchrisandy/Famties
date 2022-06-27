@@ -41,7 +41,7 @@ class JournalViewController: UIViewController {
     
     func initDesign() {
         segmentedControl.setTitleTextAttributes([.foregroundColor: UIColor.white], for: .selected)
-        segmentedControl.setTitleTextAttributes([.foregroundColor: UIColor(named: "ActivityTitleColor")!], for: .normal)
+        segmentedControl.setTitleTextAttributes([.foregroundColor: UIColor(named: "PageControlTintColor")!], for: .normal)
         
         // TODO: UIColor for segmented
     }

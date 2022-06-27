@@ -67,9 +67,9 @@ class MoodJournalWorksheetTableViewCell: UITableViewCell, UICollectionViewDelega
         let cell = moodCollectionView.dequeueReusableCell(withReuseIdentifier: "moodCell", for: indexPath) as! MoodCollectionViewCell
         
         if moodSelected != indexPath.row {
-            cell.moodBackground.backgroundColor = UIColor(named: "ManagementColor")
+            cell.moodBackground.backgroundColor = UIColor(named: "EmojiBackgroundColor")
         } else {
-            cell.moodBackground.backgroundColor = UIColor(named: "ActivityTitleColor")
+            cell.moodBackground.backgroundColor = UIColor(named: "EmojiTintColor")
         }
         
         cell.moodBackground.layer.cornerRadius = cell.frame.height/2
@@ -81,11 +81,11 @@ class MoodJournalWorksheetTableViewCell: UITableViewCell, UICollectionViewDelega
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         for i in 0...(moodCount-1){
             selectCell = collectionView.cellForItem(at: IndexPath(row: i, section: 0)) as! MoodCollectionViewCell
-            selectCell.moodBackground.backgroundColor = UIColor(named: "ManagementColor")
+            selectCell.moodBackground.backgroundColor = UIColor(named: "EmojiBackgroundColor")
         }
         
         selectCell = collectionView.cellForItem(at: indexPath) as! MoodCollectionViewCell
-        selectCell.moodBackground.backgroundColor = UIColor(named: "ActivityTitleColor")
+        selectCell.moodBackground.backgroundColor = UIColor(named: "EmojiTintColor")
         moodSelected = Int16(indexPath.row)
         saveData()
         
