@@ -193,6 +193,7 @@ class ActivityDetailViewController: UIViewController {
             
             let destination = segue.destination as! JournalViewController
             destination.journal = journal
+            destination.mode = "New"
             
         }
     }

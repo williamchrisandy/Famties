@@ -64,6 +64,7 @@ class JournalRecapViewController: UIViewController {
         loadTextViews(at: 0)
         
         self.navigationController?.isNavigationBarHidden = true
+        self.tabBarController?.tabBar.isHidden = false
         titleTextView.isHidden = true
         nameTextView.isHidden = true
     }
@@ -127,6 +128,13 @@ class JournalRecapViewController: UIViewController {
         if segue.identifier == "collectionToJournal" {
             let destination = segue.destination as! JournalViewController
             destination.journal = selectedJournal
+            destination.mode = "Edit"
+        }
+    }
+    
+    @IBAction func unwindToJournalRecap(_ segue: UIStoryboardSegue) {
+        if segue.identifier == "finishedFromJournalRecapWithSavedSegue" {
+            
         }
     }
 }

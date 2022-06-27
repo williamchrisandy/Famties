@@ -137,6 +137,12 @@ class ActivityViewController: UIViewController {
             destination.detailActivity = selectedActivity
         }
     }
+    
+    @IBAction func unwindToActivity(_ segue: UIStoryboardSegue) {
+        if segue.identifier == "finishedFromActivityWithSavedSegue" {
+            tabBarController?.selectedIndex = 1
+        }
+    }
 }
 
 //MARK: - UICollectionView Data and Delegate

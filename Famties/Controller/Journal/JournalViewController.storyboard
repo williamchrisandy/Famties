@@ -78,9 +78,12 @@
                         <outlet property="journalView" destination="ARX-NG-pKz" id="syo-nv-5bM"/>
                         <outlet property="saveButton" destination="e9T-Fe-HIr" id="SCg-J6-slC"/>
                         <outlet property="segmentedControl" destination="Wiq-wX-m52" id="gzr-qs-9Ao"/>
+                        <segue destination="cMd-8c-p6X" kind="unwind" identifier="finishedFromActivityWithSavedSegue" unwindAction="unwindToActivity:" id="KnA-Un-lZA"/>
+                        <segue destination="cMd-8c-p6X" kind="unwind" identifier="finishedFromJournalRecapWithSavedSegue" unwindAction="unwindToJournalRecap:" id="Q8M-dz-miO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="agy-3t-IZ1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="cMd-8c-p6X" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="7.6171874999999991" y="128.69692532942898"/>
         </scene>

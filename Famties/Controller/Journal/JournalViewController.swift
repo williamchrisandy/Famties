@@ -20,6 +20,8 @@ class JournalViewController: UIViewController {
     @IBOutlet weak var activityView: UIView!
     @IBOutlet weak var journalView: UIView!
     @IBOutlet weak var saveButton: UIButton!
+    var mode = "New"
+    var back = true
     
     let DBHelper = DatabaseHelper()
     var journal: Journal?
@@ -53,8 +55,34 @@ class JournalViewController: UIViewController {
         navigationItem.title = journal?.activity?.name
     }
     
-    override func willMove(toParent parent: UIViewController?) {
-        DBHelper.rollbackContext()
+    override func viewWillDisappear(_ animated: Bool) {
+        if back == true {
+            for delegate in delegates {
+                delegate?.saveJournalData()
+            }
+            
+            let alertController = UIAlertController(title: "Discard Changes?", message: "You may have accidentally pressed back without saving. Do you want to save changes?", preferredStyle: .alert)
+            
+            let saveAction = UIAlertAction(title: "Save Changes", style: .default) {
+                [unowned journal] action in
+                journal?.lastEdited = Date()
+                DatabaseHelper().saveContext()
+            }
+            
+            let discardAction = UIAlertAction(title: "Discard Changes", style: .destructive) {
+                [weak self, mode = self.mode, unowned journal] action in
+                if mode == "New" {
+                    DatabaseHelper().delete(journal)
+                }
+                else if mode == "Edit" {
+                    DatabaseHelper().rollbackContext()
+                }
+            }
+            
+            alertController.addAction(saveAction)
+            alertController.addAction(discardAction)
+            navigationController?.present(alertController, animated: true)
+        }
     }
     
     //MARK: Actions
@@ -65,10 +93,7 @@ class JournalViewController: UIViewController {
         
         journal?.lastEdited = Date()
         
-        let titleFilled = journal?.name != "Journal \(journal?.id ?? -1)"
-        let childNameFilled = journal?.childName != "Unnamed"
-        
-        if titleFilled == false || childNameFilled == false {
+        if mode == "New" {
             let addJournalAlertController = UIAlertController(title: "Save Journal", message: "", preferredStyle: .alert)
             
             addJournalAlertController.addTextField {
@@ -95,6 +120,7 @@ class JournalViewController: UIViewController {
                 if journalName.count > 0 { journal?.name = journalName }
                 if childName.count > 0 { journal?.childName = childName }
                 DBHelper.saveContext()
+                performSegue(withIdentifier: "finishedFromActivityWithSavedSegue", sender: self)
             }
             
             let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
@@ -104,10 +130,10 @@ class JournalViewController: UIViewController {
             present(addJournalAlertController, animated: true)
             
         }
-        else {
+        else if mode == "Edit" {
             DBHelper.saveContext()
+            performSegue(withIdentifier: "finishedFromJournalRecapWithSavedSegue", sender: self)
         }
-        
     }
     
     @IBAction func switchView(_ sender: UISegmentedControl) {
@@ -127,17 +153,23 @@ class JournalViewController: UIViewController {
     
     //MARK: Overrides
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
         initVar()
         
         if segue.identifier == "ActivityWorksheetViewSegue" {
             let destination = segue.destination as! ActivityWorksheetViewController
             delegates.append(destination)
             destination.journal = journal
-        } else if segue.identifier == "JournalWorksheetViewSegue" {
+        }
+        else if segue.identifier == "JournalWorksheetViewSegue" {
             let destination = segue.destination as! JournalWorksheetViewController
             delegates.append(destination)
             destination.journal = journal
+        }
+        else if segue.identifier == "finishedFromActivityWithSavedSegue" {
+            back = false
+        }
+        else if segue.identifier == "finishedFromJournalRecapWithSavedSegue" {
+            back = false
         }
     }
 }

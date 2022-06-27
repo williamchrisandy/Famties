@@ -378,7 +378,7 @@
                             <constraint firstItem="FpT-J7-143" firstAttribute="leading" secondItem="UOc-Hc-bTO" secondAttribute="leading" id="tNQ-PD-nQA"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Activity" image="pencil.tip" catalog="system" selectedImage="TabBar_Activity" id="WZZ-Jo-H4d"/>
+                    <tabBarItem key="tabBarItem" title="Activity" image="TabBar_Activity" id="WZZ-Jo-H4d"/>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="1Qd-dD-75M"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
@@ -411,7 +411,6 @@
     </scenes>
     <resources>
         <image name="TabBar_Activity" width="34.5" height="34.5"/>
-        <image name="pencil.tip" catalog="system" width="99" height="128"/>
         <namedColor name="ActivityDescriptionColor">
             <color red="0.35294117647058826" green="0.35294117647058826" blue="0.35294117647058826" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
