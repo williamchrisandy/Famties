@@ -62,7 +62,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="ActivityName" id="6yd-lw-BeF">
                         <barButtonItem key="rightBarButtonItem" style="plain" id="q3I-oj-TZE">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="e9T-Fe-HIr">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="e9T-Fe-HIr">
                                 <rect key="frame" x="777" y="8" width="227" height="34.5"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
