@@ -277,6 +277,9 @@
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="LET'S START"/>
+                                <connections>
+                                    <action selector="createNewJournal:" destination="UcM-PV-rYc" eventType="touchUpInside" id="5ee-O5-zJc"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="2m4-69-gIV"/>
@@ -315,7 +318,7 @@
                         <outlet property="timeDurationLabel" destination="Ue0-Gb-5l0" id="JH7-6j-YLf"/>
                         <outlet property="timeDurationView" destination="0xj-Go-4Fx" id="Bq4-5P-giK"/>
                         <outlet property="titleLabel" destination="Abs-rB-7C4" id="3nm-Wd-IXe"/>
-                        <segue destination="n0A-sR-xpN" kind="show" id="9fT-gg-She"/>
+                        <segue destination="n0A-sR-xpN" kind="show" identifier="goToJournalSegue" id="9fT-gg-She"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2pM-bp-e9X" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
