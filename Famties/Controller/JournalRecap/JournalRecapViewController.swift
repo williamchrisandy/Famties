@@ -75,6 +75,7 @@ class JournalRecapViewController: UIViewController {
         super.viewWillAppear(animated)
         loadData()
         loadTextViews(at: 0)
+        journalCollectionView.reloadData()
         
         self.navigationController?.isNavigationBarHidden = true
         self.tabBarController?.tabBar.isHidden = false
@@ -83,6 +84,9 @@ class JournalRecapViewController: UIViewController {
     }
     
     func doneEditing() {
+        guard journals.isEmpty == false else {
+            return
+        }
         textFieldShouldReturn(titleTextField)
         textFieldShouldReturn(nameTextField)
     }
@@ -94,6 +98,9 @@ class JournalRecapViewController: UIViewController {
     //MARK: - Helpers
     
     @objc private func titleTapped() {
+        guard journals.isEmpty == false else {
+            return
+        }
         journalTitle.isHidden = true
         titleTextField.isHidden = false
         titleTextField.text = journals[currentIndex].name
@@ -101,6 +108,9 @@ class JournalRecapViewController: UIViewController {
     }
     
     @objc private func nameTapped() {
+        guard journals.isEmpty == false else {
+            return
+        }
         journalKidName.isHidden = true
         nameTextField.isHidden = false
         nameTextField.text = journals[currentIndex].childName
@@ -108,6 +118,9 @@ class JournalRecapViewController: UIViewController {
     }
     
     @IBAction func slideRightButtonTapped(_ sender: Any) {
+        guard journals.isEmpty == false else {
+            return
+        }
         doneEditing()
         currentIndex += 1
         if currentIndex > journals.count - 1 { currentIndex = 0 }
@@ -116,6 +129,9 @@ class JournalRecapViewController: UIViewController {
     }
     
     @IBAction func slideLeftButtonTapped(_ sender: Any) {
+        guard journals.isEmpty == false else {
+            return
+        }
         doneEditing()
         currentIndex -= 1
         if currentIndex < 0 { currentIndex = journals.count - 1 }
@@ -130,6 +146,9 @@ class JournalRecapViewController: UIViewController {
     }
     
     private func loadTextViews(at index: Int) {
+        guard journals.isEmpty == false else {
+            return
+        }
         
         let createdText = dateToTexts(date: journals[index].createdTime!)
         let editedText = dateToTexts(date: journals[index].lastEdited!)
@@ -203,6 +222,9 @@ extension JournalRecapViewController: UICollectionViewDataSource, UICollectionVi
 extension JournalRecapViewController: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        guard journals.isEmpty == false else {
+            return false
+        }
         if textField == titleTextField {
             titleTextField.resignFirstResponder()
             setDetailText(textField: textField, text: journalTitle.text!)
@@ -215,6 +237,9 @@ extension JournalRecapViewController: UITextFieldDelegate {
     }
     
     private func setDetailText(textField: UITextField, text: String) {
+        guard journals.isEmpty == false else {
+            return
+        }
         let databaseHelper = DatabaseHelper()
         if textField == titleTextField {
             let journal = journals[currentIndex]
