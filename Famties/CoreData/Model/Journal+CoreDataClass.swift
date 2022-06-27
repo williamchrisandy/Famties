@@ -33,4 +33,21 @@ public class Journal: NSManagedObject {
             return result
         }
     }
+    
+    
+    /*
+     Per journal start
+     categoryPoint += journalId * 0.3
+     activityPoint += journalId * 0,1
+
+     Per journal end:
+     categoryPoint += journalId * mood * 0,05
+     activityPoint += journalId * mood * 0,1
+     */
+    
+    func addActivityPoint() {
+        activity?.point += Double(id) * Double(mood) * 0.1
+        activity?.partOf?.point += Double(id) * Double(mood) * 0.05
+        activity?.updateTotalPoint()
+    }
 }

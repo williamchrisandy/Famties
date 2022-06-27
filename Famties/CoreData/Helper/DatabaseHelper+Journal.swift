@@ -54,6 +54,10 @@ extension DatabaseHelper {
         journal.childName = "Unnamed"
         createBlankWorksheet(for: journal)
         
+        activity.point += Double(journal.id) * 0.3
+        activity.partOf?.point += Double(journal.id) * 0.1
+        activity.updateTotalPoint()
+        
         saveContext()
         
         return journal

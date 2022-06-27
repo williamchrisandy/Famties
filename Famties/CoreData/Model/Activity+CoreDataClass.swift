@@ -38,4 +38,7 @@ public class Activity: NSManagedObject {
         return result
     }()
     
+    func updateTotalPoint() {
+        totalPoint = point + partOf!.point
+    }
 }
