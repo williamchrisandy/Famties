@@ -34,6 +34,7 @@ class JournalViewController: UIViewController {
         super.viewDidLoad()
         initDesign()
         initVar()
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
     func initDesign() {
@@ -57,6 +58,7 @@ class JournalViewController: UIViewController {
         for delegate in delegates {
             delegate?.saveJournalData()
         }
+        journal?.lastEdited = Date()
         DBHelper.saveContext()
         
     }
