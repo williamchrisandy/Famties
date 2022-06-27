@@ -43,11 +43,14 @@ class ActivityWorksheetViewController: UIViewController {
         worksheetImage = journal?.activity?.worksheetImage
         pageCount = worksheetImage.count
         currentPage = 0
-        
-        for _ in 1...pageCount{
-            canvasDrawing.append(PKDrawing())
+    
+        for worksheet in journal?.worksheets?.allObjects as! [Worksheet]{
+            do{
+                try canvasDrawing.append(PKDrawing(data: worksheet.data!))
+            } catch {
+                print(error)
+            }
         }
-        
         
         canvasView.drawing = canvasDrawing[0]
         toolPicker.selectedTool = PKInkingTool(.pen, color: .black, width: 5)
@@ -102,6 +105,7 @@ extension ActivityWorksheetViewController: EmbeddedViewControllerDelegate {
     }
     
     func saveJournalData() {
+        saveDrawing()
         let sheets = journal?.worksheets?.allObjects as! [Worksheet]
         
         for i in 0...(pageCount-1){

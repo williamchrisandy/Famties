@@ -41,7 +41,15 @@ class LearnedJournalWorksheetTableViewCell: UITableViewCell {
         journal?.lessonLearned = learnedTextView.text
 //        DBHelper.saveContext()
     }
-
+    
+    func loadData(){
+        if journal?.lessonLearned != "" {
+            learnedTextView.text = journal?.lessonLearned
+            doneFirstTime = true
+            learnedTextView.textColor = UIColor(named: "ActivityTitleColor")
+        }
+        
+    }
 }
 
 extension LearnedJournalWorksheetTableViewCell: UITextViewDelegate{

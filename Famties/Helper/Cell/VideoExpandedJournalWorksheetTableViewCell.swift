@@ -15,6 +15,7 @@ class VideoExpandedJournalWorksheetTableViewCell: UITableViewCell {
     @IBOutlet weak var videoExpandedDescriptionLabel: UILabel!
     @IBOutlet weak var videoExpandedImageView: UIImageView!
     
+    var journal: Journal?
     
     //MARK: Initialization
     override func awakeFromNib() {

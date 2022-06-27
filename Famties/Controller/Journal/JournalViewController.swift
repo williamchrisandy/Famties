@@ -24,9 +24,6 @@ class JournalViewController: UIViewController {
     let DBHelper = DatabaseHelper()
     var journal: Journal?
     var delegates: [EmbeddedViewControllerDelegate?] = []
-    var worksheetImage: [UIImage]!
-    var worksheetPageCount: Int!
-    var imageTemp: UIImage!
     
     
     //MARK: Initialization
@@ -44,7 +41,7 @@ class JournalViewController: UIViewController {
     
     func initDesign() {
         segmentedControl.setTitleTextAttributes([.foregroundColor: UIColor.white], for: .selected)
-        segmentedControl.setTitleTextAttributes([.foregroundColor: UIColor.white], for: .normal)
+        segmentedControl.setTitleTextAttributes([.foregroundColor: UIColor(named: "ActivityTitleColor")!], for: .normal)
         
         // TODO: UIColor for segmented
     }
@@ -53,7 +50,6 @@ class JournalViewController: UIViewController {
         for delegate in delegates {
             delegate?.showLeftView()
         }
-        
         navigationItem.title = journal?.activity?.name
     }
     

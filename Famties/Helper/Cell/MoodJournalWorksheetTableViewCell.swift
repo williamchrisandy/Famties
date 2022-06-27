@@ -18,6 +18,7 @@ class MoodJournalWorksheetTableViewCell: UITableViewCell, UICollectionViewDelega
     var journal: Journal?
     let moodList = ["Emoji1", "Emoji2", "Emoji3", "Emoji4", "Emoji5", "Emoji6", "Emoji7", "Emoji8", "Emoji9"]
     var moodCount: Int!
+    var moodSelected: Int16!
     var selectCell = MoodCollectionViewCell()
     var moodCellWidth: CGFloat!
     var moodCellHeight: CGFloat!
@@ -47,9 +48,13 @@ class MoodJournalWorksheetTableViewCell: UITableViewCell, UICollectionViewDelega
     
     
     //MARK: Functions
-    func saveData(moodNum: Int16){
-        journal?.mood = moodNum
+    func saveData(){
+        journal?.mood = moodSelected
 //        DBHelper.saveContext()
+    }
+    
+    func loadData(){
+        moodSelected = journal?.mood
     }
     
     
@@ -60,9 +65,16 @@ class MoodJournalWorksheetTableViewCell: UITableViewCell, UICollectionViewDelega
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = moodCollectionView.dequeueReusableCell(withReuseIdentifier: "moodCell", for: indexPath) as! MoodCollectionViewCell
-        cell.moodBackground.backgroundColor = UIColor(named: "ManagementColor")
+        
+        if moodSelected != indexPath.row {
+            cell.moodBackground.backgroundColor = UIColor(named: "ManagementColor")
+        } else {
+            cell.moodBackground.backgroundColor = UIColor(named: "ActivityTitleColor")
+        }
+        
         cell.moodBackground.layer.cornerRadius = cell.frame.height/2
         cell.moodEmoji.image = UIImage(named: moodList[indexPath.row])
+        
         return cell
     }
     
@@ -74,7 +86,8 @@ class MoodJournalWorksheetTableViewCell: UITableViewCell, UICollectionViewDelega
         
         selectCell = collectionView.cellForItem(at: indexPath) as! MoodCollectionViewCell
         selectCell.moodBackground.backgroundColor = UIColor(named: "ActivityTitleColor")
-        saveData(moodNum: Int16(indexPath.row))
+        moodSelected = Int16(indexPath.row)
+        saveData()
         
     }
     
