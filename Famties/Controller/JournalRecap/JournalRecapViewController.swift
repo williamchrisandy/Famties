@@ -42,8 +42,8 @@ class JournalRecapViewController: UIViewController {
     @IBOutlet weak var createdAtJournalText: UILabel!
     @IBOutlet weak var slideRightButton: UIButton!
     @IBOutlet weak var slideLeftButton: UIButton!
-    @IBOutlet weak var titleTextView: UITextView!
-    @IBOutlet weak var nameTextView: UITextView!
+    @IBOutlet weak var titleTextField: UITextField!
+    @IBOutlet weak var nameTextField: UITextField!
     
     // Property Type
     var currentIndex = 0
@@ -54,8 +54,8 @@ class JournalRecapViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         journalCollectionView.layer.cornerRadius = 15
-        titleTextView.delegate = self
-        nameTextView.delegate = self
+        titleTextField.delegate = self
+        nameTextField.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -65,22 +65,22 @@ class JournalRecapViewController: UIViewController {
         
         self.navigationController?.isNavigationBarHidden = true
         self.tabBarController?.tabBar.isHidden = false
-        titleTextView.isHidden = true
-        nameTextView.isHidden = true
+        titleTextField.isHidden = true
+        nameTextField.isHidden = true
     }
     
     //MARK: - Helpers
     
     @objc private func titleTapped() {
         journalTitle.isHidden = true
-        titleTextView.isHidden = false
-        titleTextView.text = journalTitle.text
+        titleTextField.isHidden = false
+        titleTextField.text = journalTitle.text
     }
     
     @objc private func nameTapped() {
         journalKidName.isHidden = true
-        nameTextView.isHidden = false
-        nameTextView.text = journalKidName.text
+        nameTextField.isHidden = false
+        nameTextField.text = journalKidName.text
     }
     
     @IBAction func slideRightButtonTapped(_ sender: Any) {
@@ -173,28 +173,38 @@ extension JournalRecapViewController: UICollectionViewDataSource, UICollectionVi
     }
 }
 
-extension JournalRecapViewController: UITextViewDelegate {
-    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
-        if (text == "\n") {
-            textView.resignFirstResponder()
-            setDetailText(textView: textView, text: text)
-            return false
+extension JournalRecapViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == titleTextField {
+            titleTextField.resignFirstResponder()
+            setDetailText(textField: textField, text: textField.text ?? journalTitle.text!)
+            return true
+        } else {
+            nameTextField.resignFirstResponder()
+            setDetailText(textField: textField, text: textField.text ?? "👧 \(journalKidName.text!)")
+            return true
         }
-        return true
     }
     
-    private func setDetailText(textView: UITextView, text: String) {
-        if textView == nameTextView {
-            textView.isHidden = true
-            journalKidName.isHidden = false
-            journalKidName.text = text
-        } else {
-            textView.isHidden = true
-            journalTitle.isHidden = false
+    private func setDetailText(textField: UITextField, text: String) {
+        let databaseHelper = DatabaseHelper()
+        if textField == titleTextField {
             journalTitle.text = text
+            journals[currentIndex].name = text
+            databaseHelper.saveContext()
+            textField.isHidden = true
+            journalTitle.isHidden = false
+        } else {
+
+            if text.contains("👧") {
+                journalKidName.text = "\(text)"
+            } else {
+                journalKidName.text = "👧 \(text)"
+            }
+            journals[currentIndex].childName = text
+            databaseHelper.saveContext()
+            textField.isHidden = true
+            journalKidName.isHidden = false
         }
-        
-        
-        
     }
 }
