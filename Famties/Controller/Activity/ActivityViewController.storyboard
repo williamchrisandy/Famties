@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dMZ-It-fm1">
-    <device id="ipad7_9" orientation="portrait" layout="fullscreen" appearance="light"/>
+    <device id="ipad12_9rounded" orientation="portrait" layout="fullscreen" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
@@ -13,17 +13,17 @@
             <objects>
                 <viewController id="dMZ-It-fm1" customClass="ActivityViewController" customModule="Famties" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eHc-d5-dxN">
-                        <rect key="frame" x="0.0" y="0.0" width="744" height="1133"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FpT-J7-143">
-                                <rect key="frame" x="0.0" y="24" width="744" height="1039"/>
+                                <rect key="frame" x="0.0" y="24" width="1024" height="1277"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="caN-XO-3La">
-                                        <rect key="frame" x="0.0" y="0.0" width="744" height="3229"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="1024" height="3298.5"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ros-Vx-n7R">
-                                                <rect key="frame" x="0.0" y="0.0" width="744" height="293.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="1024" height="404"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="Ros-Vx-n7R" secondAttribute="height" multiplier="256:101" id="HAm-1G-M7c"/>
                                                 </constraints>
@@ -33,28 +33,23 @@
                                                     <action selector="bannerTapped:" destination="dMZ-It-fm1" eventType="touchUpInside" id="TV4-1M-9hg"/>
                                                 </connections>
                                             </button>
-                                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="0cm-zr-nFI">
-                                                <rect key="frame" x="10" y="313.5" width="724" height="51"/>
-                                                <color key="tintColor" name="BackgroundColor"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </searchBar>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="isA-da-kHv">
-                                                <rect key="frame" x="0.0" y="384.5" width="744" height="368"/>
+                                                <rect key="frame" x="0.0" y="454" width="1024" height="368"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Favorite Activities" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GkU-qh-QMu">
-                                                        <rect key="frame" x="35" y="0.0" width="709" height="39"/>
+                                                        <rect key="frame" x="35" y="0.0" width="989" height="39"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                                         <color key="textColor" name="ActivityTitleColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Activities you are interested to do" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A2k-lI-nSt">
-                                                        <rect key="frame" x="35" y="39" width="709" height="21"/>
+                                                        <rect key="frame" x="35" y="39" width="989" height="21"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" name="ActivityDescriptionColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="cFw-W0-Ra4">
-                                                        <rect key="frame" x="35" y="75" width="709" height="291"/>
+                                                        <rect key="frame" x="35" y="75" width="989" height="291"/>
                                                         <color key="backgroundColor" name="BackgroundColor"/>
                                                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="vu1-ql-3uB">
                                                             <size key="itemSize" width="128" height="290"/>
@@ -81,22 +76,22 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vxx-Tp-HlL">
-                                                <rect key="frame" x="0.0" y="792.5" width="744" height="368"/>
+                                                <rect key="frame" x="0.0" y="862" width="1024" height="368"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recommended For You" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LZG-fb-rL8">
-                                                        <rect key="frame" x="35" y="0.0" width="709" height="39"/>
+                                                        <rect key="frame" x="35" y="0.0" width="989" height="39"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                                         <color key="textColor" name="ActivityTitleColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Based on the cards you have completed " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6nG-LC-Tw4">
-                                                        <rect key="frame" x="35" y="39" width="709" height="21"/>
+                                                        <rect key="frame" x="35" y="39" width="989" height="21"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" name="ActivityDescriptionColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="S23-3g-ZcX">
-                                                        <rect key="frame" x="35" y="75" width="709" height="291"/>
+                                                        <rect key="frame" x="35" y="75" width="989" height="291"/>
                                                         <color key="backgroundColor" name="BackgroundColor"/>
                                                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="tVw-iS-QHN">
                                                             <size key="itemSize" width="128" height="290"/>
@@ -123,22 +118,22 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J7p-c5-A2U">
-                                                <rect key="frame" x="0.0" y="1200.5" width="744" height="368"/>
+                                                <rect key="frame" x="0.0" y="1270" width="1024" height="368"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wondering About Personal Strength &amp; Weakness?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bXm-eA-G5Z">
-                                                        <rect key="frame" x="35" y="0.0" width="709" height="39"/>
+                                                        <rect key="frame" x="35" y="0.0" width="989" height="39"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                                         <color key="textColor" name="ActivityTitleColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Try these activities and observe how children’s emotions and thoughts are influencing their behavior" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hCH-WL-jcw">
-                                                        <rect key="frame" x="35" y="39" width="709" height="41"/>
+                                                        <rect key="frame" x="35" y="39" width="989" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" name="ActivityDescriptionColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="7ws-zR-CkA">
-                                                        <rect key="frame" x="35" y="95" width="709" height="271"/>
+                                                        <rect key="frame" x="35" y="74.5" width="989" height="291.5"/>
                                                         <color key="backgroundColor" name="BackgroundColor"/>
                                                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="qnH-Wt-1gS">
                                                             <size key="itemSize" width="128" height="290"/>
@@ -165,22 +160,22 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="68Y-uk-Rh6">
-                                                <rect key="frame" x="0.0" y="1608.5" width="744" height="368"/>
+                                                <rect key="frame" x="0.0" y="1678" width="1024" height="368"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Get Your Children’s Regulate Their Thoughts! " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7lH-vv-0tb">
-                                                        <rect key="frame" x="35" y="0.0" width="709" height="39"/>
+                                                        <rect key="frame" x="35" y="0.0" width="989" height="39"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                                         <color key="textColor" name="ActivityTitleColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Help your children in setting goals, controlling impulses and managing stress" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WTq-DD-ivh">
-                                                        <rect key="frame" x="35" y="39" width="709" height="20.5"/>
+                                                        <rect key="frame" x="35" y="39" width="989" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" name="ActivityDescriptionColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="f99-Qi-fXj">
-                                                        <rect key="frame" x="35" y="74.5" width="709" height="291.5"/>
+                                                        <rect key="frame" x="35" y="74.5" width="989" height="291.5"/>
                                                         <color key="backgroundColor" name="BackgroundColor"/>
                                                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Xmp-69-Oxs">
                                                             <size key="itemSize" width="128" height="290"/>
@@ -207,22 +202,22 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QTE-7d-1Sn">
-                                                <rect key="frame" x="0.0" y="2016.5" width="744" height="368"/>
+                                                <rect key="frame" x="0.0" y="2086" width="1024" height="368"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Want to Have More Engagement with Others?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kTa-yN-AOg">
-                                                        <rect key="frame" x="35" y="0.0" width="709" height="39"/>
+                                                        <rect key="frame" x="35" y="0.0" width="989" height="39"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                                         <color key="textColor" name="ActivityTitleColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="See how children can build and maintain healthy relationships" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tzw-8A-lD5">
-                                                        <rect key="frame" x="35" y="39" width="709" height="21"/>
+                                                        <rect key="frame" x="35" y="39" width="989" height="21"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" name="ActivityDescriptionColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ORq-T1-SHw">
-                                                        <rect key="frame" x="35" y="75" width="709" height="291"/>
+                                                        <rect key="frame" x="35" y="75" width="989" height="291"/>
                                                         <color key="backgroundColor" name="BackgroundColor"/>
                                                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="CcP-kX-RlE">
                                                             <size key="itemSize" width="128" height="290"/>
@@ -249,22 +244,22 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fKs-eA-7oN">
-                                                <rect key="frame" x="0.0" y="2424.5" width="744" height="368"/>
+                                                <rect key="frame" x="0.0" y="2494" width="1024" height="368"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Build Higher Self-Esteem with These! " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5li-Bo-cH4">
-                                                        <rect key="frame" x="35" y="0.0" width="709" height="39"/>
+                                                        <rect key="frame" x="35" y="0.0" width="989" height="39"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                                         <color key="textColor" name="ActivityTitleColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Practice your children’s empathy with family, school, and community relationship support" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XSv-Wj-cT8">
-                                                        <rect key="frame" x="35" y="39" width="709" height="21"/>
+                                                        <rect key="frame" x="35" y="39" width="989" height="21"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" name="ActivityDescriptionColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="u8i-FS-cRQ">
-                                                        <rect key="frame" x="35" y="75" width="709" height="291"/>
+                                                        <rect key="frame" x="35" y="75" width="989" height="291"/>
                                                         <color key="backgroundColor" name="BackgroundColor"/>
                                                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="nzt-sn-IdG">
                                                             <size key="itemSize" width="128" height="290"/>
@@ -291,22 +286,22 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZYS-ey-Igw">
-                                                <rect key="frame" x="0.0" y="2832.5" width="744" height="368"/>
+                                                <rect key="frame" x="0.0" y="2902" width="1024" height="368"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Excited for Thoughtful Choices from Your Children?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fr4-9b-ZU6">
-                                                        <rect key="frame" x="35" y="0.0" width="709" height="39"/>
+                                                        <rect key="frame" x="35" y="0.0" width="989" height="39"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                                         <color key="textColor" name="ActivityTitleColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Facilitate children’s process in creating choices and evaluating the consequences of decisions" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fmq-zm-e3I">
-                                                        <rect key="frame" x="35" y="39" width="709" height="41"/>
+                                                        <rect key="frame" x="35" y="39" width="989" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" name="ActivityDescriptionColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="pam-9T-gUk">
-                                                        <rect key="frame" x="35" y="95" width="709" height="271"/>
+                                                        <rect key="frame" x="35" y="74.5" width="989" height="291.5"/>
                                                         <color key="backgroundColor" name="BackgroundColor"/>
                                                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="05H-32-MSJ">
                                                             <size key="itemSize" width="128" height="290"/>
@@ -348,22 +343,19 @@
                                             <constraint firstItem="ZYS-ey-Igw" firstAttribute="leading" secondItem="caN-XO-3La" secondAttribute="leading" id="Skn-sw-tnO"/>
                                             <constraint firstAttribute="trailing" secondItem="68Y-uk-Rh6" secondAttribute="trailing" id="Wcd-tA-GY7"/>
                                             <constraint firstItem="J7p-c5-A2U" firstAttribute="top" secondItem="vxx-Tp-HlL" secondAttribute="bottom" constant="40" id="aF6-rD-g0V"/>
-                                            <constraint firstItem="0cm-zr-nFI" firstAttribute="top" secondItem="Ros-Vx-n7R" secondAttribute="bottom" constant="20" id="e3L-9l-F9x"/>
                                             <constraint firstItem="QTE-7d-1Sn" firstAttribute="leading" secondItem="caN-XO-3La" secondAttribute="leading" id="eh5-oi-Inv"/>
                                             <constraint firstAttribute="trailing" secondItem="QTE-7d-1Sn" secondAttribute="trailing" id="eql-E5-hNg"/>
                                             <constraint firstItem="isA-da-kHv" firstAttribute="leading" secondItem="caN-XO-3La" secondAttribute="leading" id="gl5-9O-ufO"/>
                                             <constraint firstItem="J7p-c5-A2U" firstAttribute="leading" secondItem="caN-XO-3La" secondAttribute="leading" id="jVS-FB-ATK"/>
                                             <constraint firstItem="68Y-uk-Rh6" firstAttribute="top" secondItem="J7p-c5-A2U" secondAttribute="bottom" constant="40" id="jYe-FL-u32"/>
-                                            <constraint firstItem="isA-da-kHv" firstAttribute="top" secondItem="0cm-zr-nFI" secondAttribute="bottom" constant="20" id="jfw-0t-3Sm"/>
+                                            <constraint firstItem="isA-da-kHv" firstAttribute="top" secondItem="Ros-Vx-n7R" secondAttribute="bottom" constant="50" id="jfw-0t-3Sm"/>
                                             <constraint firstItem="Ros-Vx-n7R" firstAttribute="leading" secondItem="caN-XO-3La" secondAttribute="leading" id="ksY-Vl-Mj4"/>
                                             <constraint firstAttribute="trailing" secondItem="J7p-c5-A2U" secondAttribute="trailing" id="l1l-o0-POC"/>
                                             <constraint firstAttribute="trailing" secondItem="vxx-Tp-HlL" secondAttribute="trailing" id="lQb-C9-DMv"/>
                                             <constraint firstAttribute="bottom" secondItem="ZYS-ey-Igw" secondAttribute="bottom" constant="28.5" id="n64-Y3-I7h"/>
-                                            <constraint firstAttribute="trailing" secondItem="0cm-zr-nFI" secondAttribute="trailing" constant="10" id="nto-aN-Pi1"/>
                                             <constraint firstItem="fKs-eA-7oN" firstAttribute="leading" secondItem="caN-XO-3La" secondAttribute="leading" id="te3-EG-nZi"/>
                                             <constraint firstAttribute="trailing" secondItem="ZYS-ey-Igw" secondAttribute="trailing" id="vPV-GZ-6OD"/>
                                             <constraint firstItem="vxx-Tp-HlL" firstAttribute="top" secondItem="isA-da-kHv" secondAttribute="bottom" constant="40" id="w0P-hs-IAZ"/>
-                                            <constraint firstItem="0cm-zr-nFI" firstAttribute="leading" secondItem="caN-XO-3La" secondAttribute="leading" constant="10" id="xdF-2q-yB0"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -386,7 +378,7 @@
                             <constraint firstItem="FpT-J7-143" firstAttribute="leading" secondItem="UOc-Hc-bTO" secondAttribute="leading" id="tNQ-PD-nQA"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Activity" image="pencil.tip" catalog="system" id="WZZ-Jo-H4d"/>
+                    <tabBarItem key="tabBarItem" title="Activity" image="pencil.tip" catalog="system" selectedImage="TabBar_Activity" id="WZZ-Jo-H4d"/>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="1Qd-dD-75M"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
@@ -418,6 +410,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="TabBar_Activity" width="34.5" height="34.5"/>
         <image name="pencil.tip" catalog="system" width="99" height="128"/>
         <namedColor name="ActivityDescriptionColor">
             <color red="0.35294117647058826" green="0.35294117647058826" blue="0.35294117647058826" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
