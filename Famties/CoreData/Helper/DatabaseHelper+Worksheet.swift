@@ -9,9 +9,7 @@ import PencilKit
 import CoreData
 
 extension DatabaseHelper {
-    func createBlankWorksheet(for journal: Journal) -> [Worksheet] {
-        let result: [Worksheet] = []
-        
+    func createBlankWorksheet(for journal: Journal) {
         for index in 0..<(journal.activity?.worksheetImage.count ?? 0) {
             let worksheet = Worksheet(context: context)
             worksheet.index = Int16(index)
@@ -19,7 +17,5 @@ extension DatabaseHelper {
             worksheet.journal = journal
             insert(worksheet)
         }
-        
-        return result
     }
 }

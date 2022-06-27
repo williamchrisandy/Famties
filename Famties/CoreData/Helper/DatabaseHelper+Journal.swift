@@ -53,22 +53,30 @@ extension DatabaseHelper {
         
         journal.name = "Journal \(journal.id)"
         journal.childName = "Unnamed"
+        createBlankWorksheet(for: journal)
+        
         saveContext()
+        
+        
         
         return journal
     }
     
-    func save(image: UIImage, at index: Int, journal: Journal) {
+    func save(images: [UIImage], journal: Journal) {
         do {
             let rootURL = try FileManager.default.url(for: .picturesDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
             let subDirectoryURL = rootURL.appendingPathComponent("Journal\(journal.id)")
             
             try FileManager.default.createDirectory(at: subDirectoryURL, withIntermediateDirectories: true)
+            try FileManager.default.removeItem(at: subDirectoryURL)
+            try FileManager.default.createDirectory(at: subDirectoryURL, withIntermediateDirectories: true)
             
-            let saveURL = subDirectoryURL.appendingPathComponent("Journal\(journal.id)_Photo\(index+1)")
-            
-            if let pngData = image.pngData() {
-                try pngData.write(to: saveURL)
+            for index in 0..<images.count {
+                let saveURL = subDirectoryURL.appendingPathComponent("Journal\(journal.id)_Photo\(index+1)")
+                
+                if let pngData = images[index].pngData() {
+                    try pngData.write(to: saveURL)
+                }
             }
         }
         catch {
@@ -76,16 +84,11 @@ extension DatabaseHelper {
         }
     }
     
-    func deleteImage(at index: Int, journal: Journal) {
+    func deletePhotos(journal: Journal) {
         do {
-            let rootURL = try FileManager.default.url(for: .picturesDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+            let rootURL = try FileManager.default.url(for: .picturesDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
             let subDirectoryURL = rootURL.appendingPathComponent("Journal\(journal.id)")
-            
-            try FileManager.default.createDirectory(at: subDirectoryURL, withIntermediateDirectories: false)
-            
-            let saveURL = subDirectoryURL.appendingPathComponent("Journal\(journal.id)_Photo\(index+1)")
-            
-            try FileManager.default.removeItem(at: saveURL)
+            try FileManager.default.removeItem(at: subDirectoryURL)
         }
         catch {
             print(error.localizedDescription)
