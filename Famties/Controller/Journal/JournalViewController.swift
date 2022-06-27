@@ -21,6 +21,7 @@ class JournalViewController: UIViewController {
     @IBOutlet weak var journalView: UIView!
     
     var delegates: [EmbeddedViewControllerDelegate?] = []
+    var journal: Journal?
     
     override func viewDidLoad() {
         super.viewDidLoad()

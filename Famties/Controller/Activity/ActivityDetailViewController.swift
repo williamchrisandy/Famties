@@ -151,6 +151,10 @@ class ActivityDetailViewController: UIViewController {
         self.hidesBottomBarWhenPushed = false
     }
     
+    @IBAction func createNewJournal(_ sender: UIButton) {
+        performSegue(withIdentifier: "goToJournalSegue", sender: self)
+    }
+    
     @objc private func addActivityToFavorite() {
         let databaseHelper = DatabaseHelper()
         databaseHelper.toogleFavoritesActivity(detailActivity!)
@@ -179,6 +183,93 @@ class ActivityDetailViewController: UIViewController {
         } else {
             categoryColor = UIColor(named: "DecisionColor")
             categoryBorderColor = UIColor(named: "DecisionBorderColor")
+        }
+    }
+    
+    //MARK: Helpers
+    private func setupConstraint() {
+        let frameHeight = view.frame.height
+        let frameWidth = view.frame.width
+        let topAnchor = view.topAnchor
+        let bottomAnchor = view.bottomAnchor
+        let leftAnchor = view.leftAnchor
+        let rightAnchor = view.rightAnchor
+        
+        previewImage.anchor(top: topAnchor, paddingTop: frameHeight * 0.0981,
+                            bottom: bottomAnchor, paddingBottom: frameHeight * 0.6311,
+                            left: leftAnchor, paddingLeft: frameWidth * 0.0313 ,
+                            right: rightAnchor, paddingRight: frameWidth * 0.67)
+        previewImage.layer.cornerRadius = 20
+        
+        howToDoActivitiesLabel.anchor(top: topAnchor, paddingTop: frameHeight * 0.0981,
+                                      bottom: bottomAnchor, paddingBottom: frameHeight * 0.8844,
+                                      left: leftAnchor, paddingLeft: frameWidth * 0.3995 ,
+                                      right: rightAnchor, paddingRight: frameWidth * 0.2686)
+        
+        stepsCollectionView.anchor(top: topAnchor, paddingTop: frameHeight * 0.134,
+                                   bottom: bottomAnchor, paddingBottom: frameHeight * 0.399,
+                                   left: leftAnchor, paddingLeft: frameWidth * 0.4083 ,
+                                   right: rightAnchor, paddingRight: frameWidth * 0.0391)
+        
+        stepsPageController.anchor(top: topAnchor, paddingTop: frameHeight * 0.6069,
+                                   bottom: bottomAnchor, paddingBottom: frameHeight * 0.361,
+                                   left: leftAnchor, paddingLeft: frameWidth * 0.4952 ,
+                                   right: rightAnchor, paddingRight: frameWidth * 0.1241)
+        
+        titleLabel.anchor(top: topAnchor, paddingTop: frameHeight * 0.391,
+                          bottom: bottomAnchor, paddingBottom: frameHeight * 0.5242,
+                          left: leftAnchor, paddingLeft: frameWidth * 0.0391 ,
+                          right: rightAnchor, paddingRight: frameWidth * 0.6827)
+        
+        categoryView.anchor(top: topAnchor, paddingTop: frameHeight * 0.492,
+                            bottom: bottomAnchor, paddingBottom: frameHeight * 0.492,
+                            left: leftAnchor, paddingLeft: frameWidth * 0.0401 ,
+                            right: rightAnchor, paddingRight: frameWidth * 0.8)
+        
+        timeDurationView.anchor(top: topAnchor, paddingTop: frameHeight * 0.5198,
+                                bottom: bottomAnchor, paddingBottom: frameHeight * 0.4671,
+                                left: leftAnchor, paddingLeft: frameWidth * 0.0391 ,
+                                right: rightAnchor, paddingRight: frameWidth * 0.85)
+        
+        descriptionLabel.anchor(top: topAnchor, paddingTop: frameHeight * 0.555,
+                                bottom: bottomAnchor, paddingBottom: frameHeight * 0.3485,
+                                left: leftAnchor, paddingLeft: frameWidth * 0.0401 ,
+                                right: rightAnchor, paddingRight: frameWidth * 0.6739)
+        
+        benefitView1.anchor(top: topAnchor, paddingTop: frameHeight * 0.6765,
+                            bottom: bottomAnchor, paddingBottom: frameHeight * 0.2753,
+                            left: leftAnchor, paddingLeft: frameWidth * 0.0479 ,
+                            right: rightAnchor, paddingRight: frameWidth * 0.6641)
+        
+        benefitView2.anchor(top: topAnchor, paddingTop: frameHeight * 0.7482,
+                            bottom: bottomAnchor, paddingBottom: frameHeight * 0.2036,
+                            left: leftAnchor, paddingLeft: frameWidth * 0.0479 ,
+                            right: rightAnchor, paddingRight: frameWidth * 0.6641)
+        
+        benefitView3.anchor(top: topAnchor, paddingTop: frameHeight * 0.817,
+                            bottom: bottomAnchor, paddingBottom: frameHeight * 0.1186,
+                            left: leftAnchor, paddingLeft: frameWidth * 0.0479 ,
+                            right: rightAnchor, paddingRight: frameWidth * 0.6641)
+        
+        startJournalingButton.anchor(top: topAnchor, paddingTop: frameHeight * 0.9217,
+                                     bottom: bottomAnchor, paddingBottom: frameHeight * 0.0345,
+                                     left: leftAnchor, paddingLeft: frameWidth * 0.0499 ,
+                                     right: rightAnchor, paddingRight: frameWidth * 0.0499)
+        
+        lineView.anchor(top: topAnchor, paddingTop: frameHeight * 0.0985,
+                        bottom: bottomAnchor, paddingBottom: frameHeight * 0.1117,
+                        left: leftAnchor, paddingLeft: frameWidth * 0.3687 ,
+                        width: 1)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToJournalSegue" {
+            let databaseHelper = DatabaseHelper()
+            let journal = databaseHelper.createBlankJournal(from: detailActivity!)
+            
+            let destination = segue.destination as! JournalViewController
+            destination.journal = journal
+            
         }
     }
 }

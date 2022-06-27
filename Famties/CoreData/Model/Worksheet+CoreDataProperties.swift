@@ -33,3 +33,11 @@ extension Worksheet {
 extension Worksheet : Identifiable {
 
 }
+
+extension Worksheet: HasKeyLastId {
+    static var keyLastId: String = "worksheetLastId"
+}
+
+extension Worksheet: HasId {
+    
+}
