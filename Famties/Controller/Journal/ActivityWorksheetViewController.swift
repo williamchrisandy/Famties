@@ -105,13 +105,13 @@ extension ActivityWorksheetViewController: EmbeddedViewControllerDelegate {
         let sheets = journal?.worksheets?.allObjects as! [Worksheet]
         
         //TODO: CHECK ERROR
-//        print(sheets.count)
-//        print(canvasDrawing.count)
+        print(sheets.count)
+        print(canvasDrawing.count)
         
         
-//        for i in 0...(pageCount-1){
-//            sheets[i].data = canvasDrawing[i].dataRepresentation()
-//        }
+        for i in 0...(pageCount-1){
+            sheets[i].data = canvasDrawing[i].dataRepresentation()
+        }
         
 //        DBHelper.saveContext()
     }

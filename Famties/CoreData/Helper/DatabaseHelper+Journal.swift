@@ -72,7 +72,7 @@ extension DatabaseHelper {
             try FileManager.default.createDirectory(at: subDirectoryURL, withIntermediateDirectories: true)
             
             for index in 0..<images.count {
-                let saveURL = subDirectoryURL.appendingPathComponent("Journal\(journal.id)_Photo\(index+1)")
+                let saveURL = subDirectoryURL.appendingPathComponent("Journal\(journal.id)_Photo\(index+1).png")
                 
                 if let pngData = images[index].pngData() {
                     try pngData.write(to: saveURL)

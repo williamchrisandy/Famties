@@ -102,19 +102,6 @@ class JournalWorksheetViewController: UIViewController, UITableViewDelegate, UIT
         updateTableCell()
     }
     
-    
-    //MARK: Actions
-    @IBAction func changeCell(_ sender: Any) {
-//        print(rowHeight)
-        photoIsHidden = !photoIsHidden
-        videoIsHidden = !videoIsHidden
-        
-        journalWorksheetTableView.reloadData()
-        journalWorksheetTableView.frame = CGRect(x: journalWorksheetTableView.frame.origin.x, y: journalWorksheetTableView.frame.origin.y, width: journalWorksheetTableView.frame.size.width, height: journalWorksheetTableView.contentSize.height)
-        journalWorksheetTableView.reloadData()
-//        print(rowHeight)
-    }
-    
 
     //MARK: Overrides
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -190,7 +177,7 @@ extension JournalWorksheetViewController: EmbeddedViewControllerDelegate {
     }
     
     func saveJournalData() {
-        // all cell save
+        DBHelper.save(images: photos, journal: journal!)
         
     }
     

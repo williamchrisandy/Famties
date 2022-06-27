@@ -21,7 +21,7 @@ public class Journal: NSManagedObject {
                 try FileManager.default.createDirectory(at: subDirectoryURL, withIntermediateDirectories: false)
                 
                 for index in 0...5 {
-                    let saveURL = subDirectoryURL.appendingPathComponent("Journal\(id)_Photo\(index+1)")
+                    let saveURL = subDirectoryURL.appendingPathComponent("Journal\(id)_Photo\(index+1).png")
                     
                     if let image = UIImage(contentsOfFile: saveURL.path) {
                         result.append(image)
