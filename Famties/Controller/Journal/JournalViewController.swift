@@ -68,6 +68,7 @@ class JournalViewController: UIViewController {
                     delegate?.saveJournalData()
                 }
                 journal?.lastEdited = Date()
+                journal?.addActivityPoint()
                 DatabaseHelper().saveContext()
             }
             
@@ -121,6 +122,7 @@ class JournalViewController: UIViewController {
                 
                 if journalName.count > 0 { journal?.name = journalName }
                 if childName.count > 0 { journal?.childName = childName }
+                journal?.addActivityPoint()
                 DBHelper.saveContext()
                 performSegue(withIdentifier: "finishedFromActivityWithSavedSegue", sender: self)
             }
@@ -133,6 +135,7 @@ class JournalViewController: UIViewController {
             
         }
         else if mode == "Edit" {
+            journal?.addActivityPoint()
             DBHelper.saveContext()
             performSegue(withIdentifier: "finishedFromJournalRecapWithSavedSegue", sender: self)
         }
