@@ -81,12 +81,7 @@ class ActivityDetailViewController: UIViewController {
     }
     @IBOutlet weak var stepsPageController: UIPageControl!
     @IBOutlet weak var lineView: UIView!
-    @IBOutlet weak var startJournalingButton: UIButton! {
-        didSet {
-            startJournalingButton.titleLabel?.font = .systemFont(ofSize: 20.0, weight: .bold)
-            startJournalingButton.layer.cornerRadius = 10
-        }
-    }
+    @IBOutlet weak var startJournalingButton: UIButton!
     
     // PropertyType
     weak var delegate: ActivityCollectionViewCellDelegate?
@@ -106,11 +101,15 @@ class ActivityDetailViewController: UIViewController {
         let rightButton = UIBarButtonItem(image: UIImage(systemName: (detailActivity?.isFavorited == false ? "heart" : "heart.fill")), style: .done, target: self, action: #selector(addActivityToFavorite))
         rightButton.tintColor = UIColor(named: "CardsFavoriteColor")
         self.navigationItem.rightBarButtonItem = rightButton
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        startJournalingButton.titleLabel?.font = .systemFont(ofSize: 20.0, weight: .bold)
+        startJournalingButton.layer.cornerRadius = 10
         
         imgArray = detailActivity!.howToImage
         stepsPageController.currentPage = 0
         stepsPageController.numberOfPages = imgArray.count
-        
         setupDetailData()
     }
 

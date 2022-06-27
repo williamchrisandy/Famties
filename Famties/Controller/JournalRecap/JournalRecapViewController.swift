@@ -17,9 +17,20 @@ class JournalRecapViewController: UIViewController {
     @IBOutlet weak var journalTitle: UILabel! {
         didSet {
             adjustTextSize(label: journalTitle)
+            journalTitle.isUserInteractionEnabled = true
+            let titleTapGesture = UITapGestureRecognizer(target: self, action: #selector(titleTapped))
+            journalTitle.addGestureRecognizer(titleTapGesture)
+            titleTapGesture.numberOfTapsRequired = 1
         }
     }
-    @IBOutlet weak var journalKidName: UILabel!
+    @IBOutlet weak var journalKidName: UILabel! {
+        didSet {
+            journalKidName.isUserInteractionEnabled = true
+            let nameTapGesture = UITapGestureRecognizer(target: self, action: #selector(nameTapped))
+            nameTapGesture.numberOfTapsRequired = 1
+            journalKidName.addGestureRecognizer(nameTapGesture)
+        }
+    }
     @IBOutlet weak var journalCollectionView: UICollectionView! {
         didSet {
             journalCollectionView.delegate = self
@@ -31,53 +42,56 @@ class JournalRecapViewController: UIViewController {
     @IBOutlet weak var createdAtJournalText: UILabel!
     @IBOutlet weak var slideRightButton: UIButton!
     @IBOutlet weak var slideLeftButton: UIButton!
+    @IBOutlet weak var titleTextView: UITextView!
+    @IBOutlet weak var nameTextView: UITextView!
     
     // Property Type
     var currentIndex = 0
-    var imageArray: [UIImage] = []
-    var nameArray: [String] = []
-    var titleArray: [String] = []
     var journals: [Journal] = []
     var selectedJournal: Journal!
     
     // MARK: - Life Cycles
     override func viewDidLoad() {
         super.viewDidLoad()
+        journalCollectionView.layer.cornerRadius = 15
+        titleTextView.delegate = self
+        nameTextView.delegate = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
         loadData()
         loadTextViews(at: 0)
         
-        journalCollectionView.layer.cornerRadius = 15
-        
-//        imageArray.append((UIImage(named: "Activity1_Journal")!))
-//        imageArray.append((UIImage(named: "Activity16_Journal")!))
-//        imageArray.append((UIImage(named: "Activity17_Journal")!))
-//        imageArray.append((UIImage(named: "Activity22_Journal")!))
-//
-//        titleArray.append("Making Dream Comes True with Nano")
-//        titleArray.append("Lovely Gift Creating with Zoya")
-//        titleArray.append("Lovely Gift Creating Creating Creating")
-//        titleArray.append("Expressing Agreement or Disagreement Together")
-//
-//        nameArray.append("Nano")
-//        nameArray.append("Zoya")
-//        nameArray.append("Budi")
-//        nameArray.append("Joji")
-//
-//        journalTitle.text = titleArray[0]
-//        journalKidName.text = nameArray[0]
+        self.navigationController?.isNavigationBarHidden = true
+        titleTextView.isHidden = true
+        nameTextView.isHidden = true
     }
     
     //MARK: - Helpers
+    
+    @objc private func titleTapped() {
+        journalTitle.isHidden = true
+        titleTextView.isHidden = false
+        titleTextView.text = journalTitle.text
+    }
+    
+    @objc private func nameTapped() {
+        journalKidName.isHidden = true
+        nameTextView.isHidden = false
+        nameTextView.text = journalKidName.text
+    }
+    
     @IBAction func slideRightButtonTapped(_ sender: Any) {
         currentIndex += 1
-        if currentIndex > imageArray.count - 1 { currentIndex = 0 }
+        if currentIndex > journals.count - 1 { currentIndex = 0 }
         loadTextViews(at: currentIndex)
         journalCollectionView.scrollToItem(at: IndexPath.init(item: currentIndex, section: 0), at: .centeredHorizontally, animated: true)
     }
     
     @IBAction func slideLeftButtonTapped(_ sender: Any) {
         currentIndex -= 1
-        if currentIndex < 0 { currentIndex = imageArray.count - 1 }
+        if currentIndex < 0 { currentIndex = journals.count - 1 }
         loadTextViews(at: currentIndex)
         journalCollectionView.scrollToItem(at: IndexPath.init(item: currentIndex, section: 0), at: .centeredHorizontally, animated: true)
     }
@@ -93,7 +107,7 @@ class JournalRecapViewController: UIViewController {
         let editedText = dateToTexts(date: journals[index].lastEdited!)
         
         journalTitle.text = journals[index].name
-        journalKidName.text = "👧 \(journals[index].childName)"
+        journalKidName.text = "👧 \(journals[index].childName!)"
         createdAtJournalText.text = "Created At: \(createdText)"
         lastEditedJournalText.text = "Last Edited: \(editedText)"
     }
@@ -148,5 +162,31 @@ extension JournalRecapViewController: UICollectionViewDataSource, UICollectionVi
         let cell = collectionView.cellForItem(at: indexPath) as! JournalRecapCollectionViewCell
         selectedJournal = cell.journal
         performSegue(withIdentifier: "collectionToJournal", sender: self)
+    }
+}
+
+extension JournalRecapViewController: UITextViewDelegate {
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if (text == "\n") {
+            textView.resignFirstResponder()
+            setDetailText(textView: textView, text: text)
+            return false
+        }
+        return true
+    }
+    
+    private func setDetailText(textView: UITextView, text: String) {
+        if textView == nameTextView {
+            textView.isHidden = true
+            journalKidName.isHidden = false
+            journalKidName.text = text
+        } else {
+            textView.isHidden = true
+            journalTitle.isHidden = false
+            journalTitle.text = text
+        }
+        
+        
+        
     }
 }
