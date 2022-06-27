@@ -10,24 +10,37 @@ import PencilKit
 
 class ActivityWorksheetViewController: UIViewController {
     
+    //MARK: Properties
+    @IBOutlet weak var pageControlView: UIView!
     @IBOutlet weak var worksheetView: UIView!
     @IBOutlet weak var canvasView: PKCanvasView!
     @IBOutlet weak var imageView: UIImageView!
-    
     @IBOutlet weak var pageUpButton: UIButton!
     @IBOutlet weak var pageDownButton: UIButton!
     @IBOutlet weak var pageIndicatorLabel: UILabel!
     
     
+    let DBHelper = DatabaseHelper()
+    var journal: Journal?
     var canvasDrawing: [PKDrawing] = []
     var toolPicker = PKToolPicker()
-    
-    let worksheetImage = ["Activity1_Worksheet1", "Activity1_Worksheet2"]
+    var worksheetImage: [UIImage]!
     var pageCount: Int!
     var currentPage: Int!
     
+    
+    //MARK: Initialization
     override func viewDidLoad() {
-        
+        initDesign()
+        initVar()
+    }
+    
+    func initDesign(){
+        canvasView.layer.borderWidth = 1
+    }
+    
+    func initVar(){
+        worksheetImage = journal?.activity?.worksheetImage
         pageCount = worksheetImage.count
         currentPage = 0
         
@@ -45,6 +58,21 @@ class ActivityWorksheetViewController: UIViewController {
         refreshContent()
     }
     
+    
+    //MARK: Functions
+    func refreshContent(){
+        canvasView.drawing = canvasDrawing[currentPage]
+        imageView.image = worksheetImage[currentPage]
+        pageIndicatorLabel.text = String(currentPage+1) + "/" + String(pageCount)
+    }
+    
+    func saveDrawing(){
+        canvasDrawing[currentPage] = canvasView.drawing
+        
+    }
+    
+    
+    //MARK: Actions
     @IBAction func pageUp(_ sender: Any) {
         saveDrawing()
         if currentPage > 0 {
@@ -60,35 +88,31 @@ class ActivityWorksheetViewController: UIViewController {
             refreshContent()
         }
     }
-    
-    func refreshContent(){
-        canvasView.drawing = canvasDrawing[currentPage]
-        imageView.image = UIImage(named: worksheetImage[currentPage])
-        pageIndicatorLabel.text = String(currentPage+1) + "/" + String(pageCount)
-        print("loaded")
-    }
-    
-    func saveDrawing(){
-        canvasDrawing[currentPage] = canvasView.drawing
-    }
-    
-    
-    
 }
 
 extension ActivityWorksheetViewController: EmbeddedViewControllerDelegate {
     func showLeftView() {
-        self.view.alpha = 1
-        toolPicker.setVisible(true, forFirstResponder: canvasView)
+        canvasView.becomeFirstResponder()
+        self.view.isHidden = false
     }
     
     func showRightView() {
-        self.view.alpha = 0
-        toolPicker.setVisible(false, forFirstResponder: canvasView)
+        canvasView.resignFirstResponder()
+        self.view.isHidden = true
     }
     
-    func loadBothView() {
-        self.view.alpha = 1
+    func saveJournalData() {
+        let sheets = journal?.worksheets?.allObjects as! [Worksheet]
+        
+        //TODO: CHECK ERROR
+//        print(sheets.count)
+//        print(canvasDrawing.count)
+        
+        
+//        for i in 0...(pageCount-1){
+//            sheets[i].data = canvasDrawing[i].dataRepresentation()
+//        }
+        
+//        DBHelper.saveContext()
     }
-    
 }

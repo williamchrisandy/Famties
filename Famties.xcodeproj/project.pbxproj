@@ -54,6 +54,14 @@
 		3BD1172A28531FFC0036F6DE /* FamtiesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD1172928531FFC0036F6DE /* FamtiesTests.swift */; };
 		3BD1173428531FFC0036F6DE /* FamtiesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD1173328531FFC0036F6DE /* FamtiesUITests.swift */; };
 		3BD1173628531FFC0036F6DE /* FamtiesUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD1173528531FFC0036F6DE /* FamtiesUITestsLaunchTests.swift */; };
+		64BEA46A28681156001B1427 /* PhotoUploadCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64BEA46928681156001B1427 /* PhotoUploadCollectionViewCell.swift */; };
+		64BEA46C286811D9001B1427 /* PhotoPreviewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64BEA46B286811D9001B1427 /* PhotoPreviewCollectionViewCell.swift */; };
+		64D670452867EE0200B67B19 /* MoodJournalWorksheetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D670442867EE0200B67B19 /* MoodJournalWorksheetTableViewCell.swift */; };
+		64D670472867EE1800B67B19 /* LearnedJournalWorksheetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D670462867EE1800B67B19 /* LearnedJournalWorksheetTableViewCell.swift */; };
+		64D670492867EE3E00B67B19 /* PhotoHiddenJournalWorksheetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D670482867EE3E00B67B19 /* PhotoHiddenJournalWorksheetTableViewCell.swift */; };
+		64D6704B2867EE5C00B67B19 /* PhotoExpandedJournalWorksheetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D6704A2867EE5C00B67B19 /* PhotoExpandedJournalWorksheetTableViewCell.swift */; };
+		64D6704D2867EE6A00B67B19 /* VideoHiddenJournalWorksheetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D6704C2867EE6A00B67B19 /* VideoHiddenJournalWorksheetTableViewCell.swift */; };
+		64D6704F2867EE7800B67B19 /* VideoExpandedJournalWorksheetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D6704E2867EE7800B67B19 /* VideoExpandedJournalWorksheetTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -125,6 +133,14 @@
 		3BD1172F28531FFC0036F6DE /* FamtiesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FamtiesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BD1173328531FFC0036F6DE /* FamtiesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamtiesUITests.swift; sourceTree = "<group>"; };
 		3BD1173528531FFC0036F6DE /* FamtiesUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamtiesUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		64BEA46928681156001B1427 /* PhotoUploadCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoUploadCollectionViewCell.swift; sourceTree = "<group>"; };
+		64BEA46B286811D9001B1427 /* PhotoPreviewCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPreviewCollectionViewCell.swift; sourceTree = "<group>"; };
+		64D670442867EE0200B67B19 /* MoodJournalWorksheetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodJournalWorksheetTableViewCell.swift; sourceTree = "<group>"; };
+		64D670462867EE1800B67B19 /* LearnedJournalWorksheetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnedJournalWorksheetTableViewCell.swift; sourceTree = "<group>"; };
+		64D670482867EE3E00B67B19 /* PhotoHiddenJournalWorksheetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoHiddenJournalWorksheetTableViewCell.swift; sourceTree = "<group>"; };
+		64D6704A2867EE5C00B67B19 /* PhotoExpandedJournalWorksheetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoExpandedJournalWorksheetTableViewCell.swift; sourceTree = "<group>"; };
+		64D6704C2867EE6A00B67B19 /* VideoHiddenJournalWorksheetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoHiddenJournalWorksheetTableViewCell.swift; sourceTree = "<group>"; };
+		64D6704E2867EE7800B67B19 /* VideoExpandedJournalWorksheetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoExpandedJournalWorksheetTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,13 +191,21 @@
 		013AB0082862C3EA00A8B7A9 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				3B6677E128655EE9004C96BB /* MoodCollectionViewCell.swift */,
 				013AB0092862C3EA00A8B7A9 /* DetailCollectionViewCell.xib */,
 				013AB00B2862C3EA00A8B7A9 /* DetailCollectionViewCell.swift */,
 				013AB00A2862C3EA00A8B7A9 /* ActivityCollectionViewCell.xib */,
 				013AB00C2862C3EA00A8B7A9 /* ActivityCollectionViewCell.swift */,
 				01F9BA7628641DA000292CFB /* JournalRecapCollectionViewCell.swift */,
 				01F9BA7728641DA000292CFB /* JournalRecapCollectionViewCell.xib */,
+				64D670442867EE0200B67B19 /* MoodJournalWorksheetTableViewCell.swift */,
+				3B6677E128655EE9004C96BB /* MoodCollectionViewCell.swift */,
+				64D670462867EE1800B67B19 /* LearnedJournalWorksheetTableViewCell.swift */,
+				64D670482867EE3E00B67B19 /* PhotoHiddenJournalWorksheetTableViewCell.swift */,
+				64D6704A2867EE5C00B67B19 /* PhotoExpandedJournalWorksheetTableViewCell.swift */,
+				64BEA46928681156001B1427 /* PhotoUploadCollectionViewCell.swift */,
+				64BEA46B286811D9001B1427 /* PhotoPreviewCollectionViewCell.swift */,
+				64D6704C2867EE6A00B67B19 /* VideoHiddenJournalWorksheetTableViewCell.swift */,
+				64D6704E2867EE7800B67B19 /* VideoExpandedJournalWorksheetTableViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -200,10 +224,10 @@
 		3B15DF042862F05300F4E803 /* Journal */ = {
 			isa = PBXGroup;
 			children = (
-				3B6677DF28655E42004C96BB /* JournalWorksheetViewController.swift */,
-				3B6677DD28655E39004C96BB /* ActivityWorksheetViewController.swift */,
 				013AAFFA2862C3DE00A8B7A9 /* JournalViewController.swift */,
 				013AAFFC2862C3DE00A8B7A9 /* JournalViewController.storyboard */,
+				3B6677DD28655E39004C96BB /* ActivityWorksheetViewController.swift */,
+				3B6677DF28655E42004C96BB /* JournalWorksheetViewController.swift */,
 			);
 			path = Journal;
 			sourceTree = "<group>";
@@ -475,15 +499,20 @@
 				3BD1171A28531FFB0036F6DE /* Famties.xcdatamodeld in Sources */,
 				3B4D773D285BF64800402B03 /* DatabaseHelper+Constants.swift in Sources */,
 				3B4D772B285A9FA200402B03 /* Category+CoreDataProperties.swift in Sources */,
+				64BEA46C286811D9001B1427 /* PhotoPreviewCollectionViewCell.swift in Sources */,
 				3B15DF0E28653A6800F4E803 /* DatabaseHelper+Worksheet.swift in Sources */,
+				64D6704D2867EE6A00B67B19 /* VideoHiddenJournalWorksheetTableViewCell.swift in Sources */,
 				3B4D7731285A9FA200402B03 /* Activity+CoreDataProperties.swift in Sources */,
 				3B4D773F285BF69C00402B03 /* DatabaseHelper+Category.swift in Sources */,
 				3B15DF092865360200F4E803 /* Worksheet+CoreDataClass.swift in Sources */,
+				64BEA46A28681156001B1427 /* PhotoUploadCollectionViewCell.swift in Sources */,
 				3B15DF0B2865360200F4E803 /* Journal+CoreDataClass.swift in Sources */,
 				3B15DF0A2865360200F4E803 /* Worksheet+CoreDataProperties.swift in Sources */,
+				64D670472867EE1800B67B19 /* LearnedJournalWorksheetTableViewCell.swift in Sources */,
 				3B6677E028655E42004C96BB /* JournalWorksheetViewController.swift in Sources */,
 				3B4D7741285BF6AD00402B03 /* DatabaseHelper+Activity.swift in Sources */,
 				013AB0142862C44500A8B7A9 /* Extension+UIView.swift in Sources */,
+				64D670452867EE0200B67B19 /* MoodJournalWorksheetTableViewCell.swift in Sources */,
 				013AB00F2862C3EA00A8B7A9 /* DetailCollectionViewCell.swift in Sources */,
 				3B6677DE28655E39004C96BB /* ActivityWorksheetViewController.swift in Sources */,
 				3B15DF1028653A8700F4E803 /* DatabaseHelper+Journal.swift in Sources */,
@@ -493,14 +522,17 @@
 				3B15DF0C2865360200F4E803 /* Journal+CoreDataProperties.swift in Sources */,
 				3B4D772D285A9FA200402B03 /* Activity+CoreDataClass.swift in Sources */,
 				3BD1171028531FFB0036F6DE /* AppDelegate.swift in Sources */,
+				64D6704F2867EE7800B67B19 /* VideoExpandedJournalWorksheetTableViewCell.swift in Sources */,
 				01F9BA7828641DA000292CFB /* JournalRecapCollectionViewCell.swift in Sources */,
 				3B6677E228655EE9004C96BB /* MoodCollectionViewCell.swift in Sources */,
+				64D6704B2867EE5C00B67B19 /* PhotoExpandedJournalWorksheetTableViewCell.swift in Sources */,
 				3BD1171228531FFB0036F6DE /* SceneDelegate.swift in Sources */,
 				3B4D7743285BF6BA00402B03 /* DatabaseHelper+Tips.swift in Sources */,
 				3B4D7747285BF72B00402B03 /* DatabaseHelper+ActivityBenefit.swift in Sources */,
 				3B4D7733285A9FA200402B03 /* Benefit+CoreDataClass.swift in Sources */,
 				013AB0002862C3DE00A8B7A9 /* ActivityDetailViewController.swift in Sources */,
 				3B4D773B285BF5FF00402B03 /* DatabaseHelper.swift in Sources */,
+				64D670492867EE3E00B67B19 /* PhotoHiddenJournalWorksheetTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

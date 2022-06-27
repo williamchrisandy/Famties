@@ -10,67 +10,85 @@ import UIKit
 protocol EmbeddedViewControllerDelegate {
     func showLeftView()
     func showRightView()
-    func loadBothView()
+    func saveJournalData()
 }
 
 class JournalViewController: UIViewController {
     
-    //MARK: - Properties
+    //MARK: Properties
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var activityView: UIView!
     @IBOutlet weak var journalView: UIView!
+    @IBOutlet weak var saveButton: UIButton!
     
-    var delegates: [EmbeddedViewControllerDelegate?] = []
+    let DBHelper = DatabaseHelper()
     var journal: Journal?
+    var delegates: [EmbeddedViewControllerDelegate?] = []
+    var worksheetImage: [UIImage]!
+    var worksheetPageCount: Int!
+    var imageTemp: UIImage!
     
+    
+    //MARK: Initialization
     override func viewDidLoad() {
         super.viewDidLoad()
+        initDesign()
+        initVar()
+    }
+    
+    func initDesign() {
+        segmentedControl.setTitleTextAttributes([.foregroundColor: UIColor.white], for: .selected)
+        segmentedControl.setTitleTextAttributes([.foregroundColor: UIColor.white], for: .normal)
         
+        // TODO: UIColor for segmented
+    }
+    
+    func initVar(){
         for delegate in delegates {
-            delegate?.loadBothView()
+            delegate?.showLeftView()
         }
+        
+        navigationItem.title = journal?.activity?.name
+    }
+    
+    
+    //MARK: Actions
+    @IBAction func saveJournal(_ sender: Any) {
+        for delegate in delegates {
+            delegate?.saveJournalData()
+        }
+        DBHelper.saveContext()
         
     }
     
     @IBAction func switchView(_ sender: UISegmentedControl) {
-        
         for delegate in delegates {
             if sender.selectedSegmentIndex == 0 {
+                journalView.isHidden = true
+                activityView.isHidden = false
                 delegate?.showLeftView()
             } else {
+                activityView.isHidden = true
+                journalView.isHidden = false
                 delegate?.showRightView()
             }
         }
     }
     
+    
+    //MARK: Overrides
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        initVar()
+        
         if segue.identifier == "ActivityWorksheetViewSegue" {
             let destination = segue.destination as! ActivityWorksheetViewController
             delegates.append(destination)
-        }
-        else if segue.identifier == "JournalWorksheetViewSegue" {
+            destination.journal = journal
+        } else if segue.identifier == "JournalWorksheetViewSegue" {
             let destination = segue.destination as! JournalWorksheetViewController
             delegates.append(destination)
+            destination.journal = journal
         }
     }
-    //    private func setupConstraint() {
-//
-//        let frameHeight = view.frame.height
-//        let frameWidth = view.frame.width
-//        let topAnchor = view.topAnchor
-//        let bottomAnchor = view.bottomAnchor
-//        let leftAnchor = view.leftAnchor
-//        let rightAnchor = view.rightAnchor
-//
-//        WorksheetUISwitcher.anchor(top: topAnchor, paddingTop: frameHeight * 0.0981,
-//                                   bottom: bottomAnchor, paddingBottom: frameHeight * 0.8785,
-//                                   left: leftAnchor, paddingLeft: frameWidth * 0.1114,
-//                                   right: rightAnchor, paddingRight: frameWidth * 0.1163)
-//
-//        worksheetContainer.anchor(top: topAnchor, paddingTop: frameHeight * 0.1326,
-//                                   bottom: bottomAnchor, paddingBottom: frameHeight * 0.1523,
-//                                   left: leftAnchor, paddingLeft: 0,
-//                                   right: rightAnchor, paddingRight: 0)
-//
-//    }
 }

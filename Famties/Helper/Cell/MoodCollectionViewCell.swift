@@ -9,8 +9,15 @@ import UIKit
 
 class MoodCollectionViewCell: UICollectionViewCell {
     
-    @IBOutlet weak var moodLabel: UILabel!
-    @IBOutlet weak var moodBackground: UIImageView!
+    @IBOutlet weak var moodBackground: UIView!
     @IBOutlet weak var moodEmoji: UIImageView!
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        initDesign()
+    }
+
+    func initDesign(){
+        // layouts
+    }
 }
