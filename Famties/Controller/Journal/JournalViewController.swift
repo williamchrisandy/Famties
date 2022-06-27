@@ -53,14 +53,60 @@ class JournalViewController: UIViewController {
         navigationItem.title = journal?.activity?.name
     }
     
+    override func willMove(toParent parent: UIViewController?) {
+        DBHelper.rollbackContext()
+    }
     
     //MARK: Actions
     @IBAction func saveJournal(_ sender: Any) {
         for delegate in delegates {
             delegate?.saveJournalData()
         }
+        
         journal?.lastEdited = Date()
-        DBHelper.saveContext()
+        
+        let titleFilled = journal?.name != "Journal \(journal?.id ?? -1)"
+        let childNameFilled = journal?.childName != "Unnamed"
+        
+        if titleFilled == false || childNameFilled == false {
+            let addJournalAlertController = UIAlertController(title: "Save Journal", message: "", preferredStyle: .alert)
+            
+            addJournalAlertController.addTextField {
+                [unowned self] textField in
+                textField.placeholder = "Journal Title"
+                if journal?.name != "Journal \(journal?.id ?? -1)" { textField.text = journal?.name}
+            }
+            
+            addJournalAlertController.addTextField {
+                [unowned self] textField in
+                textField.placeholder = "Your Child Name"
+                if journal?.childName != "Unnamed" { textField.text = journal?.childName}
+            }
+            
+            let saveAction = UIAlertAction(title: "Save", style: .default) {
+                [unowned addJournalAlertController, unowned self] action in
+                
+                unowned let textFieldJournalName = addJournalAlertController.textFields![0]
+                let journalName = textFieldJournalName.text!
+                
+                unowned let textFieldChildName = addJournalAlertController.textFields![1]
+                let childName = textFieldChildName.text!
+                
+                if journalName.count > 0 { journal?.name = journalName }
+                if childName.count > 0 { journal?.childName = childName }
+                DBHelper.saveContext()
+            }
+            
+            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+            
+            addJournalAlertController.addAction(saveAction)
+            addJournalAlertController.addAction(cancelAction)
+            present(addJournalAlertController, animated: true)
+            
+        }
+        else {
+            DBHelper.saveContext()
+        }
         
     }
     

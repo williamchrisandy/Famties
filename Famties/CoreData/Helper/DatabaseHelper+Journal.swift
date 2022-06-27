@@ -7,7 +7,6 @@
 
 import UIKit
 import CoreData
-import AVFoundation
 
 extension DatabaseHelper {
     func getJournals() -> [Journal] {
@@ -56,8 +55,6 @@ extension DatabaseHelper {
         createBlankWorksheet(for: journal)
         
         saveContext()
-        
-        
         
         return journal
     }

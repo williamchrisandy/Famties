@@ -562,6 +562,12 @@
                                     <constraint firstItem="CVo-sM-PgT" firstAttribute="leading" secondItem="jqm-fM-V0L" secondAttribute="leading" id="sgR-IB-XDS"/>
                                 </constraints>
                             </view>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6Ks-qR-PSR">
+                                <rect key="frame" x="648" y="1167" width="97" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="IJh-Nq-nSd"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
