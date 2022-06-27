@@ -128,6 +128,16 @@ extension DatabaseHelper {
         activity1.addToHas(benefit3)
         insert(activity1)
         
+        let activity2 = Activity(context: context)
+        activity2.name = "Affirmation Messages"
+        activity2.estimatedTime = 30
+        activity2.explanation = "Through this activity, parents can exercise how to motivate their children with encouraging messages and confidence in believing their inner potential and future growth. Parents and children can brainstorm together on things they believe are a strong trait for their children."
+        activity2.partOf = category1
+        activity2.addToHas(benefit1)
+        activity2.addToHas(benefit2)
+        activity2.addToHas(benefit3)
+        insert(activity2)
+        
         UserDefaults.standard.set(true, forKey: DatabaseHelper.keyFirstTimev1)
     }
 }

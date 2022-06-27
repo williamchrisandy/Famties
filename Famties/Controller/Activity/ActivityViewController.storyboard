@@ -36,20 +36,20 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="isA-da-kHv">
                                                 <rect key="frame" x="0.0" y="454" width="1024" height="368"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Favorite Activities" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GkU-qh-QMu">
-                                                        <rect key="frame" x="35" y="0.0" width="989" height="39"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Favorite Activities" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GkU-qh-QMu">
+                                                        <rect key="frame" x="35" y="0.0" width="954" height="38.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                                         <color key="textColor" name="ActivityTitleColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Activities you are interested to do" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A2k-lI-nSt">
-                                                        <rect key="frame" x="35" y="39" width="989" height="21"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Activities you are interested to do" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A2k-lI-nSt">
+                                                        <rect key="frame" x="35" y="38.5" width="954" height="19.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                         <color key="textColor" name="ActivityDescriptionColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="cFw-W0-Ra4">
-                                                        <rect key="frame" x="35" y="75" width="989" height="291"/>
+                                                        <rect key="frame" x="35" y="73" width="989" height="293"/>
                                                         <color key="backgroundColor" name="BackgroundColor"/>
                                                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="vu1-ql-3uB">
                                                             <size key="itemSize" width="128" height="290"/>
@@ -63,13 +63,13 @@
                                                 <color key="backgroundColor" name="BackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstItem="A2k-lI-nSt" firstAttribute="top" secondItem="GkU-qh-QMu" secondAttribute="bottom" id="0Rx-od-IIZ"/>
-                                                    <constraint firstAttribute="trailing" secondItem="A2k-lI-nSt" secondAttribute="trailing" id="B3E-cI-wFL"/>
+                                                    <constraint firstAttribute="trailing" secondItem="A2k-lI-nSt" secondAttribute="trailing" constant="35" id="B3E-cI-wFL"/>
                                                     <constraint firstAttribute="trailing" secondItem="cFw-W0-Ra4" secondAttribute="trailing" id="JVA-CF-zyp"/>
                                                     <constraint firstItem="GkU-qh-QMu" firstAttribute="leading" secondItem="isA-da-kHv" secondAttribute="leading" constant="35" id="PFu-k9-YdJ"/>
                                                     <constraint firstItem="cFw-W0-Ra4" firstAttribute="top" secondItem="A2k-lI-nSt" secondAttribute="bottom" constant="15" id="Q9W-bc-qAD"/>
                                                     <constraint firstAttribute="bottom" secondItem="cFw-W0-Ra4" secondAttribute="bottom" constant="2" id="XV4-2T-cuP"/>
                                                     <constraint firstItem="A2k-lI-nSt" firstAttribute="leading" secondItem="isA-da-kHv" secondAttribute="leading" constant="35" id="e2f-ay-ozS"/>
-                                                    <constraint firstAttribute="trailing" secondItem="GkU-qh-QMu" secondAttribute="trailing" id="wnp-R2-IBz"/>
+                                                    <constraint firstAttribute="trailing" secondItem="GkU-qh-QMu" secondAttribute="trailing" constant="35" id="wnp-R2-IBz"/>
                                                     <constraint firstItem="GkU-qh-QMu" firstAttribute="top" secondItem="isA-da-kHv" secondAttribute="top" id="xUs-Fk-IpW"/>
                                                     <constraint firstItem="cFw-W0-Ra4" firstAttribute="leading" secondItem="isA-da-kHv" secondAttribute="leading" constant="35" id="xzP-TX-2cN"/>
                                                     <constraint firstAttribute="height" constant="368" id="yuT-sp-5XK"/>
@@ -78,20 +78,20 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vxx-Tp-HlL">
                                                 <rect key="frame" x="0.0" y="862" width="1024" height="368"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recommended For You" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LZG-fb-rL8">
-                                                        <rect key="frame" x="35" y="0.0" width="989" height="39"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recommended For You" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LZG-fb-rL8">
+                                                        <rect key="frame" x="35" y="0.0" width="954" height="38.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                                         <color key="textColor" name="ActivityTitleColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Based on the cards you have completed " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6nG-LC-Tw4">
-                                                        <rect key="frame" x="35" y="39" width="989" height="21"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Based on the cards you have completed " textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6nG-LC-Tw4">
+                                                        <rect key="frame" x="35" y="38.5" width="954" height="19.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                         <color key="textColor" name="ActivityDescriptionColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="S23-3g-ZcX">
-                                                        <rect key="frame" x="35" y="75" width="989" height="291"/>
+                                                        <rect key="frame" x="35" y="73" width="989" height="293"/>
                                                         <color key="backgroundColor" name="BackgroundColor"/>
                                                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="tVw-iS-QHN">
                                                             <size key="itemSize" width="128" height="290"/>
@@ -112,28 +112,28 @@
                                                     <constraint firstItem="6nG-LC-Tw4" firstAttribute="leading" secondItem="vxx-Tp-HlL" secondAttribute="leading" constant="35" id="ThV-Ov-8N1"/>
                                                     <constraint firstItem="S23-3g-ZcX" firstAttribute="leading" secondItem="vxx-Tp-HlL" secondAttribute="leading" constant="35" id="Vlj-w4-rUA"/>
                                                     <constraint firstItem="LZG-fb-rL8" firstAttribute="top" secondItem="vxx-Tp-HlL" secondAttribute="top" id="aeJ-PF-CcF"/>
-                                                    <constraint firstAttribute="trailing" secondItem="6nG-LC-Tw4" secondAttribute="trailing" id="fhH-tL-IcE"/>
+                                                    <constraint firstAttribute="trailing" secondItem="6nG-LC-Tw4" secondAttribute="trailing" constant="35" id="fhH-tL-IcE"/>
                                                     <constraint firstItem="6nG-LC-Tw4" firstAttribute="top" secondItem="LZG-fb-rL8" secondAttribute="bottom" id="pLl-pb-t7x"/>
-                                                    <constraint firstAttribute="trailing" secondItem="LZG-fb-rL8" secondAttribute="trailing" id="zhX-Kg-Wrx"/>
+                                                    <constraint firstAttribute="trailing" secondItem="LZG-fb-rL8" secondAttribute="trailing" constant="35" id="zhX-Kg-Wrx"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J7p-c5-A2U">
                                                 <rect key="frame" x="0.0" y="1270" width="1024" height="368"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wondering About Personal Strength &amp; Weakness?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bXm-eA-G5Z">
-                                                        <rect key="frame" x="35" y="0.0" width="989" height="39"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wondering About Personal Strength &amp; Weakness?" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bXm-eA-G5Z">
+                                                        <rect key="frame" x="35" y="0.0" width="954" height="38.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                                         <color key="textColor" name="ActivityTitleColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Try these activities and observe how children’s emotions and thoughts are influencing their behavior" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hCH-WL-jcw">
-                                                        <rect key="frame" x="35" y="39" width="989" height="20.5"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Try these activities and observe how children’s emotions and thoughts are influencing their behavior" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hCH-WL-jcw">
+                                                        <rect key="frame" x="35" y="38.5" width="954" height="19.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                         <color key="textColor" name="ActivityDescriptionColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="7ws-zR-CkA">
-                                                        <rect key="frame" x="35" y="74.5" width="989" height="291.5"/>
+                                                        <rect key="frame" x="35" y="73" width="989" height="293"/>
                                                         <color key="backgroundColor" name="BackgroundColor"/>
                                                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="qnH-Wt-1gS">
                                                             <size key="itemSize" width="128" height="290"/>
@@ -149,9 +149,9 @@
                                                     <constraint firstAttribute="bottom" secondItem="7ws-zR-CkA" secondAttribute="bottom" constant="2" id="HBX-ui-aI2"/>
                                                     <constraint firstItem="bXm-eA-G5Z" firstAttribute="top" secondItem="J7p-c5-A2U" secondAttribute="top" id="IsX-7J-Ca5"/>
                                                     <constraint firstAttribute="trailing" secondItem="7ws-zR-CkA" secondAttribute="trailing" id="RY6-FM-wwZ"/>
-                                                    <constraint firstAttribute="trailing" secondItem="bXm-eA-G5Z" secondAttribute="trailing" id="Sj8-0g-oHC"/>
+                                                    <constraint firstAttribute="trailing" secondItem="bXm-eA-G5Z" secondAttribute="trailing" constant="35" id="Sj8-0g-oHC"/>
                                                     <constraint firstItem="hCH-WL-jcw" firstAttribute="top" secondItem="bXm-eA-G5Z" secondAttribute="bottom" id="TYI-t2-4Ju"/>
-                                                    <constraint firstAttribute="trailing" secondItem="hCH-WL-jcw" secondAttribute="trailing" id="Tci-DZ-Mka"/>
+                                                    <constraint firstAttribute="trailing" secondItem="hCH-WL-jcw" secondAttribute="trailing" constant="35" id="Tci-DZ-Mka"/>
                                                     <constraint firstItem="hCH-WL-jcw" firstAttribute="leading" secondItem="J7p-c5-A2U" secondAttribute="leading" constant="35" id="XBv-9G-d7t"/>
                                                     <constraint firstItem="7ws-zR-CkA" firstAttribute="top" secondItem="hCH-WL-jcw" secondAttribute="bottom" constant="15" id="YNc-En-JrP"/>
                                                     <constraint firstAttribute="height" constant="368" id="gaq-SQ-idS"/>
@@ -162,20 +162,20 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="68Y-uk-Rh6">
                                                 <rect key="frame" x="0.0" y="1678" width="1024" height="368"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Get Your Children’s Regulate Their Thoughts! " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7lH-vv-0tb">
-                                                        <rect key="frame" x="35" y="0.0" width="989" height="39"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Get Your Children’s Regulate Their Thoughts! " textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7lH-vv-0tb">
+                                                        <rect key="frame" x="35" y="0.0" width="954" height="38.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                                         <color key="textColor" name="ActivityTitleColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Help your children in setting goals, controlling impulses and managing stress" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WTq-DD-ivh">
-                                                        <rect key="frame" x="35" y="39" width="989" height="20.5"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Help your children in setting goals, controlling impulses and managing stress" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WTq-DD-ivh">
+                                                        <rect key="frame" x="35" y="38.5" width="954" height="19.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                         <color key="textColor" name="ActivityDescriptionColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="f99-Qi-fXj">
-                                                        <rect key="frame" x="35" y="74.5" width="989" height="291.5"/>
+                                                        <rect key="frame" x="35" y="73" width="989" height="293"/>
                                                         <color key="backgroundColor" name="BackgroundColor"/>
                                                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Xmp-69-Oxs">
                                                             <size key="itemSize" width="128" height="290"/>
@@ -195,29 +195,29 @@
                                                     <constraint firstItem="WTq-DD-ivh" firstAttribute="leading" secondItem="68Y-uk-Rh6" secondAttribute="leading" constant="35" id="YdA-ir-GND"/>
                                                     <constraint firstItem="WTq-DD-ivh" firstAttribute="top" secondItem="7lH-vv-0tb" secondAttribute="bottom" id="dIn-B0-Oub"/>
                                                     <constraint firstItem="f99-Qi-fXj" firstAttribute="leading" secondItem="68Y-uk-Rh6" secondAttribute="leading" constant="35" id="gKU-fZ-ezb"/>
-                                                    <constraint firstAttribute="trailing" secondItem="WTq-DD-ivh" secondAttribute="trailing" id="guV-fS-6TN"/>
+                                                    <constraint firstAttribute="trailing" secondItem="WTq-DD-ivh" secondAttribute="trailing" constant="35" id="guV-fS-6TN"/>
                                                     <constraint firstAttribute="trailing" secondItem="f99-Qi-fXj" secondAttribute="trailing" id="n9M-7y-8BG"/>
                                                     <constraint firstItem="7lH-vv-0tb" firstAttribute="leading" secondItem="68Y-uk-Rh6" secondAttribute="leading" constant="35" id="pCi-VU-u8V"/>
-                                                    <constraint firstAttribute="trailing" secondItem="7lH-vv-0tb" secondAttribute="trailing" id="wiy-Un-x7g"/>
+                                                    <constraint firstAttribute="trailing" secondItem="7lH-vv-0tb" secondAttribute="trailing" constant="35" id="wiy-Un-x7g"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QTE-7d-1Sn">
                                                 <rect key="frame" x="0.0" y="2086" width="1024" height="368"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Want to Have More Engagement with Others?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kTa-yN-AOg">
-                                                        <rect key="frame" x="35" y="0.0" width="989" height="39"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Want to Have More Engagement with Others?" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kTa-yN-AOg">
+                                                        <rect key="frame" x="35" y="0.0" width="954" height="38.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                                         <color key="textColor" name="ActivityTitleColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="See how children can build and maintain healthy relationships" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tzw-8A-lD5">
-                                                        <rect key="frame" x="35" y="39" width="989" height="21"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="See how children can build and maintain healthy relationships" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tzw-8A-lD5">
+                                                        <rect key="frame" x="35" y="38.5" width="954" height="19.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                         <color key="textColor" name="ActivityDescriptionColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ORq-T1-SHw">
-                                                        <rect key="frame" x="35" y="75" width="989" height="291"/>
+                                                        <rect key="frame" x="35" y="73" width="989" height="293"/>
                                                         <color key="backgroundColor" name="BackgroundColor"/>
                                                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="CcP-kX-RlE">
                                                             <size key="itemSize" width="128" height="290"/>
@@ -231,13 +231,13 @@
                                                 <color key="backgroundColor" name="BackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="368" id="7Cu-li-BD0"/>
-                                                    <constraint firstAttribute="trailing" secondItem="kTa-yN-AOg" secondAttribute="trailing" id="PbY-ra-LqP"/>
+                                                    <constraint firstAttribute="trailing" secondItem="kTa-yN-AOg" secondAttribute="trailing" constant="35" id="PbY-ra-LqP"/>
                                                     <constraint firstItem="kTa-yN-AOg" firstAttribute="leading" secondItem="QTE-7d-1Sn" secondAttribute="leading" constant="35" id="RDg-Zf-uWU"/>
                                                     <constraint firstItem="tzw-8A-lD5" firstAttribute="top" secondItem="kTa-yN-AOg" secondAttribute="bottom" id="UY9-ic-5QY"/>
                                                     <constraint firstItem="ORq-T1-SHw" firstAttribute="leading" secondItem="QTE-7d-1Sn" secondAttribute="leading" constant="35" id="e8m-Qg-xRP"/>
                                                     <constraint firstAttribute="bottom" secondItem="ORq-T1-SHw" secondAttribute="bottom" constant="2" id="eLF-uk-6VO"/>
                                                     <constraint firstItem="ORq-T1-SHw" firstAttribute="top" secondItem="tzw-8A-lD5" secondAttribute="bottom" constant="15" id="fqE-xo-q1r"/>
-                                                    <constraint firstAttribute="trailing" secondItem="tzw-8A-lD5" secondAttribute="trailing" id="jyI-6F-Lr1"/>
+                                                    <constraint firstAttribute="trailing" secondItem="tzw-8A-lD5" secondAttribute="trailing" constant="35" id="jyI-6F-Lr1"/>
                                                     <constraint firstItem="tzw-8A-lD5" firstAttribute="leading" secondItem="QTE-7d-1Sn" secondAttribute="leading" constant="35" id="lv5-Iq-yq1"/>
                                                     <constraint firstAttribute="trailing" secondItem="ORq-T1-SHw" secondAttribute="trailing" id="uGR-zg-giC"/>
                                                     <constraint firstItem="kTa-yN-AOg" firstAttribute="top" secondItem="QTE-7d-1Sn" secondAttribute="top" id="zav-Oa-ekm"/>
@@ -246,20 +246,20 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fKs-eA-7oN">
                                                 <rect key="frame" x="0.0" y="2494" width="1024" height="368"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Build Higher Self-Esteem with These! " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5li-Bo-cH4">
-                                                        <rect key="frame" x="35" y="0.0" width="989" height="39"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Build Higher Self-Esteem with These! " textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5li-Bo-cH4">
+                                                        <rect key="frame" x="35" y="0.0" width="954" height="38.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                                         <color key="textColor" name="ActivityTitleColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Practice your children’s empathy with family, school, and community relationship support" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XSv-Wj-cT8">
-                                                        <rect key="frame" x="35" y="39" width="989" height="21"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Practice your children’s empathy with family, school, and community relationship support" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XSv-Wj-cT8">
+                                                        <rect key="frame" x="35" y="38.5" width="954" height="19.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                         <color key="textColor" name="ActivityDescriptionColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="u8i-FS-cRQ">
-                                                        <rect key="frame" x="35" y="75" width="989" height="291"/>
+                                                        <rect key="frame" x="35" y="73" width="989" height="293"/>
                                                         <color key="backgroundColor" name="BackgroundColor"/>
                                                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="nzt-sn-IdG">
                                                             <size key="itemSize" width="128" height="290"/>
@@ -273,9 +273,9 @@
                                                 <color key="backgroundColor" name="BackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstItem="XSv-Wj-cT8" firstAttribute="top" secondItem="5li-Bo-cH4" secondAttribute="bottom" id="0FG-7w-Gnh"/>
-                                                    <constraint firstAttribute="trailing" secondItem="XSv-Wj-cT8" secondAttribute="trailing" id="1La-D1-hpR"/>
+                                                    <constraint firstAttribute="trailing" secondItem="XSv-Wj-cT8" secondAttribute="trailing" constant="35" id="1La-D1-hpR"/>
                                                     <constraint firstItem="XSv-Wj-cT8" firstAttribute="leading" secondItem="fKs-eA-7oN" secondAttribute="leading" constant="35" id="Dp4-Dt-ymd"/>
-                                                    <constraint firstAttribute="trailing" secondItem="5li-Bo-cH4" secondAttribute="trailing" id="GxY-MI-Sd7"/>
+                                                    <constraint firstAttribute="trailing" secondItem="5li-Bo-cH4" secondAttribute="trailing" constant="35" id="GxY-MI-Sd7"/>
                                                     <constraint firstAttribute="height" constant="368" id="RkJ-Gw-f1Q"/>
                                                     <constraint firstAttribute="bottom" secondItem="u8i-FS-cRQ" secondAttribute="bottom" constant="2" id="ZJO-uX-vTy"/>
                                                     <constraint firstItem="u8i-FS-cRQ" firstAttribute="top" secondItem="XSv-Wj-cT8" secondAttribute="bottom" constant="15" id="fdO-O7-biH"/>
@@ -288,20 +288,20 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZYS-ey-Igw">
                                                 <rect key="frame" x="0.0" y="2902" width="1024" height="368"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Excited for Thoughtful Choices from Your Children?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fr4-9b-ZU6">
-                                                        <rect key="frame" x="35" y="0.0" width="989" height="39"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Excited for Thoughtful Choices from Your Children?" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fr4-9b-ZU6">
+                                                        <rect key="frame" x="35" y="0.0" width="954" height="38.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                                         <color key="textColor" name="ActivityTitleColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Facilitate children’s process in creating choices and evaluating the consequences of decisions" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fmq-zm-e3I">
-                                                        <rect key="frame" x="35" y="39" width="989" height="20.5"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Facilitate children’s process in creating choices and evaluating the consequences of decisions" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fmq-zm-e3I">
+                                                        <rect key="frame" x="35" y="38.5" width="954" height="19.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                         <color key="textColor" name="ActivityDescriptionColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="pam-9T-gUk">
-                                                        <rect key="frame" x="35" y="74.5" width="989" height="291.5"/>
+                                                        <rect key="frame" x="35" y="73" width="989" height="293"/>
                                                         <color key="backgroundColor" name="BackgroundColor"/>
                                                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="05H-32-MSJ">
                                                             <size key="itemSize" width="128" height="290"/>
@@ -316,15 +316,14 @@
                                                 <constraints>
                                                     <constraint firstItem="Fmq-zm-e3I" firstAttribute="top" secondItem="Fr4-9b-ZU6" secondAttribute="bottom" id="0Ep-3O-4IF"/>
                                                     <constraint firstItem="pam-9T-gUk" firstAttribute="top" secondItem="Fmq-zm-e3I" secondAttribute="bottom" constant="15" id="16q-BQ-xUe"/>
-                                                    <constraint firstAttribute="trailing" secondItem="Fmq-zm-e3I" secondAttribute="trailing" id="BVb-m0-NG2"/>
                                                     <constraint firstAttribute="height" constant="368" id="FUt-Fk-hDX"/>
                                                     <constraint firstItem="Fr4-9b-ZU6" firstAttribute="leading" secondItem="ZYS-ey-Igw" secondAttribute="leading" constant="35" id="OAf-To-9RN"/>
                                                     <constraint firstItem="pam-9T-gUk" firstAttribute="leading" secondItem="ZYS-ey-Igw" secondAttribute="leading" constant="35" id="RU0-rz-nI1"/>
                                                     <constraint firstItem="Fmq-zm-e3I" firstAttribute="leading" secondItem="ZYS-ey-Igw" secondAttribute="leading" constant="35" id="WY2-Z5-wPN"/>
                                                     <constraint firstAttribute="bottom" secondItem="pam-9T-gUk" secondAttribute="bottom" constant="2" id="jWS-Ac-5Lv"/>
-                                                    <constraint firstAttribute="trailing" secondItem="Fmq-zm-e3I" secondAttribute="trailing" id="s6I-bT-bcs"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Fmq-zm-e3I" secondAttribute="trailing" constant="35" id="s6I-bT-bcs"/>
                                                     <constraint firstAttribute="trailing" secondItem="pam-9T-gUk" secondAttribute="trailing" id="x6n-73-zq2"/>
-                                                    <constraint firstAttribute="trailing" secondItem="Fr4-9b-ZU6" secondAttribute="trailing" id="xck-bt-N7M"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Fr4-9b-ZU6" secondAttribute="trailing" constant="35" id="xck-bt-N7M"/>
                                                     <constraint firstItem="Fr4-9b-ZU6" firstAttribute="top" secondItem="ZYS-ey-Igw" secondAttribute="top" id="zBI-Wp-fmE"/>
                                                 </constraints>
                                             </view>

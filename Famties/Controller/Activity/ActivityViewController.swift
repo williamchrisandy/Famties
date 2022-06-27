@@ -89,13 +89,13 @@ class ActivityViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        let bannerImage = UIImage(named: "Acivity1_Banner")?.resized(to: activityButton.frame.size)
+        let bannerImage = DatabaseHelper().getActivity(id: 1)?.bannerImage?.resized(to: activityButton.frame.size)
         activityButton.setImage(bannerImage, for: .normal)
     }
     
     //MARK: - Helpers
     @IBAction func bannerTapped(_ sender: Any) {
-        selectedActivity = data[1][0]
+        selectedActivity = DatabaseHelper().getActivity(id: 1)
         performSegue(withIdentifier: "activityToDetailSegue", sender: self)
     }
     

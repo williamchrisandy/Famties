@@ -122,7 +122,7 @@ class ActivityDetailViewController: UIViewController {
         descriptionLabel.text = detailActivity?.explanation
         previewImage.image = detailActivity?.coverImage
         timeDurationLabel.text = "\(detailActivity?.estimatedTime ?? 0) minutes"
-        categoryTextLabel.text = "Relationship Skills"
+        categoryTextLabel.text = detailActivity?.partOf?.name
         
         benefitTitleLabel1.text = detailBenefits?[0].name
         benefitDescriptionLabel1.text = detailBenefits?[0].explanation
