@@ -137,7 +137,7 @@
                             <constraint firstItem="YQ3-hm-FRp" firstAttribute="centerX" secondItem="p8j-Jq-flr" secondAttribute="centerX" id="xzt-5d-fQH"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Journal" image="externaldrive.fill.badge.person.crop" catalog="system" id="NgV-Pg-QuA"/>
+                    <tabBarItem key="tabBarItem" title="Journal" image="book.closed.fill" catalog="system" id="NgV-Pg-QuA"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="createdAtJournalText" destination="YQ3-hm-FRp" id="rOn-b2-VLc"/>
@@ -168,9 +168,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="book.closed.fill" catalog="system" width="115" height="128"/>
         <image name="chevron.left" catalog="system" width="96" height="128"/>
         <image name="chevron.right" catalog="system" width="96" height="128"/>
-        <image name="externaldrive.fill.badge.person.crop" catalog="system" width="128" height="91"/>
         <namedColor name="BackgroundColor">
             <color red="1" green="0.99215686274509807" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
