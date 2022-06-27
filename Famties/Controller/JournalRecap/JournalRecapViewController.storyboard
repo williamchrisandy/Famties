@@ -72,7 +72,7 @@
                                     <action selector="slideRightButtonTapped:" destination="A6E-Wd-y0S" eventType="touchUpInside" id="ZVH-EV-Rh0"/>
                                 </connections>
                             </button>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" scrollEnabled="NO" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="DBN-yE-R49">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" scrollEnabled="NO" pagingEnabled="YES" keyboardDismissMode="onDrag" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="DBN-yE-R49">
                                 <rect key="frame" x="196" y="299.5" width="352" height="534"/>
                                 <color key="backgroundColor" systemColor="systemTealColor"/>
                                 <constraints>

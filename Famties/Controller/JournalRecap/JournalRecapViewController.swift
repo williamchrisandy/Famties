@@ -42,8 +42,16 @@ class JournalRecapViewController: UIViewController {
     @IBOutlet weak var createdAtJournalText: UILabel!
     @IBOutlet weak var slideRightButton: UIButton!
     @IBOutlet weak var slideLeftButton: UIButton!
-    @IBOutlet weak var titleTextField: UITextField!
-    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var titleTextField: UITextField! {
+        didSet {
+            titleTextField.placeholder = "Journal Title"
+        }
+    }
+    @IBOutlet weak var nameTextField: UITextField! {
+        didSet {
+            nameTextField.placeholder = "Your Child Name"
+        }
+    }
     
     // Property Type
     var currentIndex = 0
@@ -58,8 +66,13 @@ class JournalRecapViewController: UIViewController {
         nameTextField.delegate = self
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        textFieldShouldReturn(titleTextField)
+        textFieldShouldReturn(nameTextField)
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
+        super.viewWillAppear(animated)
         loadData()
         loadTextViews(at: 0)
         
@@ -69,21 +82,33 @@ class JournalRecapViewController: UIViewController {
         nameTextField.isHidden = true
     }
     
+    func doneEditing() {
+        textFieldShouldReturn(titleTextField)
+        textFieldShouldReturn(nameTextField)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        doneEditing()
+    }
+    
     //MARK: - Helpers
     
     @objc private func titleTapped() {
         journalTitle.isHidden = true
         titleTextField.isHidden = false
-        titleTextField.text = journalTitle.text
+        titleTextField.text = journals[currentIndex].name
+        titleTextField.becomeFirstResponder()
     }
     
     @objc private func nameTapped() {
         journalKidName.isHidden = true
         nameTextField.isHidden = false
-        nameTextField.text = journalKidName.text
+        nameTextField.text = journals[currentIndex].childName
+        nameTextField.becomeFirstResponder()
     }
     
     @IBAction func slideRightButtonTapped(_ sender: Any) {
+        doneEditing()
         currentIndex += 1
         if currentIndex > journals.count - 1 { currentIndex = 0 }
         loadTextViews(at: currentIndex)
@@ -91,6 +116,7 @@ class JournalRecapViewController: UIViewController {
     }
     
     @IBAction func slideLeftButtonTapped(_ sender: Any) {
+        doneEditing()
         currentIndex -= 1
         if currentIndex < 0 { currentIndex = journals.count - 1 }
         loadTextViews(at: currentIndex)
@@ -100,6 +126,7 @@ class JournalRecapViewController: UIViewController {
     private func loadData() {
         let databaseHelper = DatabaseHelper()
         journals = databaseHelper.getJournals()
+        currentIndex = 0
     }
     
     private func loadTextViews(at index: Int) {
@@ -174,14 +201,15 @@ extension JournalRecapViewController: UICollectionViewDataSource, UICollectionVi
 }
 
 extension JournalRecapViewController: UITextFieldDelegate {
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == titleTextField {
             titleTextField.resignFirstResponder()
-            setDetailText(textField: textField, text: textField.text ?? journalTitle.text!)
+            setDetailText(textField: textField, text: journalTitle.text!)
             return true
         } else {
             nameTextField.resignFirstResponder()
-            setDetailText(textField: textField, text: textField.text ?? "👧 \(journalKidName.text!)")
+            setDetailText(textField: textField, text: journalKidName.text!)
             return true
         }
     }
@@ -189,22 +217,34 @@ extension JournalRecapViewController: UITextFieldDelegate {
     private func setDetailText(textField: UITextField, text: String) {
         let databaseHelper = DatabaseHelper()
         if textField == titleTextField {
-            journalTitle.text = text
-            journals[currentIndex].name = text
+            let journal = journals[currentIndex]
+            
+            var displayedText = textField.text!
+            if displayedText.count <= 0 { displayedText = journal.name! }
+            
+            journal.name = displayedText
             databaseHelper.saveContext()
-            textField.isHidden = true
+            
+            journalTitle.text = displayedText
+            textField.text = ""
+            
             journalTitle.isHidden = false
-        } else {
-
-            if text.contains("👧") {
-                journalKidName.text = "\(text)"
-            } else {
-                journalKidName.text = "👧 \(text)"
-            }
-            journals[currentIndex].childName = text
-            databaseHelper.saveContext()
             textField.isHidden = true
+        }
+        else {
+            let journal = journals[currentIndex]
+            
+            var displayedText = textField.text!
+            if displayedText.count <= 0 { displayedText = journal.childName! }
+            
+            journal.childName = displayedText
+            databaseHelper.saveContext()
+            
+            journalKidName.text = "👧 \(displayedText)"
+            textField.text = ""
+            
             journalKidName.isHidden = false
+            textField.isHidden = true
         }
     }
 }
