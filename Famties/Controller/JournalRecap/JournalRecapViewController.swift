@@ -34,50 +34,34 @@ class JournalRecapViewController: UIViewController {
     
     // Property Type
     var currentIndex = 0
-    var imageArray: [UIImage] = []
-    var nameArray: [String] = []
-    var titleArray: [String] = []
     var journals: [Journal] = []
     var selectedJournal: Journal!
     
     // MARK: - Life Cycles
     override func viewDidLoad() {
         super.viewDidLoad()
+        journalCollectionView.layer.cornerRadius = 15
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
         loadData()
         loadTextViews(at: 0)
-        
-        journalCollectionView.layer.cornerRadius = 15
-        
-//        imageArray.append((UIImage(named: "Activity1_Journal")!))
-//        imageArray.append((UIImage(named: "Activity16_Journal")!))
-//        imageArray.append((UIImage(named: "Activity17_Journal")!))
-//        imageArray.append((UIImage(named: "Activity22_Journal")!))
-//
-//        titleArray.append("Making Dream Comes True with Nano")
-//        titleArray.append("Lovely Gift Creating with Zoya")
-//        titleArray.append("Lovely Gift Creating Creating Creating")
-//        titleArray.append("Expressing Agreement or Disagreement Together")
-//
-//        nameArray.append("Nano")
-//        nameArray.append("Zoya")
-//        nameArray.append("Budi")
-//        nameArray.append("Joji")
-//
-//        journalTitle.text = titleArray[0]
-//        journalKidName.text = nameArray[0]
     }
+    
+    
     
     //MARK: - Helpers
     @IBAction func slideRightButtonTapped(_ sender: Any) {
         currentIndex += 1
-        if currentIndex > imageArray.count - 1 { currentIndex = 0 }
+        if currentIndex > journals.count - 1 { currentIndex = 0 }
         loadTextViews(at: currentIndex)
         journalCollectionView.scrollToItem(at: IndexPath.init(item: currentIndex, section: 0), at: .centeredHorizontally, animated: true)
     }
     
     @IBAction func slideLeftButtonTapped(_ sender: Any) {
         currentIndex -= 1
-        if currentIndex < 0 { currentIndex = imageArray.count - 1 }
+        if currentIndex < 0 { currentIndex = journals.count - 1 }
         loadTextViews(at: currentIndex)
         journalCollectionView.scrollToItem(at: IndexPath.init(item: currentIndex, section: 0), at: .centeredHorizontally, animated: true)
     }
@@ -93,7 +77,7 @@ class JournalRecapViewController: UIViewController {
         let editedText = dateToTexts(date: journals[index].lastEdited!)
         
         journalTitle.text = journals[index].name
-        journalKidName.text = "👧 \(journals[index].childName)"
+        journalKidName.text = "👧 \(journals[index].childName!)"
         createdAtJournalText.text = "Created At: \(createdText)"
         lastEditedJournalText.text = "Last Edited: \(editedText)"
     }
