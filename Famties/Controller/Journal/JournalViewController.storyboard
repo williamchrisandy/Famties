@@ -497,47 +497,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="1221"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GLW-wg-f4L">
-                                <rect key="frame" x="0.0" y="524" width="91.5" height="197"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2fL-mi-JHP">
-                                        <rect key="frame" x="24.5" y="42.5" width="42.5" height="31"/>
-                                        <color key="tintColor" name="PageControlTintColor"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" image="arrow.up" catalog="system"/>
-                                        <connections>
-                                            <action selector="pageUp:" destination="VpZ-aw-HPW" eventType="touchUpInside" id="W6V-pl-pP0"/>
-                                        </connections>
-                                    </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="n/n" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w6r-mF-VcD">
-                                        <rect key="frame" x="26" y="83.5" width="40" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="40" id="1PV-m2-uGH"/>
-                                            <constraint firstAttribute="height" constant="30" id="Jpa-Ku-KY4"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" name="PageControlTintColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JXr-ke-RvA">
-                                        <rect key="frame" x="24.5" y="123.5" width="42.5" height="31"/>
-                                        <color key="tintColor" name="PageControlTintColor"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" image="arrow.down" catalog="system"/>
-                                        <connections>
-                                            <action selector="pageDown:" destination="VpZ-aw-HPW" eventType="touchUpInside" id="fKv-XX-aLy"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="w6r-mF-VcD" firstAttribute="top" secondItem="2fL-mi-JHP" secondAttribute="bottom" constant="10" id="7OV-ge-56P"/>
-                                    <constraint firstItem="2fL-mi-JHP" firstAttribute="centerX" secondItem="GLW-wg-f4L" secondAttribute="centerX" id="SRu-1V-jP8"/>
-                                    <constraint firstItem="JXr-ke-RvA" firstAttribute="top" secondItem="w6r-mF-VcD" secondAttribute="bottom" constant="10" id="fK9-be-Eov"/>
-                                    <constraint firstItem="w6r-mF-VcD" firstAttribute="centerY" secondItem="GLW-wg-f4L" secondAttribute="centerY" id="gOF-9Q-UsA"/>
-                                    <constraint firstItem="JXr-ke-RvA" firstAttribute="centerX" secondItem="GLW-wg-f4L" secondAttribute="centerX" id="hlE-H4-p1Z"/>
-                                    <constraint firstItem="w6r-mF-VcD" firstAttribute="centerX" secondItem="GLW-wg-f4L" secondAttribute="centerX" id="uEX-Ag-wUL"/>
-                                </constraints>
-                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jqm-fM-V0L">
                                 <rect key="frame" x="91.5" y="20" width="841" height="1051"/>
                                 <subviews>
@@ -571,23 +530,51 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2fL-mi-JHP">
+                                <rect key="frame" x="10" y="424" width="71.5" height="31"/>
+                                <color key="tintColor" name="PageControlTintColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="arrow.up" catalog="system" title=""/>
+                                <connections>
+                                    <action selector="pageUp:" destination="VpZ-aw-HPW" eventType="touchUpInside" id="W6V-pl-pP0"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JXr-ke-RvA">
+                                <rect key="frame" x="10" y="635.5" width="71.5" height="31"/>
+                                <color key="tintColor" name="PageControlTintColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="arrow.down" catalog="system"/>
+                                <connections>
+                                    <action selector="pageDown:" destination="VpZ-aw-HPW" eventType="touchUpInside" id="fKv-XX-aLy"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="n/n" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w6r-mF-VcD">
+                                <rect key="frame" x="10" y="535" width="71.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" name="PageControlTintColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="IJh-Nq-nSd"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="JXr-ke-RvA" firstAttribute="leading" secondItem="IJh-Nq-nSd" secondAttribute="leading" constant="10" id="2hW-8M-5nU"/>
                             <constraint firstItem="IJh-Nq-nSd" firstAttribute="bottom" secondItem="jqm-fM-V0L" secondAttribute="bottom" constant="150" id="D7y-E5-78j"/>
-                            <constraint firstItem="GLW-wg-f4L" firstAttribute="leading" secondItem="IJh-Nq-nSd" secondAttribute="leading" id="Fxx-dR-4kn"/>
-                            <constraint firstItem="GLW-wg-f4L" firstAttribute="top" secondItem="IJh-Nq-nSd" secondAttribute="top" constant="500" id="aid-Qe-Ni2"/>
-                            <constraint firstItem="IJh-Nq-nSd" firstAttribute="bottom" secondItem="GLW-wg-f4L" secondAttribute="bottom" constant="500" id="bBI-xp-MY6"/>
+                            <constraint firstItem="jqm-fM-V0L" firstAttribute="leading" secondItem="2fL-mi-JHP" secondAttribute="trailing" constant="10" id="E5f-D1-PEh"/>
+                            <constraint firstItem="jqm-fM-V0L" firstAttribute="leading" secondItem="JXr-ke-RvA" secondAttribute="trailing" constant="10" id="R6h-NP-NvS"/>
+                            <constraint firstItem="2fL-mi-JHP" firstAttribute="leading" secondItem="IJh-Nq-nSd" secondAttribute="leading" constant="10" id="Rlm-YM-yLS"/>
+                            <constraint firstItem="w6r-mF-VcD" firstAttribute="leading" secondItem="IJh-Nq-nSd" secondAttribute="leading" constant="10" id="WL9-f2-GVx"/>
+                            <constraint firstItem="2fL-mi-JHP" firstAttribute="top" secondItem="IJh-Nq-nSd" secondAttribute="top" constant="400" id="WX9-pz-Sd1"/>
+                            <constraint firstItem="JXr-ke-RvA" firstAttribute="top" secondItem="w6r-mF-VcD" secondAttribute="bottom" constant="80" id="Y3v-Cu-TJ6"/>
+                            <constraint firstItem="w6r-mF-VcD" firstAttribute="top" secondItem="2fL-mi-JHP" secondAttribute="bottom" constant="80" id="dA3-YW-KCL"/>
                             <constraint firstItem="jqm-fM-V0L" firstAttribute="top" secondItem="7lf-uR-ot6" secondAttribute="top" constant="20" id="dTt-xr-i4h"/>
                             <constraint firstItem="jqm-fM-V0L" firstAttribute="centerX" secondItem="7lf-uR-ot6" secondAttribute="centerX" id="jPM-WN-JDd"/>
-                            <constraint firstItem="jqm-fM-V0L" firstAttribute="leading" secondItem="GLW-wg-f4L" secondAttribute="trailing" id="keA-hQ-ulG"/>
+                            <constraint firstItem="jqm-fM-V0L" firstAttribute="leading" secondItem="w6r-mF-VcD" secondAttribute="trailing" constant="10" id="na8-4v-XJk"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="canvasView" destination="CVo-sM-PgT" id="98w-ox-ZCT"/>
                         <outlet property="imageView" destination="3JJ-YE-3D0" id="t9D-H6-Hxt"/>
-                        <outlet property="pageControlView" destination="GLW-wg-f4L" id="e9g-6v-bBb"/>
                         <outlet property="pageDownButton" destination="JXr-ke-RvA" id="1O1-WI-BXn"/>
                         <outlet property="pageIndicatorLabel" destination="w6r-mF-VcD" id="KZQ-ar-Yql"/>
                         <outlet property="pageUpButton" destination="2fL-mi-JHP" id="qqv-9E-ETD"/>

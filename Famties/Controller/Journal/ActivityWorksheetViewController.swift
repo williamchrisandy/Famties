@@ -11,7 +11,6 @@ import PencilKit
 class ActivityWorksheetViewController: UIViewController {
     
     //MARK: Properties
-    @IBOutlet weak var pageControlView: UIView!
     @IBOutlet weak var worksheetView: UIView!
     @IBOutlet weak var canvasView: PKCanvasView!
     @IBOutlet weak var imageView: UIImageView!
