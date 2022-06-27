@@ -13,7 +13,9 @@ import CoreData
 extension Journal {
 
     @nonobjc public class func fetchRequest() -> NSFetchRequest<Journal> {
-        return NSFetchRequest<Journal>(entityName: "Journal")
+        let fetchRequest = NSFetchRequest<Journal>(entityName: "Journal")
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "createdTime", ascending: false)]
+        return fetchRequest
     }
 
     @nonobjc public class func fetchRequest(id: Int) -> NSFetchRequest<Journal> {
@@ -61,4 +63,12 @@ extension Journal {
 
 extension Journal : Identifiable {
 
+}
+
+extension Journal: HasKeyLastId {
+    static var keyLastId: String = "journalLastId"
+}
+
+extension Journal: HasId {
+    
 }

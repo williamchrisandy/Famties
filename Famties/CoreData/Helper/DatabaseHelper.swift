@@ -48,6 +48,11 @@ class DatabaseHelper {
                 print("Object is not a type of NSManagedObject")
                 return
             }
+            
+            if let journal = targetObject as? Journal {
+                deletePhotos(journal: journal)
+            }
+            
             context.delete(targetObject)
             try context.save()
         }
@@ -63,6 +68,10 @@ class DatabaseHelper {
         catch let error {
             print(error.localizedDescription)
         }
+    }
+    
+    func rollbackContext() {
+        context.rollback()
     }
 }
 
