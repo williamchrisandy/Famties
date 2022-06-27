@@ -57,14 +57,15 @@ class JournalViewController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         if back == true {
-            for delegate in delegates {
-                delegate?.saveJournalData()
-            }
             
             let alertController = UIAlertController(title: "Discard Changes?", message: "You may have accidentally pressed back without saving. Do you want to save changes?", preferredStyle: .alert)
             
             let saveAction = UIAlertAction(title: "Save Changes", style: .default) {
                 [unowned journal] action in
+                
+                for delegate in self.delegates {
+                    delegate?.saveJournalData()
+                }
                 journal?.lastEdited = Date()
                 DatabaseHelper().saveContext()
             }
