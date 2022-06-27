@@ -142,7 +142,7 @@ class ActivityDetailViewController: UIViewController {
     }
     
     private func adjustTextSize(label: UILabel) {
-        label.minimumScaleFactor = 0.95
+        label.minimumScaleFactor = 0.5
         label.adjustsFontSizeToFitWidth = true
     }
     

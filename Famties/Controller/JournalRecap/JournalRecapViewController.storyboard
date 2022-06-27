@@ -119,11 +119,22 @@
                         <outlet property="lastEditedJournalText" destination="Sd3-9I-w8I" id="SIx-pJ-Mkz"/>
                         <outlet property="slideLeftButton" destination="ZXd-gF-3WF" id="fgr-bC-7h2"/>
                         <outlet property="slideRightButton" destination="tPA-1C-l6N" id="dgb-H1-jbL"/>
+                        <segue destination="bUW-vF-2c7" kind="show" identifier="collectionToJournal" id="L0J-Fd-jOw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="59D-Nk-u0w" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1100.8064516129032" y="97.705207413945274"/>
+        </scene>
+        <!--JournalViewController-->
+        <scene sceneID="FL6-L2-4IY">
+            <objects>
+                <viewControllerPlaceholder storyboardName="JournalViewController" id="bUW-vF-2c7" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="kC1-kq-DCL"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Npo-lI-Evq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1669" y="84"/>
         </scene>
     </scenes>
     <resources>

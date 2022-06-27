@@ -272,7 +272,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hXr-06-9me">
-                                <rect key="frame" x="30.5" y="1043" width="683" height="50"/>
+                                <rect key="frame" x="30.5" y="1063" width="683" height="50"/>
                                 <color key="backgroundColor" red="0.1725490093" green="0.42352938649999999" blue="0.5647059083" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Button"/>
@@ -291,7 +291,7 @@
                             <constraint firstItem="iZU-bW-t7a" firstAttribute="height" secondItem="gnn-07-nc9" secondAttribute="height" id="hHh-lt-2qv"/>
                             <constraint firstItem="fL5-1x-6cT" firstAttribute="width" secondItem="gnn-07-nc9" secondAttribute="width" multiplier="63/100" id="inl-Pe-wId"/>
                             <constraint firstItem="hXr-06-9me" firstAttribute="width" secondItem="gnn-07-nc9" secondAttribute="width" multiplier="940/1024" id="mDQ-Mi-xYm"/>
-                            <constraint firstItem="2m4-69-gIV" firstAttribute="bottom" secondItem="hXr-06-9me" secondAttribute="bottom" constant="20" id="s3U-Nm-6sH"/>
+                            <constraint firstItem="2m4-69-gIV" firstAttribute="bottom" secondItem="hXr-06-9me" secondAttribute="bottom" id="s3U-Nm-6sH"/>
                             <constraint firstItem="fL5-1x-6cT" firstAttribute="top" secondItem="2m4-69-gIV" secondAttribute="top" id="x4E-Hw-Vbd"/>
                             <constraint firstAttribute="bottom" secondItem="fL5-1x-6cT" secondAttribute="bottom" id="xMI-Nf-L4L"/>
                         </constraints>
@@ -330,7 +330,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9kF-PD-yAj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="931" y="89"/>
+            <point key="canvasLocation" x="650" y="97"/>
         </scene>
     </scenes>
     <resources>
