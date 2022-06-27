@@ -28,12 +28,12 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="👦🏻 Nano" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rtX-cp-oqK">
-                                <rect key="frame" x="328" y="229" width="88" height="20.5"/>
+                                <rect key="frame" x="328" y="229" width="88" height="29"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <color key="textColor" red="0.77647060160000003" green="0.79215681550000006" blue="0.45490196350000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZXd-gF-3WF">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZXd-gF-3WF">
                                 <rect key="frame" x="100" y="547.5" width="24" height="38"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="38" id="7q4-3E-jzc"/>
@@ -58,7 +58,7 @@
                                 <color key="textColor" red="0.73333334920000004" green="0.77647060160000003" blue="0.78823530669999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tPA-1C-l6N">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tPA-1C-l6N">
                                 <rect key="frame" x="620" y="547.5" width="24" height="38"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="24" id="Hrv-2Z-1RP"/>
@@ -71,7 +71,7 @@
                                     <action selector="slideRightButtonTapped:" destination="A6E-Wd-y0S" eventType="touchUpInside" id="ZVH-EV-Rh0"/>
                                 </connections>
                             </button>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" scrollEnabled="NO" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="DBN-yE-R49">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" directionalLockEnabled="YES" scrollEnabled="NO" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="DBN-yE-R49">
                                 <rect key="frame" x="196" y="299.5" width="352" height="534"/>
                                 <color key="backgroundColor" systemColor="systemTealColor"/>
                                 <constraints>
@@ -85,11 +85,35 @@
                                 </collectionViewFlowLayout>
                                 <cells/>
                             </collectionView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="onH-bQ-IJA">
+                                <rect key="frame" x="22" y="94" width="700" height="115"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="700" id="r0f-Gn-693"/>
+                                    <constraint firstAttribute="height" constant="115" id="sf5-40-tmb"/>
+                                </constraints>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="t7a-As-er7">
+                                <rect key="frame" x="322" y="229" width="100" height="25"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="eRj-E0-laS"/>
+                                    <constraint firstAttribute="height" constant="25" id="og8-Fd-Jv1"/>
+                                </constraints>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="LGp-X4-EjA"/>
                         <color key="backgroundColor" name="BackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="DBN-yE-R49" firstAttribute="top" relation="greaterThanOrEqual" secondItem="t7a-As-er7" secondAttribute="bottom" constant="50" id="14S-ak-tOu"/>
                             <constraint firstItem="YQ3-hm-FRp" firstAttribute="top" secondItem="Sd3-9I-w8I" secondAttribute="bottom" constant="8" id="A0A-jP-FhK"/>
+                            <constraint firstItem="onH-bQ-IJA" firstAttribute="centerX" secondItem="p8j-Jq-flr" secondAttribute="centerX" id="BGD-pq-p9u"/>
                             <constraint firstItem="ZXd-gF-3WF" firstAttribute="centerY" secondItem="DBN-yE-R49" secondAttribute="centerY" id="Cj6-Bw-Jgb"/>
                             <constraint firstItem="rtX-cp-oqK" firstAttribute="centerX" secondItem="p8j-Jq-flr" secondAttribute="centerX" id="DbM-WI-m19"/>
                             <constraint firstItem="Sd3-9I-w8I" firstAttribute="centerX" secondItem="p8j-Jq-flr" secondAttribute="centerX" id="EBV-yo-kwx"/>
@@ -97,6 +121,7 @@
                             <constraint firstItem="DBN-yE-R49" firstAttribute="top" relation="greaterThanOrEqual" secondItem="rtX-cp-oqK" secondAttribute="bottom" constant="50" id="L4h-Y1-8gR"/>
                             <constraint firstItem="ZXd-gF-3WF" firstAttribute="leading" secondItem="LGp-X4-EjA" secondAttribute="leading" constant="100" id="MOc-Vg-rot"/>
                             <constraint firstItem="tPA-1C-l6N" firstAttribute="leading" relation="lessThanOrEqual" secondItem="DBN-yE-R49" secondAttribute="trailing" constant="105" id="N6z-BI-3Pd"/>
+                            <constraint firstItem="t7a-As-er7" firstAttribute="top" secondItem="F4H-m2-WPb" secondAttribute="bottom" constant="20" id="OO1-hY-65D"/>
                             <constraint firstItem="tPA-1C-l6N" firstAttribute="centerY" secondItem="DBN-yE-R49" secondAttribute="centerY" id="Pu9-S7-P9p"/>
                             <constraint firstItem="DBN-yE-R49" firstAttribute="leading" relation="lessThanOrEqual" secondItem="ZXd-gF-3WF" secondAttribute="trailing" constant="105" id="ReT-RR-QSS"/>
                             <constraint firstAttribute="trailing" secondItem="tPA-1C-l6N" secondAttribute="trailing" constant="100" id="Tx7-8q-b4g"/>
@@ -106,6 +131,9 @@
                             <constraint firstItem="F4H-m2-WPb" firstAttribute="top" secondItem="LGp-X4-EjA" secondAttribute="top" constant="70" id="fnf-2Y-VTr"/>
                             <constraint firstItem="rtX-cp-oqK" firstAttribute="top" secondItem="F4H-m2-WPb" secondAttribute="bottom" constant="20" id="hDb-PS-Scs"/>
                             <constraint firstItem="LGp-X4-EjA" firstAttribute="bottom" secondItem="YQ3-hm-FRp" secondAttribute="bottom" constant="90" id="mmf-VJ-LeN"/>
+                            <constraint firstItem="t7a-As-er7" firstAttribute="centerX" secondItem="p8j-Jq-flr" secondAttribute="centerX" id="mxN-4D-blr"/>
+                            <constraint firstItem="onH-bQ-IJA" firstAttribute="top" secondItem="LGp-X4-EjA" secondAttribute="top" constant="70" id="qCc-Kk-X7s"/>
+                            <constraint firstItem="rtX-cp-oqK" firstAttribute="top" secondItem="onH-bQ-IJA" secondAttribute="bottom" constant="20" id="xUy-md-6lX"/>
                             <constraint firstItem="YQ3-hm-FRp" firstAttribute="centerX" secondItem="p8j-Jq-flr" secondAttribute="centerX" id="xzt-5d-fQH"/>
                         </constraints>
                     </view>
@@ -117,8 +145,10 @@
                         <outlet property="journalKidName" destination="rtX-cp-oqK" id="OFL-dq-1y9"/>
                         <outlet property="journalTitle" destination="F4H-m2-WPb" id="oQh-ot-3x2"/>
                         <outlet property="lastEditedJournalText" destination="Sd3-9I-w8I" id="SIx-pJ-Mkz"/>
+                        <outlet property="nameTextView" destination="t7a-As-er7" id="Rx0-wD-kdh"/>
                         <outlet property="slideLeftButton" destination="ZXd-gF-3WF" id="fgr-bC-7h2"/>
                         <outlet property="slideRightButton" destination="tPA-1C-l6N" id="dgb-H1-jbL"/>
+                        <outlet property="titleTextView" destination="onH-bQ-IJA" id="zkM-f1-4ki"/>
                         <segue destination="bUW-vF-2c7" kind="show" identifier="collectionToJournal" id="L0J-Fd-jOw"/>
                     </connections>
                 </viewController>
@@ -144,6 +174,12 @@
         <namedColor name="BackgroundColor">
             <color red="1" green="0.99215686274509807" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemTealColor">
             <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
