@@ -203,7 +203,7 @@ extension JournalRecapViewController: UICollectionViewDataSource, UICollectionVi
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: journalRecapCollectionViewCell, for: indexPath) as! JournalRecapCollectionViewCell
         let journal = journals[indexPath.item]
-        let cellImage = journal.activity?.coverImage!.resized(to: cell.frame.size)
+        let cellImage = journal.activity?.journalImage!.resized(to: cell.frame.size)
         
         cell.journal = journal
         cell.JournalCollectionImage.image = cellImage
