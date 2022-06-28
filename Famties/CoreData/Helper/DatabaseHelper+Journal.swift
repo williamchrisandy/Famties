@@ -65,7 +65,7 @@ extension DatabaseHelper {
     
     func save(images: [UIImage], journal: Journal) {
         do {
-            let rootURL = try FileManager.default.url(for: .picturesDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+            let rootURL = try FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
             let subDirectoryURL = rootURL.appendingPathComponent("Journal\(journal.id)")
             
             try FileManager.default.createDirectory(at: subDirectoryURL, withIntermediateDirectories: true)

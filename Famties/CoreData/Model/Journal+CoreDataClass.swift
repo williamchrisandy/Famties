@@ -15,7 +15,7 @@ public class Journal: NSManagedObject {
         get {
             var result: [UIImage] = []
             do {
-                let rootURL = try FileManager.default.url(for: .picturesDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
+                let rootURL = try FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
                 let subDirectoryURL = rootURL.appendingPathComponent("Journal\(id)")
                 
                 
