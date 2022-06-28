@@ -283,7 +283,7 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="2m4-69-gIV"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="BackgroundColor"/>
                         <constraints>
                             <constraint firstItem="iZU-bW-t7a" firstAttribute="leading" secondItem="2m4-69-gIV" secondAttribute="leading" id="5SM-Z7-eU8"/>
                             <constraint firstItem="2m4-69-gIV" firstAttribute="trailing" secondItem="fL5-1x-6cT" secondAttribute="trailing" id="69F-kD-TQA"/>
@@ -345,6 +345,9 @@
         </namedColor>
         <namedColor name="ActivityTitleColor">
             <color red="0.0" green="0.2627450980392157" blue="0.31372549019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="BackgroundColor">
+            <color red="1" green="0.99215686274509807" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="BenefitTitleColor">
             <color red="0.6705882352941176" green="0.5725490196078431" blue="0.082352941176470587" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

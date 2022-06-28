@@ -67,8 +67,7 @@ class JournalRecapViewController: UIViewController {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        textFieldShouldReturn(titleTextField)
-        textFieldShouldReturn(nameTextField)
+        doneEditing()
     }
     
     override func viewWillAppear(_ animated: Bool) {
