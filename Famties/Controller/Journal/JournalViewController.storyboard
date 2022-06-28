@@ -97,7 +97,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="MSe-32-0Cv">
                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="2280"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" name="BackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="moodJournalCell" rowHeight="182" id="Yze-KI-qY5" customClass="MoodJournalWorksheetTableViewCell" customModule="Famties" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="44.5" width="1024" height="182"/>
@@ -120,7 +120,7 @@
                                                 </label>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="dF0-6p-pW3">
                                                     <rect key="frame" x="45" y="93.5" width="934" height="68.5"/>
-                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    <color key="backgroundColor" name="BackgroundColor"/>
                                                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="15" id="WI9-3e-4RU">
                                                         <size key="itemSize" width="68" height="68"/>
                                                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -145,6 +145,7 @@
                                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                     </imageView>
                                                                 </subviews>
+                                                                <color key="backgroundColor" name="BackgroundColor"/>
                                                             </collectionViewCellContentView>
                                                             <connections>
                                                                 <outlet property="moodBackground" destination="egs-zm-gbi" id="uzS-7N-1rD"/>
@@ -154,6 +155,7 @@
                                                     </cells>
                                                 </collectionView>
                                             </subviews>
+                                            <color key="backgroundColor" name="BackgroundColor"/>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="ewO-Mq-3nI" secondAttribute="trailing" constant="45" id="2yN-Tu-J5c"/>
                                                 <constraint firstAttribute="trailing" secondItem="dF0-6p-pW3" secondAttribute="trailing" constant="45" id="IIm-ol-NBI"/>
@@ -199,6 +201,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <color key="backgroundColor" name="BackgroundColor"/>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="bge-FO-u2f" secondAttribute="trailing" constant="45" id="2Um-9f-YAy"/>
                                                 <constraint firstAttribute="trailing" secondItem="r5I-MG-l0j" secondAttribute="trailing" constant="45" id="EJN-8i-4ro"/>
@@ -249,6 +252,7 @@
                                                     </connections>
                                                 </button>
                                             </subviews>
+                                            <color key="backgroundColor" name="BackgroundColor"/>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="t2R-0k-F2R" secondAttribute="trailing" constant="45" id="2Hj-8U-k61"/>
                                                 <constraint firstItem="0CK-eH-7gM" firstAttribute="leading" secondItem="GQo-UD-g41" secondAttribute="leading" constant="45" id="Q1D-ua-MMj"/>
@@ -277,7 +281,7 @@
                                             <subviews>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="GDc-vL-t9w">
                                                     <rect key="frame" x="45" y="103" width="934" height="241"/>
-                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    <color key="backgroundColor" name="BackgroundColor"/>
                                                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="15" id="NVz-St-wYC">
                                                         <size key="itemSize" width="128" height="240"/>
                                                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -357,6 +361,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <color key="backgroundColor" name="BackgroundColor"/>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="h7k-JN-p61" secondAttribute="trailing" constant="45" id="06d-hw-aEJ"/>
                                                 <constraint firstItem="Lw2-hN-mnF" firstAttribute="leading" secondItem="cEH-Br-Wdu" secondAttribute="leading" constant="45" id="5Ct-aM-aOK"/>
@@ -407,6 +412,7 @@
                                                     </connections>
                                                 </button>
                                             </subviews>
+                                            <color key="backgroundColor" name="BackgroundColor"/>
                                             <constraints>
                                                 <constraint firstItem="iGC-G7-iWm" firstAttribute="leading" secondItem="akN-Wp-1Le" secondAttribute="leading" constant="45" id="D2y-rC-YEk"/>
                                                 <constraint firstAttribute="trailing" secondItem="iGC-G7-iWm" secondAttribute="trailing" constant="45" id="QE6-8n-nKh"/>
@@ -449,6 +455,7 @@
                                                     <rect key="frame" x="300" y="103" width="424" height="241"/>
                                                 </imageView>
                                             </subviews>
+                                            <color key="backgroundColor" name="BackgroundColor"/>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="gsE-L1-1sm" secondAttribute="trailing" constant="45" id="1mr-D5-6sr"/>
                                                 <constraint firstItem="KvD-Tn-HLK" firstAttribute="top" secondItem="gsE-L1-1sm" secondAttribute="bottom" constant="5" id="FRc-hE-Won"/>
@@ -472,7 +479,7 @@
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Ukp-ji-KqM"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="BackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Ukp-ji-KqM" firstAttribute="bottom" secondItem="MSe-32-0Cv" secondAttribute="bottom" id="C02-dq-rfa"/>
                             <constraint firstItem="MSe-32-0Cv" firstAttribute="trailing" secondItem="Ukp-ji-KqM" secondAttribute="trailing" id="GUo-MD-Hpr"/>
@@ -556,7 +563,7 @@
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="IJh-Nq-nSd"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="BackgroundColor"/>
                         <constraints>
                             <constraint firstItem="JXr-ke-RvA" firstAttribute="leading" secondItem="IJh-Nq-nSd" secondAttribute="leading" constant="10" id="2hW-8M-5nU"/>
                             <constraint firstItem="IJh-Nq-nSd" firstAttribute="bottom" secondItem="jqm-fM-V0L" secondAttribute="bottom" constant="150" id="D7y-E5-78j"/>
