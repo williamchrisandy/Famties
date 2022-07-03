@@ -23,6 +23,7 @@ class MoodJournalWorksheetTableViewCell: UITableViewCell, UICollectionViewDelega
     var moodCellWidth: CGFloat!
     var moodCellHeight: CGFloat!
     var moodCellSpacing: CGFloat!
+    var editDelegate: EditControllerDelegate?
     
     
     //MARK: Initialization
@@ -79,6 +80,7 @@ class MoodJournalWorksheetTableViewCell: UITableViewCell, UICollectionViewDelega
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        editDelegate?.updateEditStatus()
         for i in 0...(moodCount-1){
             selectCell = collectionView.cellForItem(at: IndexPath(row: i, section: 0)) as! MoodCollectionViewCell
             selectCell.moodBackground.backgroundColor = UIColor(named: "EmojiBackgroundColor")

@@ -32,6 +32,7 @@ class JournalWorksheetViewController: UIViewController, UITableViewDelegate, UIT
     var cellIdentifier: String!
     var photoIsHidden: Bool! = true
     var videoIsHidden: Bool! = true
+    var editDelegate: EditControllerDelegate?
     
     
     //MARK: Initialization
@@ -84,8 +85,6 @@ class JournalWorksheetViewController: UIViewController, UITableViewDelegate, UIT
         imagePicker.delegate = self
         if photos.count < 6 {
             present(imagePicker, animated: true)
-        } else {
-            // popup
         }
     }
     
@@ -93,6 +92,7 @@ class JournalWorksheetViewController: UIViewController, UITableViewDelegate, UIT
         let img = info[.originalImage] as! UIImage
         photos.append(img)
         self.dismiss(animated: true, completion: nil)
+        editDelegate?.updateEditStatus()
         updateTableCell()
     }
     
@@ -117,6 +117,7 @@ class JournalWorksheetViewController: UIViewController, UITableViewDelegate, UIT
             cellIdentifier = "moodJournalCell"
             let cell = journalWorksheetTableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! MoodJournalWorksheetTableViewCell
             cell.journal = journal
+            cell.editDelegate = editDelegate
             cell.loadData()
             return cell
             
@@ -125,6 +126,7 @@ class JournalWorksheetViewController: UIViewController, UITableViewDelegate, UIT
             cellIdentifier = "learnedJournalCell"
             let cell = journalWorksheetTableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! LearnedJournalWorksheetTableViewCell
             cell.journal = journal
+            cell.editDelegate = editDelegate
             cell.loadData()
             return cell
             

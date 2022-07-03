@@ -13,7 +13,12 @@ protocol EmbeddedViewControllerDelegate {
     func saveJournalData()
 }
 
-class JournalViewController: UIViewController {
+protocol EditControllerDelegate {
+    func updateEditStatus()
+}
+
+class JournalViewController: UIViewController, EditControllerDelegate {
+    
     
     //MARK: Properties
     @IBOutlet weak var segmentedControl: UISegmentedControl!
@@ -26,6 +31,7 @@ class JournalViewController: UIViewController {
     let DBHelper = DatabaseHelper()
     var journal: Journal?
     var delegates: [EmbeddedViewControllerDelegate?] = []
+    var isEdited: Bool?
     
     
     //MARK: Initialization
@@ -46,7 +52,6 @@ class JournalViewController: UIViewController {
         segmentedControl.setTitleTextAttributes([.foregroundColor: UIColor.white], for: .selected)
         segmentedControl.setTitleTextAttributes([.foregroundColor: UIColor(named: "PageControlTintColor")!], for: .normal)
         
-        // TODO: UIColor for segmented
     }
     
     func initVar(){
@@ -54,10 +59,11 @@ class JournalViewController: UIViewController {
             delegate?.showLeftView()
         }
         navigationItem.title = journal?.activity?.name
+        isEdited = false
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        if back == true {
+        if back == true && isEdited == true {
             
             let alertController = UIAlertController(title: "Discard Changes?", message: "You may have accidentally pressed back without saving. Do you want to save changes?", preferredStyle: .alert)
             
@@ -164,11 +170,13 @@ class JournalViewController: UIViewController {
             let destination = segue.destination as! ActivityWorksheetViewController
             delegates.append(destination)
             destination.journal = journal
+            destination.editDelegate = self
         }
         else if segue.identifier == "JournalWorksheetViewSegue" {
             let destination = segue.destination as! JournalWorksheetViewController
             delegates.append(destination)
             destination.journal = journal
+            destination.editDelegate = self
         }
         else if segue.identifier == "finishedFromActivityWithSavedSegue" {
             back = false
@@ -176,5 +184,9 @@ class JournalViewController: UIViewController {
         else if segue.identifier == "finishedFromJournalRecapWithSavedSegue" {
             back = false
         }
+    }
+    
+    func updateEditStatus() {
+        isEdited = true
     }
 }

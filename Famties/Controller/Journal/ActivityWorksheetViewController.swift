@@ -8,7 +8,7 @@
 import UIKit
 import PencilKit
 
-class ActivityWorksheetViewController: UIViewController {
+class ActivityWorksheetViewController: UIViewController, PKCanvasViewDelegate {
     
     //MARK: Properties
     @IBOutlet weak var worksheetView: UIView!
@@ -20,6 +20,7 @@ class ActivityWorksheetViewController: UIViewController {
     
     
     let DBHelper = DatabaseHelper()
+    var editDelegate: EditControllerDelegate?
     var journal: Journal?
     var canvasDrawing: [PKDrawing] = []
     var toolPicker = PKToolPicker()
@@ -52,6 +53,7 @@ class ActivityWorksheetViewController: UIViewController {
         }
         
         canvasView.drawing = canvasDrawing[0]
+        canvasView.delegate = self
         toolPicker.selectedTool = PKInkingTool(.pen, color: .black, width: 5)
         toolPicker.addObserver(canvasView)
         toolPicker.setVisible(true, forFirstResponder: canvasView)
@@ -89,6 +91,11 @@ class ActivityWorksheetViewController: UIViewController {
             currentPage += 1
             refreshContent()
         }
+    }
+    
+    //MARK: Overrides
+    func canvasViewDrawingDidChange(_ canvasView: PKCanvasView) {
+        editDelegate?.updateEditStatus()
     }
 }
 
