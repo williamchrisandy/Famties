@@ -254,7 +254,7 @@
                                         </collectionViewFlowLayout>
                                         <cells/>
                                     </collectionView>
-                                    <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Ty0-qz-1aC">
+                                    <pageControl opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Ty0-qz-1aC">
                                         <rect key="frame" x="176" y="568" width="116" height="26"/>
                                         <color key="pageIndicatorTintColor" red="0.74901962280000001" green="0.8156862855" blue="0.84705877299999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <color key="currentPageIndicatorTintColor" red="0.1725490093" green="0.42352938649999999" blue="0.5647059083" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
