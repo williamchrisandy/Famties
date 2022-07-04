@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import PencilKit
 
 class JournalCollectionViewViewController: UIViewController {
     //MARK: - Properties
@@ -26,16 +27,54 @@ class JournalCollectionViewViewController: UIViewController {
     @IBOutlet weak var kidNameLabel: UILabel!
     @IBOutlet weak var pageController: UIPageControl!
     
+    let databaseHelper = DatabaseHelper()
+    
     var journal: Journal!
+    var canvasDrawing: [PKDrawing] = []
+    var worksheetImage: [UIImage]!
+    var pageCount: Int!
+    
     //MARK: - Life Cycles
     override func viewDidLoad() {
         super.viewDidLoad()
-        pageController.numberOfPages = 3
+        
+        for worksheet in journal?.worksheets?.allObjects as! [Worksheet] {
+            do {
+                try canvasDrawing.append(PKDrawing(data: worksheet.data!))
+            } catch {
+                print(error)
+            }
+        }
+        
+        pageCount = canvasDrawing.count + 2
+        pageController.numberOfPages = pageCount
         pageController.currentPage = 0
     }
     //MARK: - Helpers
     @IBAction func editButtonTapped(_ sender: Any) {
         
+    }
+    
+    private func convertMoodNumberToText(index: Int) -> String {
+        //TODO: Fill Mood Name
+        var mood: String!
+        if index == 0 {
+            
+        } else if index == 1 {
+            
+        }
+        return "mood"
+    }
+    
+    private func convertMoodNumberToImage(index: Int) -> UIImage {
+        //TODO: Fill Mood Name
+        var emoji: String!
+        if index == 0 {
+            
+        } else if index == 1 {
+            
+        }
+        return UIImage(named: "Emoji1")!
     }
 }
 
@@ -49,7 +88,7 @@ extension JournalCollectionViewViewController: UICollectionViewDataSource, UICol
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return pageCount
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
@@ -64,16 +103,21 @@ extension JournalCollectionViewViewController: UICollectionViewDataSource, UICol
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if indexPath.item == 0 {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: canvasViewIdentifier, for: indexPath) as! CanvasViewViewCell
-            
-            return cell
-        } else if indexPath.item == 1 {
+        if indexPath.item == pageCount - 2 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: moodViewIdentifier, for: indexPath) as! MoodViewViewCell
+            cell.moodLabel.text = convertMoodNumberToText(index: Int(journal.mood))
+            cell.moodImage.image = convertMoodNumberToImage(index: Int(journal.mood))
+            cell.learnTitleLabel.text = journal.name
+            cell.descriptionLabel.text = journal.lessonLearned
+            return cell
+        } else if indexPath.item == pageCount - 1 {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: photosViewIdentifier, for: indexPath) as! PhotosViewViewCell
+            cell.photos = journal.photo
             return cell
         } else {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: photosViewIdentifier, for: indexPath) as! PhotosViewViewCell
-            cell.journal = journal
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: canvasViewIdentifier, for: indexPath) as! CanvasViewViewCell
+            cell.canvasView.drawing = canvasDrawing[indexPath.item]
+            cell.imageView.image = journal.activity?.worksheetImage[indexPath.item]
             return cell
         }
         return UICollectionViewCell()

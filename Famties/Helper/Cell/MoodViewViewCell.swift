@@ -13,6 +13,7 @@ class MoodViewViewCell: UICollectionViewCell {
     @IBOutlet weak var moodLabel: UILabel!
     @IBOutlet weak var learnTitleLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var moodImage: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

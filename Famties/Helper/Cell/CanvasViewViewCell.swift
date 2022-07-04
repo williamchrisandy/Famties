@@ -14,6 +14,9 @@ class CanvasViewViewCell: UICollectionViewCell {
     @IBOutlet weak var canvasView: PKCanvasView!
     @IBOutlet weak var imageView: UIImageView!
     
+    var worksheetImage: [UIImage]!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

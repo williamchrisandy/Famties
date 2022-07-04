@@ -25,7 +25,7 @@ class PhotosViewViewCell: UICollectionViewCell, UICollectionViewDataSource, UICo
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        photos = journal.photo
+//        photos = journal.photo
         
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
