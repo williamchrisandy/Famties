@@ -13,11 +13,11 @@ protocol EmbeddedViewControllerDelegate {
     func saveJournalData()
 }
 
-protocol EditControllerDelegate {
+protocol EditControllerDelegate: AnyObject {
     func updateEditStatus()
 }
 
-class JournalViewController: UIViewController, EditControllerDelegate {
+class JournalViewController: UIViewController, EditControllerDelegate, UIGestureRecognizerDelegate {
     
     
     //MARK: Properties
@@ -60,6 +60,11 @@ class JournalViewController: UIViewController, EditControllerDelegate {
     }
     
     @objc func back(_ animated: Bool) {
+        guard isEdited == true else {
+            navigationController?.popViewController(animated: true)
+            return
+        }
+        
         let alertController = UIAlertController(title: "Discard Changes?", message: "Are you sure to go back? You may have accidentally pressed back without saving. Do you want to save changes?", preferredStyle: .alert)
         
         let saveAction = UIAlertAction(title: "Save Changes", style: .default) {

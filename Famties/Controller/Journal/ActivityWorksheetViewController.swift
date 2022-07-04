@@ -20,7 +20,7 @@ class ActivityWorksheetViewController: UIViewController, PKCanvasViewDelegate {
     
     
     let DBHelper = DatabaseHelper()
-    var editDelegate: EditControllerDelegate?
+    weak var editDelegate: EditControllerDelegate?
     var journal: Journal?
     var canvasDrawing: [PKDrawing] = []
     var toolPicker = PKToolPicker()
