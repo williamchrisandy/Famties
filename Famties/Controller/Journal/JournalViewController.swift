@@ -13,7 +13,7 @@ protocol EmbeddedViewControllerDelegate {
     func saveJournalData()
 }
 
-class JournalViewController: UIViewController {
+class JournalViewController: UIViewController, UIGestureRecognizerDelegate {
     
     //MARK: Properties
     @IBOutlet weak var segmentedControl: UISegmentedControl!
@@ -21,7 +21,6 @@ class JournalViewController: UIViewController {
     @IBOutlet weak var journalView: UIView!
     @IBOutlet weak var saveButton: UIButton!
     var mode = "New"
-    var back = true
     
     let DBHelper = DatabaseHelper()
     var journal: Journal?
@@ -35,12 +34,10 @@ class JournalViewController: UIViewController {
         initVar()
         self.navigationController?.setNavigationBarHidden(false, animated: true)
         tabBarController?.tabBar.isHidden = true
+        
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "chevron.backward"), style: .plain, target: self, action: #selector(back(_:)))
+        navigationController?.interactivePopGestureRecognizer?.delegate = self
     }
-    
-//    override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(animated)
-//        self.navigationController?.isNavigationBarHidden = false
-//    }
     
     func initDesign() {
         segmentedControl.setTitleTextAttributes([.foregroundColor: UIColor.white], for: .selected)
@@ -56,36 +53,38 @@ class JournalViewController: UIViewController {
         navigationItem.title = journal?.activity?.name
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        if back == true {
+    @objc func back(_ animated: Bool) {
+        let alertController = UIAlertController(title: "Discard Changes?", message: "Are you sure to go back? You may have accidentally pressed back without saving. Do you want to save changes?", preferredStyle: .alert)
+        
+        let saveAction = UIAlertAction(title: "Save Changes", style: .default) {
+            [unowned journal, unowned self] action in
             
-            let alertController = UIAlertController(title: "Discard Changes?", message: "You may have accidentally pressed back without saving. Do you want to save changes?", preferredStyle: .alert)
-            
-            let saveAction = UIAlertAction(title: "Save Changes", style: .default) {
-                [unowned journal] action in
-                
-                for delegate in self.delegates {
-                    delegate?.saveJournalData()
-                }
-                journal?.lastEdited = Date()
-                journal?.addActivityPoint()
-                DatabaseHelper().saveContext()
+            for delegate in delegates {
+                delegate?.saveJournalData()
             }
-            
-            let discardAction = UIAlertAction(title: "Discard Changes", style: .destructive) {
-                [weak self, mode = self.mode, unowned journal] action in
-                if mode == "New" {
-                    DatabaseHelper().delete(journal)
-                }
-                else if mode == "Edit" {
-                    DatabaseHelper().rollbackContext()
-                }
-            }
-            
-            alertController.addAction(saveAction)
-            alertController.addAction(discardAction)
-            navigationController?.present(alertController, animated: true)
+            journal?.lastEdited = Date()
+            journal?.addActivityPoint()
+            DatabaseHelper().saveContext()
+            navigationController?.popViewController(animated: true)
         }
+        
+        let discardAction = UIAlertAction(title: "Discard Changes", style: .destructive) {
+            [unowned self, mode = self.mode, unowned journal] action in
+            if mode == "New" {
+                DatabaseHelper().delete(journal)
+            }
+            else if mode == "Edit" {
+                DatabaseHelper().rollbackContext()
+            }
+            navigationController?.popViewController(animated: true)
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+        
+        alertController.addAction(saveAction)
+        alertController.addAction(discardAction)
+        alertController.addAction(cancelAction)
+        navigationController?.present(alertController, animated: true)
     }
     
     //MARK: Actions
@@ -171,10 +170,8 @@ class JournalViewController: UIViewController {
             destination.journal = journal
         }
         else if segue.identifier == "finishedFromActivityWithSavedSegue" {
-            back = false
         }
         else if segue.identifier == "finishedFromJournalRecapWithSavedSegue" {
-            back = false
         }
     }
 }
