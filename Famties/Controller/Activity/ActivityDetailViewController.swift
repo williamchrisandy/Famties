@@ -82,6 +82,9 @@ class ActivityDetailViewController: UIViewController {
     @IBOutlet weak var stepsPageController: UIPageControl!
     @IBOutlet weak var lineView: UIView!
     @IBOutlet weak var startJournalingButton: UIButton!
+    @IBOutlet weak var benefitImage1: UIImageView!
+    @IBOutlet weak var benefitImage2: UIImageView!
+    @IBOutlet weak var benefitImage3: UIImageView!
     
     // PropertyType
     weak var delegate: ActivityCollectionViewCellDelegate?
@@ -126,10 +129,13 @@ class ActivityDetailViewController: UIViewController {
         
         benefitTitleLabel1.text = detailBenefits?[0].name
         benefitDescriptionLabel1.text = detailBenefits?[0].explanation
+        benefitImage1.image = detailBenefits?[0].image
         benefitTitleLabel2.text = detailBenefits?[1].name
         benefitDescriptionLabel2.text = detailBenefits?[1].explanation
+        benefitImage2.image = detailBenefits?[1].image
         benefitTitleLabel3.text = detailBenefits?[2].name
         benefitDescriptionLabel3.text = detailBenefits?[2].explanation
+        benefitImage3.image = detailBenefits?[2].image
 
         categoryView.backgroundColor = categoryColor
         categoryView.layer.borderColor = categoryBorderColor.cgColor
