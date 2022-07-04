@@ -124,6 +124,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Journal" image="book.closed.fill" catalog="system" id="NgV-Pg-QuA"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <size key="freeformSize" width="744" height="1133"/>
                     <connections>
                         <outlet property="createdAtJournalText" destination="YQ3-hm-FRp" id="rOn-b2-VLc"/>
                         <outlet property="journalCollectionView" destination="DBN-yE-R49" id="3y7-tB-5EK"/>
@@ -141,10 +142,10 @@
             </objects>
             <point key="canvasLocation" x="1100.8064516129032" y="97.705207413945274"/>
         </scene>
-        <!--JournalViewController-->
+        <!--JournalCollectionViewViewController-->
         <scene sceneID="FL6-L2-4IY">
             <objects>
-                <viewControllerPlaceholder storyboardName="JournalViewController" id="bUW-vF-2c7" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="JournalCollectionViewViewController" id="bUW-vF-2c7" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="kC1-kq-DCL"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Npo-lI-Evq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

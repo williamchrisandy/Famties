@@ -171,9 +171,8 @@ class JournalRecapViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "collectionToJournal" {
-            let destination = segue.destination as! JournalViewController
+            let destination = segue.destination  as! JournalCollectionViewViewController
             destination.journal = selectedJournal
-            destination.mode = "Edit"
         }
     }
     

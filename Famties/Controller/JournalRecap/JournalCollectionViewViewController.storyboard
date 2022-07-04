@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+    <device id="ipad7_9" orientation="portrait" layout="fullscreen" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Title-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController id="Y6W-OH-hqX" customClass="JournalCollectionViewViewController" customModule="Famties" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="744" height="1133"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="epe-bb-XPo">
+                                <rect key="frame" x="30" y="156" width="684" height="881"/>
+                                <color key="backgroundColor" name="EmojiTintColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="vg9-df-lwS">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Making Dream Comes True with Nano" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="atB-ff-elb">
+                                <rect key="frame" x="30" y="64" width="684" height="41"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
+                                <color key="textColor" red="0.0" green="0.19215688110000001" blue="0.2941176593" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Child Name: Nano" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dv1-cx-WZQ">
+                                <rect key="frame" x="30" y="115" width="138" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.19215688110000001" blue="0.2941176593" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pageControl opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="lyq-h6-HJl">
+                                <rect key="frame" x="314.5" y="1057" width="115.5" height="26"/>
+                                <color key="pageIndicatorTintColor" red="0.74901962280000001" green="0.8156862855" blue="0.84705877299999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="currentPageIndicatorTintColor" red="0.1725490093" green="0.42352938649999999" blue="0.5647059083" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </pageControl>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" name="BackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="lyq-h6-HJl" firstAttribute="top" secondItem="epe-bb-XPo" secondAttribute="bottom" constant="20" id="3Sg-JN-9op"/>
+                            <constraint firstItem="atB-ff-elb" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="30" id="4IL-Tu-BSr"/>
+                            <constraint firstItem="epe-bb-XPo" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="30" id="GZG-VJ-fJY"/>
+                            <constraint firstItem="lyq-h6-HJl" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="NHr-sn-b0v"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="epe-bb-XPo" secondAttribute="trailing" constant="30" id="St1-Uy-rFD"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="lyq-h6-HJl" secondAttribute="bottom" constant="30" id="Xco-Bl-r3U"/>
+                            <constraint firstItem="epe-bb-XPo" firstAttribute="top" secondItem="Dv1-cx-WZQ" secondAttribute="bottom" constant="20" id="e9a-nC-fc3"/>
+                            <constraint firstItem="atB-ff-elb" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="40" id="fmx-hw-cIX"/>
+                            <constraint firstItem="Dv1-cx-WZQ" firstAttribute="top" secondItem="atB-ff-elb" secondAttribute="bottom" constant="10" id="jyF-Ro-yG4"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="atB-ff-elb" secondAttribute="trailing" constant="30" id="u4Z-o6-Dvx"/>
+                            <constraint firstItem="Dv1-cx-WZQ" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="30" id="voo-C6-aB8"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Title" id="d9z-Kq-JS4">
+                        <barButtonItem key="rightBarButtonItem" title="Edit" id="pEO-MA-qD8">
+                            <connections>
+                                <action selector="editButtonTapped:" destination="Y6W-OH-hqX" id="0cW-Ut-v9Q"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="JournalViewCollectionView" destination="epe-bb-XPo" id="b8c-X1-tjj"/>
+                        <outlet property="kidNameLabel" destination="Dv1-cx-WZQ" id="jrz-wc-DIA"/>
+                        <outlet property="pageController" destination="lyq-h6-HJl" id="jeE-eA-gra"/>
+                        <outlet property="titleLabel" destination="atB-ff-elb" id="zHa-wi-efi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="911.29032258064512" y="137.95233892321269"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="BackgroundColor">
+            <color red="1" green="0.99215686274509807" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="EmojiTintColor">
+            <color red="0.95686274509803926" green="0.70196078431372544" blue="0.019607843137254902" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
