@@ -15,7 +15,7 @@ class VideoHiddenJournalWorksheetTableViewCell: UITableViewCell {
     @IBOutlet weak var videoHiddenDescriptionLabel: UILabel!
     @IBOutlet weak var videoHiddenUploadButton: UIButton!
     
-    var delegates: JournalMediaPickerDelegate?
+    weak var delegates: JournalMediaPickerDelegate?
 
     
     //MARK: Initialization

@@ -7,12 +7,12 @@
 
 import UIKit
 
-protocol JournalMediaPickerDelegate{
+protocol JournalMediaPickerDelegate: AnyObject {
     func pickImage()
     func pickVideo()
 }
 
-protocol JournalMediaDeleterDelegate{
+protocol JournalMediaDeleterDelegate: AnyObject {
     func deleteImage(currentIndex: Int)
 }
 

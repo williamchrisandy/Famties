@@ -14,7 +14,7 @@ class PhotoHiddenJournalWorksheetTableViewCell: UITableViewCell {
     @IBOutlet weak var photoHiddenDescriptionLabel: UILabel!
     @IBOutlet weak var photoHiddenUploadButton: UIButton!
     
-    var delegates: JournalMediaPickerDelegate?
+    weak var delegates: JournalMediaPickerDelegate?
     
     
     //MARK: Initialization

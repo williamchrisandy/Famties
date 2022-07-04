@@ -17,8 +17,8 @@ class PhotoExpandedJournalWorksheetTableViewCell: UITableViewCell, UICollectionV
     let DBHelper = DatabaseHelper()
     var journal: Journal?
     var photoUploadCount: Int!
-    var delegates: JournalMediaPickerDelegate?
-    var deleterDelegate: JournalMediaDeleterDelegate?
+    weak var delegates: JournalMediaPickerDelegate?
+    weak var deleterDelegate: JournalMediaDeleterDelegate?
     var photos: [UIImage]!
     
     
