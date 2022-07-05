@@ -35,6 +35,15 @@ class ActivityWorksheetViewController: UIViewController, PKCanvasViewDelegate {
         initVar()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        for worksheet in journal?.worksheets?.allObjects as! [Worksheet] {
+            let sx = canvasView.visibleSize.width / worksheet.width
+            let sy = canvasView.visibleSize.height / worksheet.height
+            canvasDrawing[Int(worksheet.index)].transform(using: CGAffineTransform(scaleX: sx, y: sy))
+        }
+        canvasView.drawing = canvasDrawing[currentPage]
+    }
+    
     func initDesign(){
         canvasView.layer.borderWidth = 1
     }
@@ -43,10 +52,10 @@ class ActivityWorksheetViewController: UIViewController, PKCanvasViewDelegate {
         worksheetImage = journal?.activity?.worksheetImage
         pageCount = worksheetImage.count
         currentPage = 0
-        
-        for worksheet in journal?.worksheets?.allObjects as! [Worksheet]{
+        let worksheets = journal?.worksheets?.allObjects as! [Worksheet]
+        for worksheet in worksheets.sorted(by: { $0.index < $1.index }) {
             do{
-                try canvasDrawing.append(PKDrawing(data: worksheet.data!))
+                canvasDrawing.append(try PKDrawing(data: worksheet.data!))
             } catch {
                 print(error)
             }
@@ -115,7 +124,12 @@ extension ActivityWorksheetViewController: EmbeddedViewControllerDelegate {
         let sheets = journal?.worksheets?.allObjects as! [Worksheet]
         
         for i in 0...(pageCount-1){
-            sheets[i].data = canvasDrawing[i].dataRepresentation()
+            let index = Int(sheets[i].index)
+            sheets[i].data = canvasDrawing[index].dataRepresentation()
+            print(canvasView.visibleSize)
+            print(canvasDrawing[index].bounds.size)
+            sheets[i].width = canvasView.visibleSize.width
+            sheets[i].height = canvasView.visibleSize.height
         }
         
         //        DBHelper.saveContext()

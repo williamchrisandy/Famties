@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -20,47 +19,32 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0xf-1b-k9d">
                         <rect key="frame" x="0.0" y="0.0" width="744" height="1133"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wCG-39-bRK">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3hi-hF-JEn">
                                 <rect key="frame" x="0.0" y="0.0" width="744" height="1133"/>
-                                <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3hi-hF-JEn">
-                                        <rect key="frame" x="0.0" y="0.0" width="744" height="1133"/>
-                                    </imageView>
-                                    <view opaque="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="bxq-Kp-Ava" customClass="PKCanvasView">
-                                        <rect key="frame" x="0.0" y="0.0" width="744" height="1133"/>
-                                    </view>
-                                </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstItem="3hi-hF-JEn" firstAttribute="top" secondItem="wCG-39-bRK" secondAttribute="top" id="5mf-f4-nwa"/>
-                                    <constraint firstItem="bxq-Kp-Ava" firstAttribute="leading" secondItem="wCG-39-bRK" secondAttribute="leading" id="6Ag-kD-XnK"/>
-                                    <constraint firstItem="3hi-hF-JEn" firstAttribute="leading" secondItem="wCG-39-bRK" secondAttribute="leading" id="Hck-ZX-OIX"/>
-                                    <constraint firstAttribute="trailing" secondItem="3hi-hF-JEn" secondAttribute="trailing" id="XPf-jR-oJN"/>
-                                    <constraint firstAttribute="trailing" secondItem="bxq-Kp-Ava" secondAttribute="trailing" id="Ync-28-6al"/>
-                                    <constraint firstAttribute="bottom" secondItem="3hi-hF-JEn" secondAttribute="bottom" id="Z4T-9U-Zhp"/>
-                                    <constraint firstItem="bxq-Kp-Ava" firstAttribute="top" secondItem="wCG-39-bRK" secondAttribute="top" id="hrQ-KS-InO"/>
-                                    <constraint firstAttribute="bottom" secondItem="bxq-Kp-Ava" secondAttribute="bottom" id="hx8-cu-L0N"/>
-                                </constraints>
+                            </imageView>
+                            <view opaque="NO" contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="bxq-Kp-Ava" customClass="PKCanvasView">
+                                <rect key="frame" x="0.0" y="0.0" width="744" height="1133"/>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemRedColor"/>
                         <constraints>
-                            <constraint firstItem="wCG-39-bRK" firstAttribute="centerY" secondItem="0xf-1b-k9d" secondAttribute="centerY" id="ACT-zA-AEA"/>
-                            <constraint firstItem="wCG-39-bRK" firstAttribute="leading" secondItem="0xf-1b-k9d" secondAttribute="leading" id="LXF-jk-JLT"/>
-                            <constraint firstItem="wCG-39-bRK" firstAttribute="centerX" secondItem="0xf-1b-k9d" secondAttribute="centerX" id="ORv-NS-j4f"/>
-                            <constraint firstItem="wCG-39-bRK" firstAttribute="top" secondItem="0xf-1b-k9d" secondAttribute="top" id="OVv-YF-oGR"/>
-                            <constraint firstAttribute="bottom" secondItem="wCG-39-bRK" secondAttribute="bottom" id="R5T-ko-pJp"/>
-                            <constraint firstAttribute="trailing" secondItem="wCG-39-bRK" secondAttribute="trailing" id="zBE-31-Mnz"/>
+                            <constraint firstItem="3hi-hF-JEn" firstAttribute="top" secondItem="0xf-1b-k9d" secondAttribute="top" id="3BA-uJ-oOS"/>
+                            <constraint firstItem="3hi-hF-JEn" firstAttribute="leading" secondItem="0xf-1b-k9d" secondAttribute="leading" id="7NQ-6k-pOs"/>
+                            <constraint firstAttribute="bottom" secondItem="bxq-Kp-Ava" secondAttribute="bottom" id="OjN-Im-cPp"/>
+                            <constraint firstAttribute="bottom" secondItem="3hi-hF-JEn" secondAttribute="bottom" id="PTo-SE-g8k"/>
+                            <constraint firstAttribute="trailing" secondItem="bxq-Kp-Ava" secondAttribute="trailing" id="Q7f-Za-OBV"/>
+                            <constraint firstAttribute="trailing" secondItem="3hi-hF-JEn" secondAttribute="trailing" id="eBF-pv-6z1"/>
+                            <constraint firstItem="bxq-Kp-Ava" firstAttribute="leading" secondItem="0xf-1b-k9d" secondAttribute="leading" id="fyU-I8-Xvl"/>
+                            <constraint firstItem="bxq-Kp-Ava" firstAttribute="top" secondItem="0xf-1b-k9d" secondAttribute="top" id="vDj-Dn-QAp"/>
                         </constraints>
                     </view>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
-                <constraint firstItem="0xf-1b-k9d" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Wej-Jz-Wm1"/>
-                <constraint firstAttribute="trailing" secondItem="0xf-1b-k9d" secondAttribute="trailing" id="YDL-L2-lTZ"/>
-                <constraint firstAttribute="bottom" secondItem="0xf-1b-k9d" secondAttribute="bottom" id="hC5-43-rkK"/>
-                <constraint firstItem="0xf-1b-k9d" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="jw2-9o-mVp"/>
+                <constraint firstAttribute="bottom" secondItem="0xf-1b-k9d" secondAttribute="bottom" id="Ao9-Ar-dPV"/>
+                <constraint firstItem="0xf-1b-k9d" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Bbr-KU-WSg"/>
+                <constraint firstAttribute="trailing" secondItem="0xf-1b-k9d" secondAttribute="trailing" id="Oaf-ef-PXa"/>
+                <constraint firstItem="0xf-1b-k9d" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="hCX-hW-C6n"/>
             </constraints>
             <size key="customSize" width="282" height="294"/>
             <connections>
@@ -70,12 +54,4 @@
             <point key="canvasLocation" x="-31.054687499999996" y="233.89458272327963"/>
         </collectionViewCell>
     </objects>
-    <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-    </resources>
 </document>

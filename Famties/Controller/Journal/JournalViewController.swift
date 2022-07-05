@@ -100,11 +100,6 @@ class JournalViewController: UIViewController, EditControllerDelegate, UIGesture
     
     //MARK: Actions
     @IBAction func saveJournal(_ sender: Any) {
-        for delegate in delegates {
-            delegate?.saveJournalData()
-        }
-        
-        journal?.lastEdited = Date()
         
         if mode == "New" {
             let addJournalAlertController = UIAlertController(title: "Save Journal", message: "", preferredStyle: .alert)
@@ -123,6 +118,12 @@ class JournalViewController: UIViewController, EditControllerDelegate, UIGesture
             
             let saveAction = UIAlertAction(title: "Save", style: .default) {
                 [unowned addJournalAlertController, unowned self] action in
+                
+                for delegate in delegates {
+                    delegate?.saveJournalData()
+                }
+                    
+                journal?.lastEdited = Date()
                 
                 unowned let textFieldJournalName = addJournalAlertController.textFields![0]
                 let journalName = textFieldJournalName.text!

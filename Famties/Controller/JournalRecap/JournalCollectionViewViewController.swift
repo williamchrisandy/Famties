@@ -36,10 +36,11 @@ class JournalCollectionViewViewController: UIViewController {
     //MARK: - Life Cycles
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        for worksheet in journal?.worksheets?.allObjects as! [Worksheet] {
-            do {
-                try canvasDrawing.append(PKDrawing(data: worksheet.data!))
+        
+        let worksheets = journal?.worksheets?.allObjects as! [Worksheet]
+        for worksheet in worksheets.sorted(by: { $0.index < $1.index }) {
+            do{
+                canvasDrawing.append(try PKDrawing(data: worksheet.data!))
             } catch {
                 print(error)
             }
@@ -53,12 +54,13 @@ class JournalCollectionViewViewController: UIViewController {
         pageController.currentPage = 0
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(false)
-        self.navigationController?.isNavigationBarHidden = false
-        self.tabBarController?.tabBar.isHidden = true
-        self.title = journal.activity?.name!
-        
+    override func viewDidAppear(_ animated: Bool) {
+        for worksheet in journal?.worksheets?.allObjects as! [Worksheet] {
+            let sx = journalViewCollectionView.visibleSize.width / worksheet.width
+            let sy = journalViewCollectionView.visibleSize.height / worksheet.height
+            canvasDrawing[Int(worksheet.index)].transform(using: CGAffineTransform(scaleX: sx, y: sy))
+        }
+        journalViewCollectionView.reloadData()
     }
     //MARK: - Helpers
     @IBAction func editButtonTapped(_ sender: Any) {
@@ -129,15 +131,10 @@ extension JournalCollectionViewViewController: UICollectionViewDataSource, UICol
             return cell
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: canvasViewIdentifier, for: indexPath) as! CanvasViewViewCell
+            
             cell.canvasView.drawing = canvasDrawing[indexPath.item]
+            cell.imageView.image = journal.activity?.worksheetImage[indexPath.item].resized(to: collectionView.visibleSize)
             
-            let width = collectionView.visibleSize.width
-            let height = collectionView.visibleSize.height
-            var size: CGSize = CGSize(width: width, height: width * 1.25)
-            if width * 1.25 > height { size  = CGSize(width: height * 0.8, height: height) }
-            
-            cell.imageView.image = journal.activity?.worksheetImage[indexPath.item].resized(to: size)
-            cell.canvasView.frame.size = size
             return cell
         }
     }
