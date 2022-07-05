@@ -23,6 +23,14 @@
 		013AB0132862C44500A8B7A9 /* Extension+UICollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013AB0112862C44500A8B7A9 /* Extension+UICollectionViewCell.swift */; };
 		013AB0142862C44500A8B7A9 /* Extension+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013AB0122862C44500A8B7A9 /* Extension+UIView.swift */; };
 		0196C7252866BDAD00D94D98 /* Extension+UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0196C7242866BDAD00D94D98 /* Extension+UIImage.swift */; };
+		01D28E0B2872828C00C1C0C9 /* JournalCollectionViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D28E0A2872828C00C1C0C9 /* JournalCollectionViewViewController.swift */; };
+		01D28E0D2872830C00C1C0C9 /* JournalCollectionViewViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01D28E0C2872830C00C1C0C9 /* JournalCollectionViewViewController.storyboard */; };
+		01D28E102872835F00C1C0C9 /* CanvasViewViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D28E0E2872835F00C1C0C9 /* CanvasViewViewCell.swift */; };
+		01D28E112872835F00C1C0C9 /* CanvasViewViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01D28E0F2872835F00C1C0C9 /* CanvasViewViewCell.xib */; };
+		01D28E162872838E00C1C0C9 /* MoodViewViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D28E142872838E00C1C0C9 /* MoodViewViewCell.swift */; };
+		01D28E172872838E00C1C0C9 /* MoodViewViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01D28E152872838E00C1C0C9 /* MoodViewViewCell.xib */; };
+		01D28E1C287283D700C1C0C9 /* PhotosViewViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D28E1A287283D700C1C0C9 /* PhotosViewViewCell.swift */; };
+		01D28E1D287283D700C1C0C9 /* PhotosViewViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01D28E1B287283D700C1C0C9 /* PhotosViewViewCell.xib */; };
 		01F9BA7828641DA000292CFB /* JournalRecapCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F9BA7628641DA000292CFB /* JournalRecapCollectionViewCell.swift */; };
 		01F9BA7928641DA000292CFB /* JournalRecapCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01F9BA7728641DA000292CFB /* JournalRecapCollectionViewCell.xib */; };
 		3B15DF092865360200F4E803 /* Worksheet+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B15DF052865360200F4E803 /* Worksheet+CoreDataClass.swift */; };
@@ -99,6 +107,14 @@
 		013AB0112862C44500A8B7A9 /* Extension+UICollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extension+UICollectionViewCell.swift"; sourceTree = "<group>"; };
 		013AB0122862C44500A8B7A9 /* Extension+UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extension+UIView.swift"; sourceTree = "<group>"; };
 		0196C7242866BDAD00D94D98 /* Extension+UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIImage.swift"; sourceTree = "<group>"; };
+		01D28E0A2872828C00C1C0C9 /* JournalCollectionViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalCollectionViewViewController.swift; sourceTree = "<group>"; };
+		01D28E0C2872830C00C1C0C9 /* JournalCollectionViewViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = JournalCollectionViewViewController.storyboard; sourceTree = "<group>"; };
+		01D28E0E2872835F00C1C0C9 /* CanvasViewViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasViewViewCell.swift; sourceTree = "<group>"; };
+		01D28E0F2872835F00C1C0C9 /* CanvasViewViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CanvasViewViewCell.xib; sourceTree = "<group>"; };
+		01D28E142872838E00C1C0C9 /* MoodViewViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodViewViewCell.swift; sourceTree = "<group>"; };
+		01D28E152872838E00C1C0C9 /* MoodViewViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MoodViewViewCell.xib; sourceTree = "<group>"; };
+		01D28E1A287283D700C1C0C9 /* PhotosViewViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewViewCell.swift; sourceTree = "<group>"; };
+		01D28E1B287283D700C1C0C9 /* PhotosViewViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotosViewViewCell.xib; sourceTree = "<group>"; };
 		01F9BA7628641DA000292CFB /* JournalRecapCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalRecapCollectionViewCell.swift; sourceTree = "<group>"; };
 		01F9BA7728641DA000292CFB /* JournalRecapCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JournalRecapCollectionViewCell.xib; sourceTree = "<group>"; };
 		3B15DF052865360200F4E803 /* Worksheet+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Worksheet+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -175,6 +191,8 @@
 			children = (
 				013AAFF32862C3DE00A8B7A9 /* JournalRecapViewController.storyboard */,
 				013AAFF42862C3DE00A8B7A9 /* JournalRecapViewController.swift */,
+				01D28E0A2872828C00C1C0C9 /* JournalCollectionViewViewController.swift */,
+				01D28E0C2872830C00C1C0C9 /* JournalCollectionViewViewController.storyboard */,
 			);
 			path = JournalRecap;
 			sourceTree = "<group>";
@@ -208,6 +226,12 @@
 				64BEA46B286811D9001B1427 /* PhotoPreviewCollectionViewCell.swift */,
 				64D6704C2867EE6A00B67B19 /* VideoHiddenJournalWorksheetTableViewCell.swift */,
 				64D6704E2867EE7800B67B19 /* VideoExpandedJournalWorksheetTableViewCell.swift */,
+				01D28E0E2872835F00C1C0C9 /* CanvasViewViewCell.swift */,
+				01D28E0F2872835F00C1C0C9 /* CanvasViewViewCell.xib */,
+				01D28E142872838E00C1C0C9 /* MoodViewViewCell.swift */,
+				01D28E152872838E00C1C0C9 /* MoodViewViewCell.xib */,
+				01D28E1A287283D700C1C0C9 /* PhotosViewViewCell.swift */,
+				01D28E1B287283D700C1C0C9 /* PhotosViewViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -464,10 +488,14 @@
 				013AB0072862C3DE00A8B7A9 /* ActivityDetailViewController.storyboard in Resources */,
 				013AAFF12862C3D500A8B7A9 /* Main.storyboard in Resources */,
 				013AAFFE2862C3DE00A8B7A9 /* JournalRecapViewController.storyboard in Resources */,
+				01D28E0D2872830C00C1C0C9 /* JournalCollectionViewViewController.storyboard in Resources */,
 				013AB0032862C3DE00A8B7A9 /* ActivityViewController.storyboard in Resources */,
 				3BD1171F28531FFC0036F6DE /* LaunchScreen.storyboard in Resources */,
 				3BD1171C28531FFC0036F6DE /* Assets.xcassets in Resources */,
 				013AB00D2862C3EA00A8B7A9 /* DetailCollectionViewCell.xib in Resources */,
+				01D28E112872835F00C1C0C9 /* CanvasViewViewCell.xib in Resources */,
+				01D28E1D287283D700C1C0C9 /* PhotosViewViewCell.xib in Resources */,
+				01D28E172872838E00C1C0C9 /* MoodViewViewCell.xib in Resources */,
 				01F9BA7928641DA000292CFB /* JournalRecapCollectionViewCell.xib in Resources */,
 				013AB00E2862C3EA00A8B7A9 /* ActivityCollectionViewCell.xib in Resources */,
 			);
@@ -518,12 +546,16 @@
 				64D670452867EE0200B67B19 /* MoodJournalWorksheetTableViewCell.swift in Sources */,
 				013AB00F2862C3EA00A8B7A9 /* DetailCollectionViewCell.swift in Sources */,
 				3B6677DE28655E39004C96BB /* ActivityWorksheetViewController.swift in Sources */,
+				01D28E102872835F00C1C0C9 /* CanvasViewViewCell.swift in Sources */,
 				3B15DF1028653A8700F4E803 /* DatabaseHelper+Journal.swift in Sources */,
 				013AB0042862C3DE00A8B7A9 /* JournalViewController.swift in Sources */,
 				0196C7252866BDAD00D94D98 /* Extension+UIImage.swift in Sources */,
 				3B4D7734285A9FA200402B03 /* Category+CoreDataClass.swift in Sources */,
 				013AB0102862C3EA00A8B7A9 /* ActivityCollectionViewCell.swift in Sources */,
+				01D28E162872838E00C1C0C9 /* MoodViewViewCell.swift in Sources */,
+				01D28E0B2872828C00C1C0C9 /* JournalCollectionViewViewController.swift in Sources */,
 				3B15DF0C2865360200F4E803 /* Journal+CoreDataProperties.swift in Sources */,
+				01D28E1C287283D700C1C0C9 /* PhotosViewViewCell.swift in Sources */,
 				3B4D772D285A9FA200402B03 /* Activity+CoreDataClass.swift in Sources */,
 				3BD1171028531FFB0036F6DE /* AppDelegate.swift in Sources */,
 				64D6704F2867EE7800B67B19 /* VideoExpandedJournalWorksheetTableViewCell.swift in Sources */,
@@ -714,7 +746,7 @@
 				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -744,7 +776,7 @@
 				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

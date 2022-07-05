@@ -43,7 +43,7 @@ class ActivityWorksheetViewController: UIViewController, PKCanvasViewDelegate {
         worksheetImage = journal?.activity?.worksheetImage
         pageCount = worksheetImage.count
         currentPage = 0
-    
+        
         for worksheet in journal?.worksheets?.allObjects as! [Worksheet]{
             do{
                 try canvasDrawing.append(PKDrawing(data: worksheet.data!))
@@ -118,6 +118,6 @@ extension ActivityWorksheetViewController: EmbeddedViewControllerDelegate {
             sheets[i].data = canvasDrawing[i].dataRepresentation()
         }
         
-//        DBHelper.saveContext()
+        //        DBHelper.saveContext()
     }
 }

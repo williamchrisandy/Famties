@@ -64,6 +64,7 @@ class JournalRecapViewController: UIViewController {
         journalCollectionView.layer.cornerRadius = 15
         titleTextField.delegate = self
         nameTextField.delegate = self
+        self.title = "Journal"
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -171,9 +172,8 @@ class JournalRecapViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "collectionToJournal" {
-            let destination = segue.destination as! JournalViewController
+            let destination = segue.destination  as! JournalCollectionViewViewController
             destination.journal = selectedJournal
-            destination.mode = "Edit"
         }
     }
     
