@@ -14,13 +14,13 @@ class JournalCollectionViewViewController: UIViewController {
     let moodViewIdentifier = "MoodViewIdentifier"
     let photosViewIdentifier = "PhotosViewIdentifier"
     
-    @IBOutlet weak var JournalViewCollectionView: UICollectionView! {
+    @IBOutlet weak var journalViewCollectionView: UICollectionView! {
         didSet {
-            JournalViewCollectionView.delegate = self
-            JournalViewCollectionView.dataSource = self
-            JournalViewCollectionView.register(UINib(nibName: "CanvasViewViewCell", bundle: nil), forCellWithReuseIdentifier: canvasViewIdentifier)
-            JournalViewCollectionView.register(UINib(nibName: "MoodViewViewCell", bundle: nil), forCellWithReuseIdentifier: moodViewIdentifier)
-            JournalViewCollectionView.register(UINib(nibName: "PhotosViewViewCell", bundle: nil), forCellWithReuseIdentifier: photosViewIdentifier)
+            journalViewCollectionView.delegate = self
+            journalViewCollectionView.dataSource = self
+            journalViewCollectionView.register(UINib(nibName: "CanvasViewViewCell", bundle: nil), forCellWithReuseIdentifier: canvasViewIdentifier)
+            journalViewCollectionView.register(UINib(nibName: "MoodViewViewCell", bundle: nil), forCellWithReuseIdentifier: moodViewIdentifier)
+            journalViewCollectionView.register(UINib(nibName: "PhotosViewViewCell", bundle: nil), forCellWithReuseIdentifier: photosViewIdentifier)
         }
     }
     @IBOutlet weak var titleLabel: UILabel!
@@ -31,13 +31,12 @@ class JournalCollectionViewViewController: UIViewController {
     
     var journal: Journal!
     var canvasDrawing: [PKDrawing] = []
-    var worksheetImage: [UIImage]!
-    var pageCount: Int!
+    var pageCount: Int = 0
     
     //MARK: - Life Cycles
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         for worksheet in journal?.worksheets?.allObjects as! [Worksheet] {
             do {
                 try canvasDrawing.append(PKDrawing(data: worksheet.data!))
@@ -45,10 +44,21 @@ class JournalCollectionViewViewController: UIViewController {
                 print(error)
             }
         }
-        
-        pageCount = canvasDrawing.count + 2
+       
+        pageCount += canvasDrawing.count + 1
+        if journal.photo.isEmpty == false {
+            pageCount += 1
+        }
         pageController.numberOfPages = pageCount
         pageController.currentPage = 0
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(false)
+        self.navigationController?.isNavigationBarHidden = false
+        self.tabBarController?.tabBar.isHidden = true
+        self.title = journal.activity?.name!
+        
     }
     //MARK: - Helpers
     @IBAction func editButtonTapped(_ sender: Any) {
@@ -87,6 +97,9 @@ extension JournalCollectionViewViewController: UICollectionViewDataSource, UICol
         return CGSize(width: width, height: height)
     }
     
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return pageCount
     }
@@ -96,31 +109,37 @@ extension JournalCollectionViewViewController: UICollectionViewDataSource, UICol
     }
     
     func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        let visibleRectangleDaily = CGRect(origin: JournalViewCollectionView.contentOffset, size: JournalViewCollectionView.bounds.size)
-        if let visibleIndexPath = self.JournalViewCollectionView.indexPathForItem(at: CGPoint(x: visibleRectangleDaily.midX, y: visibleRectangleDaily.midY)) {
+        let visibleRectangleDaily = CGRect(origin: journalViewCollectionView.contentOffset, size: journalViewCollectionView.bounds.size)
+        if let visibleIndexPath = self.journalViewCollectionView.indexPathForItem(at: CGPoint(x: visibleRectangleDaily.midX, y: visibleRectangleDaily.midY)) {
             pageController.currentPage = visibleIndexPath.item
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if indexPath.item == pageCount - 2 {
+        if (indexPath.item == pageCount - 1 && journal.photo.isEmpty == true) || (indexPath.item == pageCount - 2 && journal.photo.isEmpty == false) {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: moodViewIdentifier, for: indexPath) as! MoodViewViewCell
             cell.moodLabel.text = convertMoodNumberToText(index: Int(journal.mood))
             cell.moodImage.image = convertMoodNumberToImage(index: Int(journal.mood))
             cell.learnTitleLabel.text = journal.name
             cell.descriptionLabel.text = journal.lessonLearned
             return cell
-        } else if indexPath.item == pageCount - 1 {
+        } else if indexPath.item == pageCount - 1 && journal.photo.isEmpty == false {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: photosViewIdentifier, for: indexPath) as! PhotosViewViewCell
             cell.photos = journal.photo
             return cell
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: canvasViewIdentifier, for: indexPath) as! CanvasViewViewCell
             cell.canvasView.drawing = canvasDrawing[indexPath.item]
-            cell.imageView.image = journal.activity?.worksheetImage[indexPath.item]
+            
+            let width = collectionView.visibleSize.width
+            let height = collectionView.visibleSize.height
+            var size: CGSize = CGSize(width: width, height: width * 1.25)
+            if width * 1.25 > height { size  = CGSize(width: height * 0.8, height: height) }
+            
+            cell.imageView.image = journal.activity?.worksheetImage[indexPath.item].resized(to: size)
+            cell.canvasView.frame.size = size
             return cell
         }
-        return UICollectionViewCell()
     }
 }
 

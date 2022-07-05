@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="ipad7_9" orientation="portrait" layout="fullscreen" appearance="light"/>
+    <device id="ipad12_9rounded" orientation="portrait" layout="fullscreen" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -20,36 +20,37 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0xf-1b-k9d">
                         <rect key="frame" x="0.0" y="0.0" width="744" height="1133"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hSB-8J-DYI">
-                                <rect key="frame" x="0.0" y="101.5" width="744" height="930"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wCG-39-bRK">
+                                <rect key="frame" x="0.0" y="0.0" width="744" height="1133"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bxq-Kp-Ava" customClass="PKCanvasView">
-                                        <rect key="frame" x="0.0" y="0.0" width="744" height="930"/>
-                                        <color key="backgroundColor" systemColor="systemGrayColor"/>
-                                    </view>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3hi-hF-JEn">
-                                        <rect key="frame" x="0.0" y="0.0" width="744" height="930"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="744" height="1133"/>
                                     </imageView>
+                                    <view opaque="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="bxq-Kp-Ava" customClass="PKCanvasView">
+                                        <rect key="frame" x="0.0" y="0.0" width="744" height="1133"/>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="3hi-hF-JEn" secondAttribute="trailing" id="3Pa-On-fhe"/>
-                                    <constraint firstItem="bxq-Kp-Ava" firstAttribute="leading" secondItem="hSB-8J-DYI" secondAttribute="leading" id="9s4-7T-IQT"/>
-                                    <constraint firstItem="3hi-hF-JEn" firstAttribute="leading" secondItem="hSB-8J-DYI" secondAttribute="leading" id="J4S-Nx-MLj"/>
-                                    <constraint firstItem="3hi-hF-JEn" firstAttribute="top" secondItem="hSB-8J-DYI" secondAttribute="top" id="KEh-HT-Bfl"/>
-                                    <constraint firstAttribute="bottom" secondItem="3hi-hF-JEn" secondAttribute="bottom" id="LZi-1X-TZJ"/>
-                                    <constraint firstAttribute="bottom" secondItem="bxq-Kp-Ava" secondAttribute="bottom" id="Szs-XB-A4v"/>
-                                    <constraint firstAttribute="width" secondItem="hSB-8J-DYI" secondAttribute="height" multiplier="4:5" id="Yae-rl-fTt"/>
-                                    <constraint firstAttribute="trailing" secondItem="bxq-Kp-Ava" secondAttribute="trailing" id="eYR-NJ-lNa"/>
-                                    <constraint firstItem="bxq-Kp-Ava" firstAttribute="top" secondItem="hSB-8J-DYI" secondAttribute="top" id="vtQ-F4-1D8"/>
+                                    <constraint firstItem="3hi-hF-JEn" firstAttribute="top" secondItem="wCG-39-bRK" secondAttribute="top" id="5mf-f4-nwa"/>
+                                    <constraint firstItem="bxq-Kp-Ava" firstAttribute="leading" secondItem="wCG-39-bRK" secondAttribute="leading" id="6Ag-kD-XnK"/>
+                                    <constraint firstItem="3hi-hF-JEn" firstAttribute="leading" secondItem="wCG-39-bRK" secondAttribute="leading" id="Hck-ZX-OIX"/>
+                                    <constraint firstAttribute="trailing" secondItem="3hi-hF-JEn" secondAttribute="trailing" id="XPf-jR-oJN"/>
+                                    <constraint firstAttribute="trailing" secondItem="bxq-Kp-Ava" secondAttribute="trailing" id="Ync-28-6al"/>
+                                    <constraint firstAttribute="bottom" secondItem="3hi-hF-JEn" secondAttribute="bottom" id="Z4T-9U-Zhp"/>
+                                    <constraint firstItem="bxq-Kp-Ava" firstAttribute="top" secondItem="wCG-39-bRK" secondAttribute="top" id="hrQ-KS-InO"/>
+                                    <constraint firstAttribute="bottom" secondItem="bxq-Kp-Ava" secondAttribute="bottom" id="hx8-cu-L0N"/>
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" systemColor="tintColor"/>
+                        <color key="backgroundColor" systemColor="systemRedColor"/>
                         <constraints>
-                            <constraint firstItem="hSB-8J-DYI" firstAttribute="centerX" secondItem="0xf-1b-k9d" secondAttribute="centerX" id="Qpd-Wy-Ngr"/>
-                            <constraint firstItem="hSB-8J-DYI" firstAttribute="centerY" secondItem="0xf-1b-k9d" secondAttribute="centerY" id="UpU-Wc-Ddo"/>
-                            <constraint firstItem="hSB-8J-DYI" firstAttribute="width" secondItem="0xf-1b-k9d" secondAttribute="width" id="YBr-QI-3yc"/>
+                            <constraint firstItem="wCG-39-bRK" firstAttribute="centerY" secondItem="0xf-1b-k9d" secondAttribute="centerY" id="ACT-zA-AEA"/>
+                            <constraint firstItem="wCG-39-bRK" firstAttribute="leading" secondItem="0xf-1b-k9d" secondAttribute="leading" id="LXF-jk-JLT"/>
+                            <constraint firstItem="wCG-39-bRK" firstAttribute="centerX" secondItem="0xf-1b-k9d" secondAttribute="centerX" id="ORv-NS-j4f"/>
+                            <constraint firstItem="wCG-39-bRK" firstAttribute="top" secondItem="0xf-1b-k9d" secondAttribute="top" id="OVv-YF-oGR"/>
+                            <constraint firstAttribute="bottom" secondItem="wCG-39-bRK" secondAttribute="bottom" id="R5T-ko-pJp"/>
+                            <constraint firstAttribute="trailing" secondItem="wCG-39-bRK" secondAttribute="trailing" id="zBE-31-Mnz"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -65,20 +66,16 @@
             <connections>
                 <outlet property="canvasView" destination="bxq-Kp-Ava" id="AfV-SZ-f7p"/>
                 <outlet property="imageView" destination="3hi-hF-JEn" id="zzf-S5-vA4"/>
-                <outlet property="viewContainer" destination="bxq-Kp-Ava" id="s6e-Of-m4D"/>
             </connections>
-            <point key="canvasLocation" x="-30.64516129032258" y="234.33362753751103"/>
+            <point key="canvasLocation" x="-31.054687499999996" y="233.89458272327963"/>
         </collectionViewCell>
     </objects>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
-        <systemColor name="systemGrayColor">
-            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="tintColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

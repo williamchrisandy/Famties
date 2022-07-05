@@ -31,19 +31,13 @@ class PhotosViewViewCell: UICollectionViewCell, UICollectionViewDataSource, UICo
         layout.scrollDirection = .vertical
         layout.minimumLineSpacing = 5
         layout.minimumInteritemSpacing = 5
-        photoCollectionView.setCollectionViewLayout(layout, animated: true)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 1.0, left: 1.0, bottom: 1.0, right: 1.0)//here your custom value for spacing
+//        photoCollectionView.setCollectionViewLayout(layout, animated: true)
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let lay = collectionViewLayout as! UICollectionViewFlowLayout
-        let widthPerItem = collectionView.frame.width / 2 - lay.minimumInteritemSpacing
-        
-        //TODO: set collectionviewsize
-        return CGSize(width:widthPerItem, height:100)
+        let width  = collectionView.frame.width / 2 - 40
+        let height = collectionView.frame.height / 3 - 40
+        return CGSize(width: width, height: height)
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

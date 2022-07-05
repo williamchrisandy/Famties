@@ -18,8 +18,8 @@
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="epe-bb-XPo">
                                 <rect key="frame" x="30" y="156" width="684" height="881"/>
-                                <color key="backgroundColor" name="EmojiTintColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="vg9-df-lwS">
+                                <color key="backgroundColor" name="SocialColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="vg9-df-lwS">
                                     <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -69,7 +69,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="JournalViewCollectionView" destination="epe-bb-XPo" id="b8c-X1-tjj"/>
+                        <outlet property="journalViewCollectionView" destination="epe-bb-XPo" id="b8c-X1-tjj"/>
                         <outlet property="kidNameLabel" destination="Dv1-cx-WZQ" id="jrz-wc-DIA"/>
                         <outlet property="pageController" destination="lyq-h6-HJl" id="jeE-eA-gra"/>
                         <outlet property="titleLabel" destination="atB-ff-elb" id="zHa-wi-efi"/>
@@ -84,8 +84,8 @@
         <namedColor name="BackgroundColor">
             <color red="1" green="0.99215686274509807" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="EmojiTintColor">
-            <color red="0.95686274509803926" green="0.70196078431372544" blue="0.019607843137254902" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="SocialColor">
+            <color red="1" green="0.88235294117647056" blue="0.52156862745098043" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
