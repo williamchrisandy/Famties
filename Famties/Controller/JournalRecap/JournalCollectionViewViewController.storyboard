@@ -76,11 +76,22 @@
                         <outlet property="kidNameLabel" destination="Dv1-cx-WZQ" id="jrz-wc-DIA"/>
                         <outlet property="pageController" destination="lyq-h6-HJl" id="jeE-eA-gra"/>
                         <outlet property="titleLabel" destination="atB-ff-elb" id="zHa-wi-efi"/>
+                        <segue destination="XsF-mE-7T5" kind="show" identifier="viewToEdit" id="EHN-0j-CPz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="911.29032258064512" y="137.95233892321269"/>
+        </scene>
+        <!--JournalViewController-->
+        <scene sceneID="f9W-a7-wPC">
+            <objects>
+                <viewControllerPlaceholder storyboardName="JournalViewController" id="XsF-mE-7T5" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="EqU-q2-9hp"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="i3Y-17-dxU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1430" y="120"/>
         </scene>
     </scenes>
     <resources>
