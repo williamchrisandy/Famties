@@ -228,8 +228,8 @@ extension ActivityDetailViewController: UICollectionViewDelegateFlowLayout, UICo
     }
     
     func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        let visibleRectangleDaily = CGRect(origin: stepsCollectionView.contentOffset, size: stepsCollectionView.bounds.size)
-        if let visibleIndexPath = self.stepsCollectionView.indexPathForItem(at: CGPoint(x: visibleRectangleDaily.midX, y: visibleRectangleDaily.midY)) {
+        let visibleRectangle = CGRect(origin: stepsCollectionView.contentOffset, size: stepsCollectionView.bounds.size)
+        if let visibleIndexPath = self.stepsCollectionView.indexPathForItem(at: CGPoint(x: visibleRectangle.midX, y: visibleRectangle.midY)) {
             stepsPageController.currentPage = visibleIndexPath.item
         }
     }

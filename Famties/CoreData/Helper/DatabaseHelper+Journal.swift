@@ -95,4 +95,11 @@ extension DatabaseHelper {
             print(error.localizedDescription)
         }
     }
+    
+    func deleteAllJournals() {
+        let journals = getJournals()
+        for journal in journals {
+            delete(journal)
+        }
+    }
 }
