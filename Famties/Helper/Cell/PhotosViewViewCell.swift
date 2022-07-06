@@ -46,6 +46,7 @@ class PhotosViewViewCell: UICollectionViewCell, UICollectionViewDataSource, UICo
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as! DetailCollectionViewCell
         cell.detailImageView.image = photos[indexPath.item]
+        cell.layer.cornerRadius = 10
         return cell
     }
     

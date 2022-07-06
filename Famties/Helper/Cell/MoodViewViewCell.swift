@@ -18,6 +18,13 @@ class MoodViewViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        topView.layer.borderWidth = 1
+        topView.layer.borderColor = UIColor(named: "BenefitTitleColor")?.cgColor
+        topView.layer.cornerRadius = 5
+        
+        bottomView.layer.borderWidth = 1
+        bottomView.layer.borderColor = UIColor(named: "BenefitTitleColor")?.cgColor
+        bottomView.layer.cornerRadius = 5
     }
 
 }

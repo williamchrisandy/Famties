@@ -100,8 +100,10 @@ class JournalCollectionViewViewController: UIViewController {
             mood = "So inspired."
         } else if index == 7 {
             mood = "We needed to work some things out."
-        } else {
+        } else if index == 8 {
             mood = "It was the time of celebration. Woohoooo."
+        } else {
+            mood = "We are unsure about our feelings."
         }
         return mood
     }
@@ -125,8 +127,10 @@ class JournalCollectionViewViewController: UIViewController {
             emoji = "Emoji7"
         } else if index == 7 {
             emoji = "Emoji8"
-        } else {
+        } else if index == 8 {
             emoji = "Emoji9"
+        } else {
+            return UIImage(systemName: "questionmark")!
         }
         return UIImage(named: emoji)!
     }
