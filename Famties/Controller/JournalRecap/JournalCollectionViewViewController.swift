@@ -85,7 +85,7 @@ class JournalCollectionViewViewController: UIViewController {
         //TODO: Fill Mood Name
         var mood: String!
         if index == 0 {
-            mood = "We had a mixed feelings."
+            mood = "We had mixed feelings about this activity."
         } else if index == 1 {
             mood = "It was quite fun."
         } else if index == 2 {
