@@ -74,7 +74,7 @@ extension LearnedJournalWorksheetTableViewCell: UITextViewDelegate{
     func textViewDidBeginEditing(_ textView: UITextView) {
         if (!doneFirstTime){
             learnedTextView.text = ""
-            learnedTextView.textColor = UIColor(named: "ActivityTitleColor")
+            learnedTextView.textColor = UIColor(named: "ActivityJournalTitleColor")
         }
         doneFirstTime = true
     }

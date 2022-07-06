@@ -29,7 +29,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Creating Your Own Luck!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Abs-rB-7C4">
                                         <rect key="frame" x="31" y="322" width="213.5" height="89"/>
                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="48"/>
-                                        <color key="textColor" name="ActivityTitleColor"/>
+                                        <color key="textColor" name="ActivityDetailTitleColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0xj-Go-4Fx">
@@ -37,7 +37,7 @@
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clock.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="tdf-0L-e5v">
                                                 <rect key="frame" x="0.0" y="0.5" width="20" height="19"/>
-                                                <color key="tintColor" name="CardsFavoriteColor"/>
+                                                <color key="tintColor" name="ActivityDetailAccentColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="20" id="0YP-dv-k3O"/>
                                                     <constraint firstAttribute="height" constant="20" id="kZb-xf-nMj"/>
@@ -237,7 +237,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How to do this activity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1jO-xh-sME">
                                         <rect key="frame" x="28" y="40" width="412.5" height="31.5"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
-                                        <color key="textColor" name="ActivityTitleColor"/>
+                                        <color key="textColor" name="ActivityDetailTitleColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="yuR-4H-L0v">
@@ -346,8 +346,11 @@
         <namedColor name="ActivityDescriptionColor">
             <color red="0.35294117647058826" green="0.35294117647058826" blue="0.35294117647058826" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="ActivityTitleColor">
-            <color red="0.0" green="0.2627450980392157" blue="0.31372549019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="ActivityDetailAccentColor">
+            <color red="0.44705882352941179" green="0.54117647058823526" blue="0.13333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="ActivityDetailTitleColor">
+            <color red="0.0078431372549019607" green="0.33725490196078434" blue="0.50980392156862742" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="BackgroundColor">
             <color red="1" green="0.99215686274509807" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -356,10 +359,7 @@
             <color red="0.6705882352941176" green="0.5725490196078431" blue="0.082352941176470587" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="CardsDarkBlueColor">
-            <color red="0.0" green="0.19200000166893005" blue="0.29399999976158142" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="CardsFavoriteColor">
-            <color red="0.9882352941176471" green="0.59607843137254901" blue="0.19607843137254902" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.19215686274509805" blue="0.29411764705882354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
