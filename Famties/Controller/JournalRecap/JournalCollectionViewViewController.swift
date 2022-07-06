@@ -24,7 +24,7 @@ class JournalCollectionViewViewController: UIViewController {
         }
     }
     @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var kidNameLabel: UILabel!
+    @IBOutlet weak var ChildNameLabel: UILabel!
     @IBOutlet weak var pageController: UIPageControl!
     
     let databaseHelper = DatabaseHelper()
@@ -36,6 +36,9 @@ class JournalCollectionViewViewController: UIViewController {
     //MARK: - Life Cycles
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let editBarButtonItem = UIBarButtonItem(title: "Edit", style: .done, target: self, action: #selector(editJournal))
+        self.navigationItem.rightBarButtonItem  = editBarButtonItem
         
         let worksheets = journal?.worksheets?.allObjects as! [Worksheet]
         for worksheet in worksheets.sorted(by: { $0.index < $1.index }) {
@@ -54,7 +57,17 @@ class JournalCollectionViewViewController: UIViewController {
         pageController.currentPage = 0
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tabBarController?.tabBar.isHidden = true
+        self.navigationController?.isNavigationBarHidden = false
+        self.title = journal.activity?.name
+        titleLabel.text = journal.name
+        ChildNameLabel.text = "Child name: \(journal.childName ?? "unnamed")"
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
+        
         for worksheet in journal?.worksheets?.allObjects as! [Worksheet] {
             let sx = journalViewCollectionView.visibleSize.width / worksheet.width
             let sy = journalViewCollectionView.visibleSize.height / worksheet.height
@@ -63,30 +76,71 @@ class JournalCollectionViewViewController: UIViewController {
         journalViewCollectionView.reloadData()
     }
     //MARK: - Helpers
-    @IBAction func editButtonTapped(_ sender: Any) {
-        
+    
+    @objc func editJournal(){
+         performSegue(withIdentifier: "viewToEdit", sender: self)
     }
     
     private func convertMoodNumberToText(index: Int) -> String {
         //TODO: Fill Mood Name
         var mood: String!
         if index == 0 {
-            
+            mood = "We had a mixed feelings."
         } else if index == 1 {
-            
+            mood = "It was quite fun."
+        } else if index == 2 {
+            mood = "It was super amusing."
+        } else if index == 3 {
+            mood = "The activity gave us excitement."
+        } else if index == 4 {
+            mood = "We both feel loved."
+        } else if index == 5 {
+            mood = "We laughed a lot while doing this activity."
+        } else if index == 6 {
+            mood = "So inspired."
+        } else if index == 7 {
+            mood = "We needed to work some things out."
+        } else if index == 8 {
+            mood = "It was the time of celebration. Woohoooo."
+        } else {
+            mood = "We are unsure about our feelings."
         }
-        return "mood"
+        return mood
     }
     
     private func convertMoodNumberToImage(index: Int) -> UIImage {
         //TODO: Fill Mood Name
         var emoji: String!
         if index == 0 {
-            
+            emoji = "Emoji1"
         } else if index == 1 {
-            
+            emoji = "Emoji2"
+        } else if index == 2 {
+            emoji = "Emoji3"
+        } else if index == 3 {
+            emoji = "Emoji4"
+        } else if index == 4 {
+            emoji = "Emoji5"
+        } else if index == 5 {
+            emoji = "Emoji6"
+        } else if index == 6 {
+            emoji = "Emoji7"
+        } else if index == 7 {
+            emoji = "Emoji8"
+        } else if index == 8 {
+            emoji = "Emoji9"
+        } else {
+            return UIImage(systemName: "questionmark")!
         }
-        return UIImage(named: "Emoji1")!
+        return UIImage(named: emoji)!
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "viewToEdit" {
+            let destination = segue.destination as! JournalViewController
+            destination.journal = journal
+            destination.mode = "Edit"
+        }
     }
 }
 

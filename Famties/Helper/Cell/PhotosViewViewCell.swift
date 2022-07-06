@@ -8,7 +8,7 @@
 import UIKit
 
 class PhotosViewViewCell: UICollectionViewCell, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-
+    
     let cellIdentifier = "PhotoIdentifier"
     
     @IBOutlet weak var photoCollectionView: UICollectionView! {
@@ -24,30 +24,34 @@ class PhotosViewViewCell: UICollectionViewCell, UICollectionViewDataSource, UICo
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-//        photos = journal.photo
+        let margin: CGFloat = 10
+        guard let collectionView = photoCollectionView, let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout else { return }
         
-        let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .vertical
-        layout.minimumLineSpacing = 5
-        layout.minimumInteritemSpacing = 5
-//        photoCollectionView.setCollectionViewLayout(layout, animated: true)
+        flowLayout.minimumInteritemSpacing = margin
+        flowLayout.minimumLineSpacing = margin
+        flowLayout.sectionInset = UIEdgeInsets(top: margin, left: margin, bottom: margin, right: margin)
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width  = collectionView.frame.width / 2 - 40
-        let height = collectionView.frame.height / 3 - 40
-        return CGSize(width: width, height: height)
+        let noOfCellsInRow = 2
+        let flowLayout = collectionViewLayout as! UICollectionViewFlowLayout
+        let totalSpace = flowLayout.sectionInset.left
+        + flowLayout.sectionInset.right
+        + (flowLayout.minimumInteritemSpacing * CGFloat(noOfCellsInRow - 1))
+        
+        let size = Int((collectionView.bounds.width - totalSpace) / CGFloat(noOfCellsInRow))
+        return CGSize(width: size, height: size * 3/4)
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as! DetailCollectionViewCell
         cell.detailImageView.image = photos[indexPath.item]
+        cell.layer.cornerRadius = 10
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return photos.count
     }
-
+    
 }

@@ -146,6 +146,10 @@ class JournalViewController: UIViewController, EditControllerDelegate, UIGesture
             
         }
         else if mode == "Edit" {
+            for delegate in delegates {
+                delegate?.saveJournalData()
+            }
+            journal?.lastEdited = Date()
             journal?.addActivityPoint()
             DBHelper.saveContext()
             performSegue(withIdentifier: "finishedFromJournalRecapWithSavedSegue", sender: self)
