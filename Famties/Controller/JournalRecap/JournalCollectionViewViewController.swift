@@ -24,7 +24,7 @@ class JournalCollectionViewViewController: UIViewController {
         }
     }
     @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var kidNameLabel: UILabel!
+    @IBOutlet weak var ChildNameLabel: UILabel!
     @IBOutlet weak var pageController: UIPageControl!
     
     let databaseHelper = DatabaseHelper()
@@ -62,6 +62,8 @@ class JournalCollectionViewViewController: UIViewController {
         tabBarController?.tabBar.isHidden = true
         self.navigationController?.isNavigationBarHidden = false
         self.title = journal.activity?.name
+        titleLabel.text = journal.name
+        ChildNameLabel.text = "Child name: \(journal.childName ?? "unnamed")"
     }
     
     override func viewDidAppear(_ animated: Bool) {
