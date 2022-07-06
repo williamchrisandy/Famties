@@ -17,6 +17,7 @@ class LearnedJournalWorksheetTableViewCell: UITableViewCell {
     let DBHelper = DatabaseHelper()
     var journal: Journal?
     var doneFirstTime: Bool!
+    var editDelegate: EditControllerDelegate?
     
     
     //MARK: Initialization
@@ -69,11 +70,16 @@ extension LearnedJournalWorksheetTableViewCell: UITextViewDelegate{
             dismissKeyboard()
             saveData()
         }
+    
     func textViewDidBeginEditing(_ textView: UITextView) {
         if (!doneFirstTime){
             learnedTextView.text = ""
             learnedTextView.textColor = UIColor(named: "ActivityTitleColor")
         }
         doneFirstTime = true
+    }
+    
+    func textViewDidChange(_ textView: UITextView) {
+        editDelegate?.updateEditStatus()
     }
 }

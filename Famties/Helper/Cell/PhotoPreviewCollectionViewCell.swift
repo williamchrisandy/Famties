@@ -13,7 +13,7 @@ class PhotoPreviewCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var photoPreviewImageView: UIImageView!
     @IBOutlet weak var photoDeleteButton: UIButton!
     
-    var deleterDelegate: JournalMediaDeleterDelegate?
+    weak var deleterDelegate: JournalMediaDeleterDelegate?
     var currentIndex: Int!
     
     //MARK: Initialization

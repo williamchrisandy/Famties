@@ -27,6 +27,8 @@ extension Worksheet {
     @NSManaged public var id: Int64
     @NSManaged public var index: Int16
     @NSManaged public var journal: Journal?
+    @NSManaged public var width: Double
+    @NSManaged public var height: Double
 
 }
 

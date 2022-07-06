@@ -13,7 +13,7 @@ class PhotoUploadCollectionViewCell: UICollectionViewCell {
     //MARK: Properties
     @IBOutlet weak var photoUploadButton: UIButton!
     
-    var delegates: JournalMediaPickerDelegate?
+    weak var delegates: JournalMediaPickerDelegate?
     
     
     //MARK: Initialization
