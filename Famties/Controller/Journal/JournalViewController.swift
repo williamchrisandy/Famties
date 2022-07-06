@@ -48,7 +48,7 @@ class JournalViewController: UIViewController, EditControllerDelegate, UIGesture
     func initDesign() {
         segmentedControl.setTitleTextAttributes([.foregroundColor: UIColor.white], for: .selected)
         segmentedControl.setTitleTextAttributes([.foregroundColor: UIColor(named: "PageControlTintColor")!], for: .normal)
-        
+        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor(named: "CardsDarkBlueColor")]
     }
     
     func initVar(){
