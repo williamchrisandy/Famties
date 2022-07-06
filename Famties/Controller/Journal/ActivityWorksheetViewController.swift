@@ -126,8 +126,6 @@ extension ActivityWorksheetViewController: EmbeddedViewControllerDelegate {
         for i in 0...(pageCount-1){
             let index = Int(sheets[i].index)
             sheets[i].data = canvasDrawing[index].dataRepresentation()
-            print(canvasView.visibleSize)
-            print(canvasDrawing[index].bounds.size)
             sheets[i].width = canvasView.visibleSize.width
             sheets[i].height = canvasView.visibleSize.height
         }

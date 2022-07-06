@@ -83,6 +83,29 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ky9-wk-ezq">
+                                <rect key="frame" x="498" y="304.5" width="45" height="45"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HZn-hm-NaX">
+                                        <rect key="frame" x="0.0" y="0.0" width="45" height="45"/>
+                                        <color key="tintColor" name="DeleteTintColor"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="trash" catalog="system"/>
+                                        <connections>
+                                            <action selector="onClickDeleteButton:" destination="A6E-Wd-y0S" eventType="touchUpInside" id="nwz-Hw-Yfw"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" name="ButtonWhiteBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="HZn-hm-NaX" secondAttribute="trailing" id="1ga-JN-hsD"/>
+                                    <constraint firstAttribute="height" constant="45" id="93W-da-GV1"/>
+                                    <constraint firstAttribute="width" constant="45" id="CN2-5p-zdU"/>
+                                    <constraint firstItem="HZn-hm-NaX" firstAttribute="leading" secondItem="ky9-wk-ezq" secondAttribute="leading" id="Q4Y-1i-dcV"/>
+                                    <constraint firstItem="HZn-hm-NaX" firstAttribute="top" secondItem="ky9-wk-ezq" secondAttribute="top" id="V9h-Wa-jt9"/>
+                                    <constraint firstAttribute="bottom" secondItem="HZn-hm-NaX" secondAttribute="bottom" id="VzS-Fd-dxT"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="LGp-X4-EjA"/>
                         <color key="backgroundColor" name="BackgroundColor"/>
@@ -95,6 +118,7 @@
                             <constraint firstItem="DBN-yE-R49" firstAttribute="top" relation="greaterThanOrEqual" secondItem="rtX-cp-oqK" secondAttribute="bottom" constant="35" id="ChK-sX-Hui"/>
                             <constraint firstItem="ZXd-gF-3WF" firstAttribute="centerY" secondItem="DBN-yE-R49" secondAttribute="centerY" id="Cj6-Bw-Jgb"/>
                             <constraint firstItem="Sd3-9I-w8I" firstAttribute="centerX" secondItem="p8j-Jq-flr" secondAttribute="centerX" id="EBV-yo-kwx"/>
+                            <constraint firstItem="ky9-wk-ezq" firstAttribute="trailing" secondItem="DBN-yE-R49" secondAttribute="trailing" constant="-5" id="JdJ-Ne-suu"/>
                             <constraint firstItem="F4H-m2-WPb" firstAttribute="leading" secondItem="LGp-X4-EjA" secondAttribute="leading" constant="100" id="LQC-NP-xar"/>
                             <constraint firstItem="ZXd-gF-3WF" firstAttribute="leading" secondItem="LGp-X4-EjA" secondAttribute="leading" constant="100" id="MOc-Vg-rot"/>
                             <constraint firstItem="tPA-1C-l6N" firstAttribute="leading" relation="lessThanOrEqual" secondItem="DBN-yE-R49" secondAttribute="trailing" constant="105" id="N6z-BI-3Pd"/>
@@ -117,6 +141,7 @@
                             <constraint firstItem="tPA-1C-l6N" firstAttribute="height" secondItem="DBN-yE-R49" secondAttribute="height" multiplier="1/5" id="u0E-bR-bh1"/>
                             <constraint firstItem="LGp-X4-EjA" firstAttribute="trailing" secondItem="F4H-m2-WPb" secondAttribute="trailing" constant="100" id="u8z-l3-flg"/>
                             <constraint firstItem="F4H-m2-WPb" firstAttribute="top" secondItem="LGp-X4-EjA" secondAttribute="top" constant="90" id="wZg-Kf-Fyh"/>
+                            <constraint firstItem="ky9-wk-ezq" firstAttribute="top" secondItem="DBN-yE-R49" secondAttribute="top" constant="5" id="xri-Wp-VrA"/>
                             <constraint firstItem="YQ3-hm-FRp" firstAttribute="centerX" secondItem="p8j-Jq-flr" secondAttribute="centerX" id="xzt-5d-fQH"/>
                         </constraints>
                     </view>
@@ -125,6 +150,8 @@
                     <size key="freeformSize" width="744" height="1133"/>
                     <connections>
                         <outlet property="createdAtJournalText" destination="YQ3-hm-FRp" id="rOn-b2-VLc"/>
+                        <outlet property="deleteButton" destination="HZn-hm-NaX" id="luf-Jx-hKt"/>
+                        <outlet property="deleteButtonBackgroundView" destination="ky9-wk-ezq" id="WK6-Dw-3ZO"/>
                         <outlet property="journalCollectionView" destination="DBN-yE-R49" id="3y7-tB-5EK"/>
                         <outlet property="journalKidName" destination="rtX-cp-oqK" id="OFL-dq-1y9"/>
                         <outlet property="journalTitle" destination="F4H-m2-WPb" id="oQh-ot-3x2"/>
@@ -155,8 +182,15 @@
         <image name="book.closed.fill" catalog="system" width="115" height="128"/>
         <image name="chevron.left" catalog="system" width="96" height="128"/>
         <image name="chevron.right" catalog="system" width="96" height="128"/>
+        <image name="trash" catalog="system" width="121" height="128"/>
         <namedColor name="BackgroundColor">
             <color red="1" green="0.99215686274509807" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="ButtonWhiteBackgroundColor">
+            <color red="1" green="1" blue="1" alpha="0.62" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="DeleteTintColor">
+            <color red="0.80000000000000004" green="0.22352941176470589" blue="0.031372549019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemTealColor">
             <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

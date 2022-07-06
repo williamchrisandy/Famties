@@ -52,6 +52,13 @@ class JournalRecapViewController: UIViewController {
             nameTextField.placeholder = "Your Child Name"
         }
     }
+    @IBOutlet weak var deleteButtonBackgroundView: UIView! {
+        didSet {
+            deleteButtonBackgroundView.layer.cornerRadius = deleteButtonBackgroundView.frame.size.height/2
+        }
+    }
+    
+    @IBOutlet weak var deleteButton: UIButton!
     
     // Property Type
     var currentIndex = 0
@@ -74,9 +81,7 @@ class JournalRecapViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         loadData()
-        loadTextViews(at: 0)
-        journalCollectionView.reloadData()
-        
+        loadViewElement()
         self.navigationController?.isNavigationBarHidden = true
         self.tabBarController?.tabBar.isHidden = false
         titleTextField.isHidden = true
@@ -139,12 +144,38 @@ class JournalRecapViewController: UIViewController {
         journalCollectionView.scrollToItem(at: IndexPath.init(item: currentIndex, section: 0), at: .centeredHorizontally, animated: true)
     }
     
+    @IBAction func onClickDeleteButton(_ sender: UIButton) {
+        guard journals.isEmpty == false else {
+            return
+        }
+        journalCollectionView.deleteItems(at: [IndexPath(item: currentIndex, section: 0)])
+        DatabaseHelper().delete(journals[currentIndex])
+        journals.remove(at: currentIndex)
+        loadViewElement()
+    }
+    
     private func loadData() {
         let databaseHelper = DatabaseHelper()
         journals = databaseHelper.getJournals()
         currentIndex = 0
     }
     
+    private func loadViewElement() {
+        if journals.isEmpty == false {
+            loadTextViews(at: 0)
+            journalCollectionView.reloadData()
+            deleteButton.isHidden = false
+            deleteButtonBackgroundView.isHidden = false
+        }
+        else {
+            deleteButton.isHidden = true
+            deleteButtonBackgroundView.isHidden = true
+            journalTitle.text = "No Journal"
+            journalKidName.text = "👧 Unnamed"
+            createdAtJournalText.text = "Created At: dd Month yyyy"
+            lastEditedJournalText.text = "Last Edited: dd Month yyyy"
+        }
+    }
     private func loadTextViews(at index: Int) {
         guard journals.isEmpty == false else {
             return
