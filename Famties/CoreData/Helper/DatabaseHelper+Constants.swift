@@ -17,5 +17,6 @@ protocol HasId {
 
 extension DatabaseHelper {
     static let limitedDataMaxCount = 10
-    static let keyFirstTimev1 = "firstTimev1.0"
+    static let keyFirstTimev1s0 = "firstTimev1.0"
+    static let keyFirstTimev1s1 = "firstTimev1.1"
 }

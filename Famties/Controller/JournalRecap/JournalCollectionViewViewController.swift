@@ -142,6 +142,13 @@ class JournalCollectionViewViewController: UIViewController {
             destination.mode = "Edit"
         }
     }
+                                                       
+    @objc func updatePageController() {
+        let visibleRectangle = CGRect(origin: journalViewCollectionView.contentOffset, size: journalViewCollectionView.bounds.size)
+        if let visibleIndexPath = journalViewCollectionView.indexPathForItem(at: CGPoint(x: visibleRectangle.midX, y: visibleRectangle.midY)) {
+            pageController.currentPage = visibleIndexPath.item
+        }
+    }
 }
 
 //MARK: - CollectionView Data Source and Delegate
@@ -156,6 +163,7 @@ extension JournalCollectionViewViewController: UICollectionViewDataSource, UICol
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return pageCount
     }
@@ -164,11 +172,8 @@ extension JournalCollectionViewViewController: UICollectionViewDataSource, UICol
         return 0
     }
     
-    func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        let visibleRectangleDaily = CGRect(origin: journalViewCollectionView.contentOffset, size: journalViewCollectionView.bounds.size)
-        if let visibleIndexPath = self.journalViewCollectionView.indexPathForItem(at: CGPoint(x: visibleRectangleDaily.midX, y: visibleRectangleDaily.midY)) {
-            pageController.currentPage = visibleIndexPath.item
-        }
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        updatePageController()
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
