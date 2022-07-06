@@ -67,13 +67,22 @@ class JournalCollectionViewViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        
+        var changed = false
         for worksheet in journal?.worksheets?.allObjects as! [Worksheet] {
-            let sx = journalViewCollectionView.visibleSize.width / worksheet.width
-            let sy = journalViewCollectionView.visibleSize.height / worksheet.height
-            canvasDrawing[Int(worksheet.index)].transform(using: CGAffineTransform(scaleX: sx, y: sy))
+            var sx = journalViewCollectionView.visibleSize.width / worksheet.width
+            var sy = journalViewCollectionView.visibleSize.height / worksheet.height
+            
+            if sx.isInfinite { sx = 1 }
+            if sy.isInfinite { sy = 1 }
+            
+            if sx != 1 || sy != 1 {
+                changed = true
+                canvasDrawing[Int(worksheet.index)].transform(using: CGAffineTransform(scaleX: sx, y: sy))
+            }
         }
-        journalViewCollectionView.reloadData()
+        if changed == true {
+            journalViewCollectionView.reloadData()
+        }
     }
     //MARK: - Helpers
     

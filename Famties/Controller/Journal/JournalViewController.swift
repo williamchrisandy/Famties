@@ -30,8 +30,7 @@ class JournalViewController: UIViewController, EditControllerDelegate, UIGesture
     let DBHelper = DatabaseHelper()
     var journal: Journal?
     var delegates: [EmbeddedViewControllerDelegate?] = []
-    var isEdited: Bool?
-    
+    var isEdited: Bool? = false
     
     //MARK: Initialization
     override func viewDidLoad() {
@@ -49,13 +48,13 @@ class JournalViewController: UIViewController, EditControllerDelegate, UIGesture
         segmentedControl.setTitleTextAttributes([.foregroundColor: UIColor.white], for: .selected)
         segmentedControl.setTitleTextAttributes([.foregroundColor: UIColor(named: "PageControlTintColor")!], for: .normal)
         navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor(named: "CardsDarkBlueColor")]
-    }
-    
-    func initVar(){
         for delegate in delegates {
             delegate?.showLeftView()
         }
         navigationItem.title = journal?.activity?.name
+    }
+    
+    func initVar(){
         isEdited = false
     }
     
@@ -100,7 +99,6 @@ class JournalViewController: UIViewController, EditControllerDelegate, UIGesture
     
     //MARK: Actions
     @IBAction func saveJournal(_ sender: Any) {
-        
         if mode == "New" {
             let addJournalAlertController = UIAlertController(title: "Save Journal", message: "", preferredStyle: .alert)
             
@@ -173,15 +171,15 @@ class JournalViewController: UIViewController, EditControllerDelegate, UIGesture
     
     //MARK: Overrides
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        initVar()
-        
         if segue.identifier == "ActivityWorksheetViewSegue" {
+            initVar()
             let destination = segue.destination as! ActivityWorksheetViewController
             delegates.append(destination)
             destination.journal = journal
             destination.editDelegate = self
         }
         else if segue.identifier == "JournalWorksheetViewSegue" {
+            initVar()
             let destination = segue.destination as! JournalWorksheetViewController
             delegates.append(destination)
             destination.journal = journal

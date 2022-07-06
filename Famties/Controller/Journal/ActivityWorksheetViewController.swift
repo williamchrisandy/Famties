@@ -36,12 +36,22 @@ class ActivityWorksheetViewController: UIViewController, PKCanvasViewDelegate {
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        var changed = false
         for worksheet in journal?.worksheets?.allObjects as! [Worksheet] {
-            let sx = canvasView.visibleSize.width / worksheet.width
-            let sy = canvasView.visibleSize.height / worksheet.height
-            canvasDrawing[Int(worksheet.index)].transform(using: CGAffineTransform(scaleX: sx, y: sy))
+            var sx = canvasView.visibleSize.width / worksheet.width
+            var sy = canvasView.visibleSize.height / worksheet.height
+            
+            if sx.isInfinite { sx = 1 }
+            if sy.isInfinite { sy = 1 }
+            
+            if sx != 1 || sy != 1 {
+                changed = true
+                canvasDrawing[Int(worksheet.index)].transform(using: CGAffineTransform(scaleX: sx, y: sy))
+            }
         }
-        canvasView.drawing = canvasDrawing[currentPage]
+        if changed == true {
+            canvasView.drawing = canvasDrawing[currentPage]
+        }
     }
     
     func initDesign(){
