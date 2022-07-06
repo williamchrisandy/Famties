@@ -152,12 +152,12 @@ extension DatabaseHelper {
         //Benefit 4-7
         let benefit4 = Benefit(context: context)
         benefit4.name = "Communication"
-        benefit4.explanation = "This activity helps children communicate and understand both themselves and other people."
+        benefit4.explanation = "This activity helps children communicate their thoughts and understand others."
         insert(benefit4)
         
         let benefit5 = Benefit(context: context)
         benefit5.name = "Social Initiation"
-        benefit5.explanation = "This activity helps children to initiate or begin interactions with other people."
+        benefit5.explanation = "This activity helps children begin interactions with other people."
         insert(benefit5)
         
         let benefit6 = Benefit(context: context)
