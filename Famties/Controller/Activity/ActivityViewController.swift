@@ -200,6 +200,10 @@ extension ActivityViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 25
     }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 25
+    }
 }
 
 extension ActivityViewController: ActivityCollectionViewCellDelegate {
@@ -222,10 +226,14 @@ extension ActivityViewController: ActivityCollectionViewCellDelegate {
         else if categoryId == 5 { targetCollectionView.append(responsibleCollectionView) }
 
         for i in 0..<targetData.count {
-            let data = targetData[i]
-            for j in 0..<data.count {
-                if data[j] == activity {
-                    targetCollectionView[i]?.reloadItems(at: [IndexPath(item: j, section: 0)])
+            let activities = targetData[i]
+            for j in 0..<activities.count {
+                if activities[j] == activity {
+                    if i == 0 { data[1] = databaseHelper.getActivities(showAll: false) }
+                    else {
+                        data[categoryId+1] = databaseHelper.getActivities(categoryId: categoryId, showAll: false)
+                    }
+                    targetCollectionView[i]?.reloadData()
                 }
             }
         }
