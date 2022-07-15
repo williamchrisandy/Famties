@@ -18,6 +18,7 @@
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="epe-bb-XPo">
                                 <rect key="frame" x="66.5" y="156" width="891" height="1114"/>
+                                <color key="backgroundColor" name="BackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="epe-bb-XPo" secondAttribute="height" multiplier="4:5" id="DpT-pf-EqF"/>
                                 </constraints>
